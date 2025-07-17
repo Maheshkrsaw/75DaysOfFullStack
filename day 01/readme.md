@@ -1,4 +1,3 @@
-this is day one 
 # 🚀 Day 01 - HTML & CSS Basics
 
 Today I revised and practiced the basics of HTML and CSS to start the foundation of my #75DaysOfFullStack journey.
@@ -17,7 +16,7 @@ Today I revised and practiced the basics of HTML and CSS to start the foundation
 - Meta tags & SEO basics
 - Linking CSS (inline, internal, external)
 
-📄 **Basic HTML Template Example**
+#### 📄 Basic HTML Template Example
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -32,3 +31,45 @@ Today I revised and practiced the basics of HTML and CSS to start the foundation
   <a href="https://github.com/Maheshkrsaw">Visit GitHub</a>
 </body>
 </html>
+✅ CSS Basics
+Selectors: element, id (#), class (.)
+
+Text styling: font-size, color, alignment
+
+Backgrounds & borders
+
+Units: px, %, em, rem
+
+Box Model (margin, padding, border, content)
+
+📄 Basic CSS Example
+css
+Copy
+Edit
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 20px;
+}
+
+h1 {
+  color: #0066cc;
+  text-align: center;
+}
+🔗 GitHub Repository
+📁 Day 01 Code Files & Practice
+
+🗓️ Next Focus
+Explore CSS Layouts — Flexbox, Grid, and Positioning.
+
+🧠 Takeaway
+Learning from scratch is powerful. Writing real code helps understand the theory deeply.
+
+🙌 Connect with me
+🐙 GitHub
+
+💼 LinkedIn
+
+🐦 Twitter/X
+
+#html #css #webdevelopment #75DaysOfFullStack #Day01

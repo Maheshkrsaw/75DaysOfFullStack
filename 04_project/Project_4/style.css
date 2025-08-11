@@ -11,3 +11,179 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+#main{
+  height: 100%;
+  width: 100%;
+  background-color: beige;
+  position: relative;
+  padding: 0.1px;
+}
+
+#nav{
+  height: 12vh;
+  width: 100%;
+  /* background-color: red; */
+  margin-top: 40px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav h2{
+  /* background-color: yellow; */
+  font-size: 25px;
+  font-weight: 500;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid black;
+
+}
+
+#nav h1{
+  /* background-color: yellow; */
+  height: 100%;
+  width: 16%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monument;
+  font-size: 45px;
+  font-weight: 800;
+  letter-spacing: -2px;
+    /* border-right: 2px solid black; */
+}
+
+#nav h2:nth-last-child(1){
+  width: 10%;
+}
+
+
+#nav h2:nth-last-child(2){
+  width: 25%;
+}
+
+#center{
+  height: 90%;
+  width: 100%;
+  /* background-color: red; */
+  padding: 4vw;
+  position: relative;
+}
+
+#content{
+  height: 100%;
+  width: 100%;
+  background-color: blueviolet;
+  position: relative;
+}
+
+#content video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  
+}
+
+
+#overlay{
+  height: 52%;
+  width: 100%;
+  position: absolute;
+  /* background-color: red; */
+  bottom: 0;
+  padding: 3vw;
+  color: white;
+}
+
+
+#over1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#over1 h1{
+  
+  font-size: 3.7vw;
+  letter-spacing: -2;
+  font-family: momentum;
+}
+
+#over1 h2{
+  font-size: 1vw;
+  padding: 2vw 2.4vw;
+  /* background-color: blue; */
+  border-radius: 50%;
+  border: 2px solid white ;
+}
+
+
+#over2 {
+  border-top: solid 1px white;
+  margin-top: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw 0;
+}
+
+
+#over2 h5 {
+  font-size: 1.5vw;
+  font-weight: 200;
+}
+
+
+#over2 h5 i{
+  font-size: 50px;
+  font-weight: 200;
+}
+
+#scroll{
+  height: 40vh;
+  width: 100%;
+  /* background-color: red; */
+  padding: 1vw;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+#container{
+  height: 100%;
+  width: 110%;
+  display: inline-block;
+  padding: 2vw;
+  /* background-color: blue; */
+  animation-name: anime ;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+#scroll img{
+  margin: 0.9vw;
+  /* display: none; */
+  height: 100%;
+  width: 15%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+
+@keyframes anime{
+  from{
+    transform: translate(0);
+  }
+  to{
+    transform: translate(-100%);
+  }
+}

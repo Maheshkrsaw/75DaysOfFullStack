@@ -313,6 +313,7 @@ cursor: pointer;
 
 .elem:nth-last-child(1){
   border-bottom: 2px solid black;
+  /* height: auto; */
 }
 
 .elem h5{
@@ -351,10 +352,16 @@ font-weight: 400;
   left: 12%;
   opacity: 0;
   transition: all ease .5s;
+  object-fit: cover;
+  object-position: top;
 }
 
 
 .elem:hover img {
   opacity: 1;
   left: 24%;
+}
+
+.elem:hover{
+  background-color: beige;
 }

@@ -282,3 +282,79 @@ cursor: pointer;
   line-height: 1.5;
 }
 
+
+/* this is day 05 */
+#page3{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#page3>h1{
+  padding: 2vw 3vw ;
+  font-family: momument;
+  font-size: 3vw;
+  font-weight: 900;
+  text-align: center;
+}
+
+.elem{
+  margin-top: 15px;
+  height: 12vh ;
+  width: 100%;
+  /* background-color: red; */
+  border-top: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+.elem:nth-last-child(1){
+  border-bottom: 2px solid black;
+}
+
+.elem h5{
+  width: 6%;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+  font-weight: 400;
+  padding: 1vw 2vw;
+}
+
+.elem .elem_part2{
+  width: 40%;
+  /* background-color: red; */
+}
+
+.elem .elem_part2 h1{
+  font-size:  2.5vw;
+  font-weight: 500;
+ 
+} 
+
+
+.elem .elem_part2 h6{
+font-size: 1vw;
+text-transform: uppercase;
+font-weight: 400;
+
+}
+
+.elem img{
+  margin-top: 15px;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  left: 12%;
+  opacity: 0;
+  transition: all ease .5s;
+}
+
+
+.elem:hover img {
+  opacity: 1;
+  left: 24%;
+}

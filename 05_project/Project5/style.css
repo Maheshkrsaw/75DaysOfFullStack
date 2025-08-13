@@ -144,18 +144,66 @@ html, body {
   display: none;
 }
 
-.elem{
+#bottom {
+  display: flex;
+  gap: 10px;
+  overflow: hidden; /* hide overflow for smooth marquee */
+  padding: 10px;
+}
+
+.scroll-wrapper {
+  display: flex;
+  animation: scroll-left 20s linear infinite; /* adjust speed here */
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* move half width for seamless loop */
+}
+
+/* Your elem styles stay the same */
+.elem {
   position: relative;
   margin-right: 30px;
   display: inline-block;
-  /* border: 2px solid white; */
   border-radius: 40px;
   height: 100%;
   width: 200px;
   background-color: black;
   overflow: hidden;
-
+  flex-shrink: 0;
 }
+
+.elem img,
+.elem video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.elem .text_bottom {
+  height: 25%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  bottom: 0;
+  position: absolute;
+  padding: 12px 12px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.elem .text_bottom h5 {
+  font-family: "WF Visual Sans";
+  font-size: 15px;
+  margin-top: 9%;
+  font-weight: 400;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
 
 
 .elem img{

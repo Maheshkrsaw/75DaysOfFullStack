@@ -145,6 +145,7 @@ html, body {
 }
 
 .elem{
+  position: relative;
   margin-right: 30px;
   display: inline-block;
   /* border: 2px solid white; */
@@ -170,4 +171,35 @@ html, body {
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+
+.elem .text_bottom {
+  height: 25%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* smooth fade */
+  backdrop-filter: blur(2px); /* adds glass blur */
+  -webkit-backdrop-filter: blur(2px); /* Safari support */
+  bottom: 0;
+  position: absolute;
+  padding: 12px 12px;
+  display: flex;
+  align-items: flex-end; /* text stays at bottom */
+}
+
+
+
+.elem .text_bottom h5{
+  font-family: "WF Visual Sans" ;
+   font-size: 15px;
+   margin-top: 9%;
+  font-weight: 400;
+  color: white;
+}
+
+
+
+#page2{
+  height: 100%;
+  width: 100%;
 }

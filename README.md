@@ -46,6 +46,7 @@ Project 3 — Horizontal scroll, image carousel, flex layouts
 ---
 
 ### Connect with Me
-- 🌐 GitHub: [https://github.com/Maheshkrsaw](https://github.com/Maheshkrsaw)  
-- 💼 LinkedIn: [https://www.linkedin.com/in/maheshkrsaw]([https://www.linkedin.com/in/maheshkrsaw](https://www.linkedin.com/in/maheshmahi07/)  
-- 🐦 Twitter/X: [https://twitter.com/Maheshkrsaw]([https://twitter.com/Maheshkrsaw](https://x.com/kumarMahesh9304)
+-  🌐 GitHub: [Maheshkrsaw](https://github.com/Maheshkrsaw)
+- 💼 LinkedIn: [maheshmahi07](https://www.linkedin.com/in/maheshmahi07)
+- 🐦 Twitter/X: [kumarMahesh9304](https://x.com/kumarMahesh9304)
+

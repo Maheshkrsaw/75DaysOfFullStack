@@ -1,68 +1,45 @@
-# 🚀 #75DaysFullStackAI — Day 05 Projects
+# 🚀 #75DaysFullStackAI — Days 01 to 05
 
 📅 Part of my #75DaysFullStackAI journey — learning, practicing & documenting full-stack web development systematically.  
 📁 GitHub Repository: [75DaysOfFullStack](https://github.com/Maheshkrsaw/75DaysOfFullStack)  
 
 ---
 
-## Project 4: Video & Overlay Showcase
-📁 Live Project: [Preview Here](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project_4/)
+## Day 01 — HTML & CSS Basics
+📁 Project: [Day 01 Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/03_project/PROJECT_1/)  
+### Achievements
+- Practiced semantic HTML & accessible structure  
+- Styled pages with CSS: fonts, colors, box model, backgrounds, borders  
+- Linked external CSS and pushed code to GitHub  
 
-### 📋 Achievements
-- Integrated full-width video backgrounds for dynamic UI  
-- Created overlay sections with headings, descriptions & interactive elements  
-- Practiced absolute positioning for overlays and text content  
-- Implemented scrolling carousel animation for image display  
-- Used flexbox to align elements in overlay and content sections  
-
-### 📘 Concepts Covered
-- Flexbox for layout & alignment  
-- Absolute positioning for overlays  
-- Video embedding with object-fit: cover  
-- Gradient overlays for text readability  
-- Keyframe animations for carousel/scrolling effects  
-- Box model: margin, padding, borders for visual hierarchy  
-
-### 🧠 Key Takeaways
-- Video backgrounds enhance UI aesthetics  
-- Overlay content ensures text remains readable  
-- Flex + absolute positioning gives flexible design control  
-- Animations engage users visually  
+### Concepts
+- HTML: headings, paragraphs, links, lists, images, tables, forms  
+- CSS: width, height, color, font-family, line-height, text-align, padding, margin, border, display, position, background, flex, pseudo-elements, pseudo-classes  
 
 ---
 
-## Project 5: Interactive Marquee & Cards
-📁 Live Project: [Preview Here](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project5/)
+## Day 05 — Projects 4 & 5
+### Project 4: Video & Overlay Showcase
+📁 Live: [Project 4](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project_4/)  
+- Full-width video backgrounds with overlay text  
+- Flexbox & absolute positioning  
+- Scrolling carousel & gradient overlays  
 
-### 📋 Achievements
-- Designed horizontal scrolling marquee with smooth animation  
-- Created interactive content cards with hover effects  
-- Practiced absolute & relative positioning for layered UI elements  
-- Styled buttons, headings & overlay text for interactivity  
-- Implemented flexbox layouts for card alignment  
-
-### 📘 Concepts Covered
-- Marquee effect using keyframe animations  
-- Hover effects for cards  
-- Absolute & relative positioning for layered design  
-- Flexbox layout for card sections  
-- Box model: padding, margin, border, spacing  
-- Typography hierarchy for readability  
-
-### 🧠 Key Takeaways
-- Smooth scrolling & animations make UIs visually appealing  
-- Hover effects enhance interactivity  
-- Layered design with absolute positioning adds depth  
-- Proper spacing, padding & font hierarchy maintain clean UI  
+### Project 5: Interactive Marquee & Cards
+📁 Live: [Project 5](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project5/)  
+- Horizontal scrolling marquee animation  
+- Interactive cards with hover effects  
+- Flexbox layouts, layered absolute positioning  
 
 ---
 
-## 🤝 Connect With Me
-- 🐙 GitHub: [Maheshkrsaw](https://github.com/Maheshkrsaw)  
-- 💼 LinkedIn: [Mahesh Mahi](https://www.linkedin.com/in/maheshmahi07/)  
-- 🐦 Twitter/X: [@kumarMahesh9304](https://x.com/kumarMahesh9304)  
+### Key Takeaways
+- Practicing fundamentals builds confidence  
+- Flexbox + positioning gives design control  
+- Animations & hover effects enhance UI interactivity  
+- Consistent documentation & GitHub pushes professional workflow  
 
 ---
 
 📌 Tags:  
-#html #css #webdevelopment #flexbox #positioning #animations #interactiveUI #horizontalScroll #videoBackgrounds #marquee #75DaysFullStackAI #Day05
+#html #css #webdevelopment #flexbox #positioning #animations #interactiveUI #videoBackgrounds #marquee #75DaysFullStackAI #Day01to05

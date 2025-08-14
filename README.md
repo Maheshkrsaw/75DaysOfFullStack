@@ -1,45 +1,51 @@
-# 🚀 #75DaysFullStackAI — Days 01 to 05
+# 75 DAYS OF CONSISTENT FULL-STACK LEARNING
+**75 Days | 75 Professional README Files | GitHub Documentation**
 
-📅 Part of my #75DaysFullStackAI journey — learning, practicing & documenting full-stack web development systematically.  
-📁 GitHub Repository: [75DaysOfFullStack](https://github.com/Maheshkrsaw/75DaysOfFullStack)  
-
----
-
-## Day 01 — HTML & CSS Basics
-📁 Project: [Day 01 Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/03_project/PROJECT_1/)  
-### Achievements
-- Practiced semantic HTML & accessible structure  
-- Styled pages with CSS: fonts, colors, box model, backgrounds, borders  
-- Linked external CSS and pushed code to GitHub  
-
-### Concepts
-- HTML: headings, paragraphs, links, lists, images, tables, forms  
-- CSS: width, height, color, font-family, line-height, text-align, padding, margin, border, display, position, background, flex, pseudo-elements, pseudo-classes  
+📁 GitHub Repository: [75DaysOfFullStack](https://github.com/Maheshkrsaw/75DaysOfFullStack)
 
 ---
 
-## Day 05 — Projects 4 & 5
-### Project 4: Video & Overlay Showcase
-📁 Live: [Project 4](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project_4/)  
-- Full-width video backgrounds with overlay text  
-- Flexbox & absolute positioning  
-- Scrolling carousel & gradient overlays  
+## DAY 01 — HTML & CSS Basics
+**Project:** [Live Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/03_project/PROJECT_1/)  
+**Focus:** Semantic HTML, CSS fundamentals, box model, flex basics, pseudo-classes.
 
-### Project 5: Interactive Marquee & Cards
-📁 Live: [Project 5](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project5/)  
-- Horizontal scrolling marquee animation  
-- Interactive cards with hover effects  
-- Flexbox layouts, layered absolute positioning  
+---
+
+## DAY 02 — CSS Layouts
+**Project:** [Live Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_2/)  
+**Focus:** Flexbox, Grid, positioning, responsive layout concepts.
+
+---
+
+## DAY 03 — Project 1
+**Project:** [Live Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/03_project/PROJECT_1/)  
+**Focus:** Product UI, flex layouts, hover effects, absolute & relative positioning, icon usage.
+
+---
+
+## DAY 04 — Projects 2 & 3
+**Project 2:** [Live Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_2/)  
+**Project 3:** [Live Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_3/)  
+**Focus:** Project 2 — Fashion UI using flex & positioning  
+Project 3 — Horizontal scroll, image carousel, flex layouts
+
+---
+
+## DAY 05 — Projects 4 & 5
+**Project 4:** [Live Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project_4/)  
+**Project 5:** [Live Demo](https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project5/)  
+**Focus:** Video backgrounds, overlays, carousel/marquee animations, interactive cards, advanced flex layouts, hover & scroll effects.
 
 ---
 
 ### Key Takeaways
-- Practicing fundamentals builds confidence  
-- Flexbox + positioning gives design control  
-- Animations & hover effects enhance UI interactivity  
-- Consistent documentation & GitHub pushes professional workflow  
+- Consistency builds skills & confidence  
+- Daily GitHub commits reinforce learning  
+- Structured approach preps for real-world full-stack dev
 
 ---
 
-📌 Tags:  
-#html #css #webdevelopment #flexbox #positioning #animations #interactiveUI #videoBackgrounds #marquee #75DaysFullStackAI #Day01to05
+### Connect with Me
+- 🌐 GitHub: [https://github.com/Maheshkrsaw](https://github.com/Maheshkrsaw)  
+- 💼 LinkedIn: [https://www.linkedin.com/in/maheshkrsaw](https://www.linkedin.com/in/maheshkrsaw)  
+- 🐦 Twitter/X: [https://twitter.com/Maheshkrsaw](https://twitter.com/Maheshkrsaw)

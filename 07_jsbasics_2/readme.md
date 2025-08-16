@@ -25,136 +25,131 @@ creating and deleting elem -> createelemet , appendchild , removechild
 event handling , event object 
 
 
-Day07_JS_Advanced:
-  Title: "🚀 **Day 07 — JavaScript Advanced Concepts (#75DaysFullStackAI)**"
-  Description: "💡 Detailed notes & examples — Day 07. Focus: **`this` behavior, invocation patterns, prototypal inheritance, closures, event handling, DOM manipulation**, and related advanced topics."
-  Repo:
-    Main: "🌐 GitHub: https://github.com/Maheshkrsaw"
-    Folder: "📂 ./07_js_advanced/"
-    LiveDemo: "🔗 https://maheshkrsaw.github.io/75DaysOfFullStack/07_jsbasics_2/"
-  Objectives:
-    - "🎯 Understand how `this` is determined in different invocation patterns."
-    - "🔧 Learn constructor/prototype patterns and how `new` creates objects."
-    - "⚡ Use call, apply, bind to control context."
-    - "🧩 Master closures for state and data privacy."
-    - "🎨 Apply event delegation, custom events, and DOM manipulation best-practices."
-    - "🛠️ Handle errors with try/catch and debug effectively."
-  Topics:
-    GlobalContext:
-      Description: "🌍 Global object in browser is `window`. Top-level `this === window`."
-      Example: "console.log(this === window); // true"
-    ThisFunctionArrow:
-      Description: "➡️ Regular vs arrow functions, lexical vs dynamic this."
-      Example: |
-        function regular() { console.log(this); }
-        const arrow = () => console.log(this);
-    Methods:
-      Description: "🏷️ Function called as object property has `this` as owning object."
-      Example: |
-        const obj = { name: 'Mahesh', greet() { console.log(this.name); } };
-        obj.greet(); // "Mahesh"
-    InnerFunctionES5_ES6:
-      Description: "📝 ES5 loses outer `this`; arrow functions preserve outer `this`."
-      Example: |
-        const o = {
-          name: 'M',
-          outer: function() {
-            function innerES5(){ console.log(this && this.name); }
-            const innerES6 = () => console.log(this.name);
-            innerES5();
-            innerES6();
-          }
-        };
-        o.outer();
-    ConstructorNew:
-      Description: "🏗️ Constructor functions + `new` keyword creates object and binds `this`."
-      Example: |
-        function Person(name) { this.name = name; }
-        const p = new Person('Mahesh');
-        Person.prototype.greet = function(){ console.log(this.name); };
-        p.greet();
-    CallApplyBind:
-      Description: "🎛️ Explicitly set `this` using call, apply, bind."
-      Example: |
-        function intro(city){ console.log(`${this.name} from ${city}`); }
-        const u = { name: 'Mahesh' };
-        intro.call(u, 'Delhi');
-        intro.apply(u, ['Mumbai']);
-        const fn = intro.bind(u, 'Pune'); fn();
-    PrototypalInheritance:
-      Description: "🧬 Objects inherit via prototype chain; constructor + prototype for shared methods."
-      Example: |
-        function Animal(type){ this.type = type; }
-        Animal.prototype.speak = function(){ console.log(this.type + ' sound'); };
-        const a = new Animal('Dog'); a.speak();
-    Closures:
-      Description: "🔒 Function remembering creation scope, useful for state & privacy."
-      Example: |
-        function counter() {
-          let count = 0;
-          return function(){ count++; return count; };
-        }
-        const c = counter(); c(); c();
-    EventDelegation:
-      Description: "🎯 Attach listener to parent, handle child events via event.target."
-      Example: |
-        document.querySelector('#list').addEventListener('click', function(e){
-          if(e.target.matches('button.item')) console.log(e.target.textContent);
-        });
-    HigherOrderFunctions:
-      Description: "🔄 Functions accepting/returning functions."
-      Example: |
-        const withLogging = fn => (...args) => { console.log(args); return fn(...args); };
-    TryCatch:
-      Description: "⚠️ Graceful runtime error handling."
-      Example: |
-        try { JSON.parse('invalid'); } 
-        catch (err) { console.error('Parse error:', err.message); }
-    CustomEvents:
-      Description: "🎉 Create and dispatch custom events for decoupled components."
-      Example: |
-        const ev = new CustomEvent('productAdded', { detail: { id: 1 } });
-        document.addEventListener('productAdded', e => console.log(e.detail));
-        document.dispatchEvent(ev);
-    DOMManipulation:
-      Access:
-        Description: "🔍 Query and select elements"
-        Example: |
-          const card = document.querySelector('.card');
-          const items = document.querySelectorAll('.item');
-      Content:
-        Description: "✏️ Modify innerHTML or textContent"
-        Example: |
-          card.textContent = 'Hello';
-          card.innerHTML = '<strong>Bold</strong>';
-      StyleClasses:
-        Description: "🎨 Manage inline styles or classList"
-        Example: |
-          card.style.color = 'red';
-          card.classList.add('active');
-          card.classList.toggle('hidden');
-      CreateDeleteElements:
-        Description: "➕➖ Add/remove elements dynamically"
-        Example: |
-          const div = document.createElement('div');
-          div.textContent = 'New';
-          document.body.appendChild(div);
-          div.remove();
-      EventHandling:
-        Description: "🖱️ Handle events with event object"
-        Example: |
-          btn.addEventListener('click', function(e){
-            console.log(e.type, e.target, e.currentTarget);
-            e.preventDefault();
-          });
-  BestPractices:
-    - "✅ Prefer let/const over var."
-    - "✅ Use arrow functions when lexical `this` is needed."
-    - "✅ Use bind for callbacks needing specific context."
-    - "✅ Batch DOM updates for performance."
-    - "✅ Use event delegation for dynamic children."
-    - "✅ Encapsulate logic with closures/modules to avoid polluting global scope."
-  Connect:
-    GitHub: "🌐 https://github.com/Maheshkrsaw"
-    LinkedIn: "💼 https://www.linkedin.com/in/maheshmahi07"
-    Twitter: "🐦 https://x.com/kumarMahesh9304"
+# 🚀 Day 07 — JavaScript Advanced Concepts (#75DaysFullStackAI)
+
+> **Consistency Builds Mastery!** Today we focused on advanced JS concepts: `this`, constructors, prototypal inheritance, closures, DOM, events, and high-order functions.
+
+---
+
+## 📁 Repo & Live Demo
+- Main Repo: [75DaysOfFullStack](https://github.com/Maheshkrsaw/75DaysOfFullStack)  
+- This Day’s Folder: `./07_jsbasics_2/`  
+- Live Demo: [Day 07 JS Examples](https://maheshkrsaw.github.io/75DaysOfFullStack/07_jsbasics_2/)
+
+---
+
+## 🎯 Objectives
+- Understand **`this` context** in multiple scenarios 🌍  
+- Master **constructor functions**, **prototypal inheritance**, **call/apply/bind** 🏗️  
+- Learn **closures**, **high-order functions**, **custom events** 🔒  
+- Explore **DOM manipulation & event delegation** 🎨  
+- Debug effectively with **try/catch** 🪲  
+
+---
+
+## 🧠 Core Concepts
+
+### 🌍 `this` Context
+- Global: `window`  
+- Function (ES5): `window`  
+- Method: owning object  
+- Function inside method (ES5): `window`  
+- Function inside method (ES6/arrow): parent object  
+- Constructor function: `new` → blank object  
+- Event listener: refers to element with listener  
+
+### 🏗️ Constructors & Prototypes
+- **Constructor Function** creates new object  
+- `this` in constructor → new object  
+- **Prototypal Inheritance** shares methods across objects  
+
+### 🔄 Call, Apply, Bind
+```js
+function greet(city) { console.log(this.name + ' from ' + city); }
+const user = { name: 'Mahesh' };
+greet.call(user, 'Delhi');   // immediate
+greet.apply(user, ['Delhi']); // immediate with array
+const boundGreet = greet.bind(user, 'Delhi'); boundGreet(); // returns bound function
+🔒 Closures
+js
+Copy
+Edit
+function counter() {
+  let count = 0;
+  return function() { count++; return count; };
+}
+const c = counter();
+console.log(c()); // 1
+console.log(c()); // 2
+🖱️ Event Handling & Delegation
+js
+Copy
+Edit
+document.querySelector('#parent').addEventListener('click', e => {
+  if(e.target.matches('.child')) console.log('Clicked:', e.target);
+});
+const btn = document.querySelector('#myBtn');
+btn.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log('Button clicked:', e.type, e.target);
+});
+🎨 DOM Manipulation
+Access Elements: document.querySelector(), getElementById()
+
+Modify Content: innerHTML, textContent
+
+Modify Styles & Classes: style, classList.add/remove/toggle
+
+Create & Remove Elements: createElement(), appendChild(), removeChild()
+
+🧩 High-Order Functions
+js
+Copy
+Edit
+function hof(fn) { return (...args) => fn(...args)*2; }
+const multiply = hof(n => n+1);
+console.log(multiply(5)); // 12
+🪲 Error Handling & Try/Catch
+js
+Copy
+Edit
+try { throw new Error('Oops!'); }
+catch(e) { console.error('Caught:', e.message); }
+finally { console.log('Cleanup'); }
+✨ Custom Events
+js
+Copy
+Edit
+const customEvent = new CustomEvent('myEvent', { detail: { msg: 'Hello' } });
+document.addEventListener('myEvent', e => console.log(e.detail.msg));
+document.dispatchEvent(customEvent);
+🔤 Key JavaScript Topics Covered
+Variables & Constants (var, let, const)
+
+Functions: ES5/ES6, arrow, parameters, implicit returns
+
+Objects & Arrays, spread/rest operators
+
+Loops: for, while, do-while, forEach, for..in, for..of
+
+Conditionals: if/else, ternary, switch
+
+Synchronous & Asynchronous concepts
+
+✅ Key Takeaways
+Mastered this context in functions, methods, constructors, and event listeners
+
+Practiced prototypal inheritance & constructor patterns
+
+Built closures and high-order functions for modular code
+
+Learned DOM manipulation, event delegation, and custom events
+
+Applied error handling using try/catch for safer code execution
+
+🔗 Connect with Me
+🌐 GitHub: Maheshkrsaw
+
+💼 LinkedIn: maheshmahi07
+
+🐦 Twitter/X: kumarMahesh9304

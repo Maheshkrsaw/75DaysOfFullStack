@@ -1,0 +1,21 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+h1{
+  font-size: 100PX;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+}

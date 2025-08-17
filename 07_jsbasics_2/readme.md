@@ -24,6 +24,10 @@ mainupulate style and classes
 creating and deleting elem -> createelemet , appendchild , removechild 
 event handling , event object 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 # 🚀 Day 07 — JavaScript Advanced Concepts (#75DaysFullStackAI)
 
 > **Consistency Builds Mastery!** Today we focused on advanced JS concepts: `this`, constructors, prototypal inheritance, closures, DOM, events, and high-order functions.
@@ -150,5 +154,6 @@ Applied error handling using try/catch for safer code execution
 🌐 GitHub: Maheshkrsaw
 
 💼 LinkedIn: maheshmahi07
+
 
 🐦 Twitter/X: kumarMahesh9304

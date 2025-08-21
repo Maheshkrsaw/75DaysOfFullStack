@@ -1,0 +1,87 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color:#000000;
+}
+
+
+#nav{
+    height: 60px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav_part_2{
+    /* width: 20%; */
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#nav h3{
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#main h1{
+    font-size: 150px;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 130px;
+    position: relative;
+    z-index: 9;
+    /* background-color: red; */
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+#main h1:nth-child(2){
+    margin-top: 150px;
+}
+
+
+#main h1:nth-child(3){
+text-align: center;
+}
+
+
+#main h1:nth-child(4){
+text-align: center;
+}
+
+
+img{
+    height: 400px;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
+
+#img2 {
+rotate: 20deg;
+}
+
+
+#img2 {
+rotate: 10deg;
+}

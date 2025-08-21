@@ -38,6 +38,51 @@ Project 3 — Horizontal scroll, image carousel, flex layouts
 
 ---
 
+### 🔥 Day 06 — JavaScript Basics
+- Variables (let, const, var)  
+- Data types (string, number, boolean, null, undefined, object)  
+- Operators (arithmetic, assignment, comparison)  
+- First mini problems solved 🧩  
+
+---
+
+### 🔥 Day 07 — Control Flow & Loops
+- `if/else`, `switch` ✅  
+- Loops: `for`, `while`, `for...in`, `for...of` 🔁  
+- Practiced patterns & conditional logic  
+- 🛠️ Approach: Started with simple examples → debugged → built small programs  
+
+---
+
+### 🔥 Day 08 — Functions Deep Dive
+- Function declaration vs expression vs arrow function  
+- Default & Rest parameters  
+- Return values + scope concept  
+- 🧩 Solved problems with reusable functions  
+
+---
+
+### 🔥 Day 09 — JavaScript Revision
+- Covered everything till now 📚  
+- Arrays: `map`, `filter`, `reduce`, `includes`  
+- Objects: creation, methods, destructuring, spread  
+- ES6 essentials (let/const, template literals, arrow fn, spread/rest)  
+- 🛠️ Approach: Revision via notes + practice problems  
+
+---
+
+### 🔥 Day 10 — Advanced JavaScript Concepts
+- Scope & Hoisting, Closures ⚡  
+- Async JS: Callbacks → Promises → Async/Await  
+- DOM Manipulation + Event Handling 🎛  
+- Error Handling (`try...catch`)  
+- 🍪 Cookies & Sessions  
+- 💾 LocalStorage & SessionStorage  
+- 🌐 JSON & Fetch API (AJAX)  
+- 🛠️ Approach: Learned via mini projects (form storage, API fetch)  
+
+---
+
 ### Key Takeaways
 - Consistency builds skills & confidence  
 - Daily GitHub commits reinforce learning  

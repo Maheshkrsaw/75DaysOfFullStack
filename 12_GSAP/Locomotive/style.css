@@ -1,0 +1,45 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  /* background-color: #fff; */
+  height: 100%;
+  width: 100%;
+}
+
+#page1{
+  height: 100vh;
+  width: 100%;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page2{
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(28, 76, 209);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#box{
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
+
+#page3{
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(153, 211, 19);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

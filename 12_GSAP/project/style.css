@@ -11,3 +11,39 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F7F7EE;
+}
+
+
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: #5B6647;
+    padding: 5vw;
+}
+
+#page2 h1{
+        font-size: 4.5vw;
+    text-align: center;
+    color: #434b34 ;
+    font-weight: 400;
+    font-family: "PP Woodland";
+    line-height: 4.8vw;
+}
+
+
+/* #page2 h1 span {
+  font-family: "PP woodland";
+} */
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #F7F7EE;
+}
+

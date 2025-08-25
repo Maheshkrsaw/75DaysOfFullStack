@@ -8,7 +8,7 @@
 
 html, body {
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  /* background-color: #fff; */
   height: 100%;
   width: 100%;
   color: white;
@@ -281,7 +281,7 @@ top: 0;
   height: 2px;
   width:99%;
   background-color: #fff;
-  margin: 1vw ;
+  margin-top: 2vw ;
 }
 
 #page4-content>p{
@@ -334,4 +334,14 @@ top: 0;
 .page4-bluediv-elem p{
   width: 40%;
   font-size: .9vw;
+}
+
+
+
+#page5{
+    min-height: 100vh;
+  position: relative;
+  width: 100%;
+  background-color: rgb(14, 12, 12);
+  position: relative;
 }

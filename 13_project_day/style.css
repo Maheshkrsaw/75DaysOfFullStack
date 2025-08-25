@@ -87,11 +87,14 @@ opacity: 1;
 font-family: "plain light"; -webkit-text-stroke: 1px #fff; color: #fff;
 font-weight: 500;
 opacity: 0;
+
+
 }
 50%{
 font-family: 'silk serif'; -webkit-text-stroke: 1px #fff; font-weight: 500;
 color: transparent;
 opacity: 1;
+font-style: italic;
 }
 100%{
 font-family: 'silk serif'; -webkit-text-stroke: 1px#fff; font-weight: 500;
@@ -113,7 +116,7 @@ opacity: 0;
 #page1{
   height: 100vh;
   width: 100%;
-  background-color: #b41f1f;
+  background-color: #0B0B0B;
 }#page2{
   height: 100vh;
   width: 100%;
@@ -122,4 +125,81 @@ opacity: 0;
   height: 100vh;
   width: 100%;
   background-color: #0B0B0B;
+}
+
+
+
+#crsr{
+  height: 3vw;
+  width: 3vw;
+  border-radius: 50%;
+  /* background-color: white; */
+  border: 1px solid rgb(230, 225, 225);
+  position: fixed;
+  z-index: 999;
+  mix-blend-mode: difference;
+  transform: translate(-50%) , -50%;
+}
+
+#page1 #nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw 4vw;
+  color: white;
+}
+
+#nav-part2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  
+}
+
+#nav-part2 h4{
+  font-size: 1vw;
+  font-weight: 500;
+  text-transform: capitalize;
+} 
+
+
+
+.hero{
+  /* background-color: red; */
+  width: 73%;
+  margin-left: 27%;
+  color: white;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+}
+
+
+.hero:nth-child(2){
+  margin-top: 21vh;
+}
+
+
+.hero h1{
+  font-weight: 500;
+  font-size: 7vw;
+  text-transform: uppercase;
+  line-height: 7vw;
+}
+
+.hero h2 , .hero h3{
+  font-weight: 500;
+  font-size: 7vw;
+  text-transform: uppercase;
+  line-height: 7vw;
+}
+
+.hero h2:hover{
+  -webkit-text-stroke: 1px  #fff;
+  color: transparent;
+  font-weight: 500;
 }

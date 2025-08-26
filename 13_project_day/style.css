@@ -183,6 +183,16 @@ opacity: 0;
   line-height: 7vw;
 }
 
+#hero1.hero h1::before{
+  content: "01";
+  position: absolute;
+  font-size: 3vw;
+  font-weight: 100;
+  font-family: "silk serif";
+  left: -12%;
+  font-style: italic;
+}
+
 .hero h2 , .hero h3{
   font-weight: 500;
   font-size: 7vw;
@@ -278,6 +288,16 @@ top: 0;
   padding-top: 2vw;
   font-size: 7vw; 
   text-transform: uppercase;
+}
+
+#page4-content h1::before{
+  content: "03";
+  position: absolute;
+  font-size: 4vw;
+  font-weight: 100;
+  font-family: "silk serif";
+  left: -12%;
+  font-style: italic;
 }
 
 #page4-content .underline{
@@ -411,4 +431,76 @@ top: 0;
   font-style: italic;
   font-family: "silk serif";
   color: transparent;
+}
+
+
+#footer{
+  height: 80vh;
+  width: 100%;
+  background-color:rgb(14, 12, 12);
+  position: relative;
+  padding-left: 25vw;
+}
+
+#footer h1{
+  font-size: 8vw;
+  text-transform: uppercase;
+ position: relative;
+  /* margin-left: 25vw; */
+font-weight: 500;
+}
+
+#footer h1::before{
+  content: "04";
+  position: absolute;
+  font-size: 4vw;
+  font-weight: 100;
+  font-family: "silk serif";
+  left: -12%;
+  font-style: italic;
+}
+
+
+#footer i {
+  font-size: 3vw;
+}
+
+
+.underline{
+  height: 2px ;
+  width: 100%;
+  background-color: white;
+  margin: 2vw 0;
+}
+
+
+#footer-div{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 15vw;
+  padding-top: 4vw;
+  margin-bottom: 5vw;
+}
+
+#footer-div h6{
+  font-size: .9vw;
+  margin-bottom: 1vw;
+}
+
+.box{
+  width: 20%;
+
+}
+
+#footer-div h5{
+  font-size: 1.4vw;
+  font-weight: 500;
+  margin: 0.2vh 0;
+}
+
+
+
+#footer>h5{
+  font-weight: 500;
 }

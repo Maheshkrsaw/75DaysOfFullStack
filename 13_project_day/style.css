@@ -16,6 +16,7 @@ html, body {
 }
 
 
+
 #loader{
   height: 100%;
   width: 100%;
@@ -111,7 +112,7 @@ opacity: 0;
 
 #main{
   position: relative;
-  color: #030303;
+  color: #fff;
 }
 
 #page1{
@@ -201,6 +202,7 @@ opacity: 0;
   width: 100%;
   background-color: #0B0B0B;
   position: relative;
+
 }
 
 
@@ -234,7 +236,7 @@ top: 0;
   width: 8vw;
   border-radius: 50%;
   position: absolute;
-  top: -10%;
+  top: -5%;
   left: 80%;
   z-index: 999;
   display: flex;
@@ -260,6 +262,7 @@ top: 0;
   width: 100%;
   background-color: rgb(14, 12, 12);
   padding-top: 4vh;
+  color: #fff;
 }
 
 
@@ -336,7 +339,7 @@ top: 0;
   font-size: .9vw;
 }
 
-
+/* day14 */
 
 #page5{
     min-height: 100vh;
@@ -344,4 +347,68 @@ top: 0;
   width: 100%;
   background-color: rgb(14, 12, 12);
   position: relative;
+  padding-top: 3vw;
+}
+
+.elem{
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.elem h1{
+  font-size: 6vw;
+  -webkit-text-stroke: 1px #fff;
+  text-transform: uppercase;
+  color: transparent;
+  display: inline-block;
+  margin-right: 16px;
+  animation-name: anime;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  margin-bottom: 1vw;
+}
+
+
+@keyframes anime{
+  from{
+    transform: translateX(0)
+  }
+   to{
+    transform: translateX(calc(-100% - 20px))
+  }
+}
+
+
+
+
+.elem2{
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.elem2 h1{
+  font-size: 6vw;
+  -webkit-text-stroke: 1px #fff;
+  text-transform: uppercase;
+  color: transparent;
+  display: inline-block;
+  margin-right: 16px;
+  transform: translateX(calc(-100% - 20px));
+  animation-name: anime;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  margin-bottom: 1vw;
+}
+
+
+
+.elem span , .elem2 span{
+  font-style: italic;
+  font-family: "silk serif";
+  color: transparent;
 }

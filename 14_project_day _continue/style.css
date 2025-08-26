@@ -1,3 +1,4 @@
+ 
 /* Basic CSS Boilerplate */
 * {
   margin: 0;
@@ -8,13 +9,16 @@
 
 html, body {
   font-family: Arial, sans-serif;
-  /* background-color: #fff; */
+  background-color: #110f0f; /* <-- add this */
   height: 100%;
   width: 100%;
   color: white;
   overflow-x: hidden;
 }
 
+#main{
+  background-color: #110f0f;
+}
 
 
 #loader{
@@ -121,16 +125,18 @@ opacity: 0;
   background-color: #0B0B0B;
 }
 
-#crsr{
+#crsr {
   height: 3vw;
   width: 3vw;
   border-radius: 50%;
-  /* background-color: white; */
   border: 1px solid rgb(230, 225, 225);
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 999;
   mix-blend-mode: difference;
-  transform: translate(-50%) , -50%;
+  pointer-events: none; /* important: cursor block na kare */
+  transform: translate(-50%, -50%);
 }
 
 #page1 #nav{
@@ -223,21 +229,18 @@ opacity: 0;
   position: relative;
   left: 24%;
   background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-#videocontainer img{
-position: absolute;
-height: 100%;
-width: 100%;
-object-fit: cover;
-top: 0;
-}
 
 
 #videocontainer video {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: center;
+  opacity: 0;
 }
 
 #videocursor{
@@ -259,11 +262,7 @@ top: 0;
   color: white;
 }
 
-#page3 {
-  min-height: 100vh;
-  width: 100%;
-  background-color: #110f0f;
-}
+
 
 
 #page4{
@@ -296,6 +295,7 @@ top: 0;
   font-size: 4vw;
   font-weight: 100;
   font-family: "silk serif";
+  top: 3.5vw;
   left: -12%;
   font-style: italic;
 }
@@ -456,6 +456,7 @@ font-weight: 500;
   font-size: 4vw;
   font-weight: 100;
   font-family: "silk serif";
+  top:4vh;
   left: -12%;
   font-style: italic;
 }
@@ -504,3 +505,74 @@ font-weight: 500;
 #footer>h5{
   font-weight: 500;
 }
+
+
+#page3 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #110f0f;
+  position: relative;
+  padding: 1vh 0;
+}
+
+
+#page3 h1{
+  font-weight: 400;
+  padding-top: 2vw;
+  font-size: 7vw; 
+  text-transform: uppercase;
+  margin-left: 25vw;
+
+}
+
+#page3 h1::before{
+  content: "02";
+  position: absolute;
+  font-size: 4.5vw;
+  font-weight: 100;
+  font-family: "silk serif";
+  top: 4vw;
+  margin-left: 25vw;
+  left: -8%;
+  font-style: italic;
+}
+
+#page3 .underline{
+  margin-left: 25vw;
+
+}
+
+
+#image-div-container{
+  /* background-color: red; */
+  padding: 1vw;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.image-div{
+  height: 33vw;
+  width: 24vw;
+  /* background-color: blue; */
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+
+.image-div img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+._canvas_container{
+  z-index: 999999 !important;
+  pointer-events: none;
+}
+
+

@@ -13,6 +13,15 @@ html, body {
   width: 100%;
 }
 
+#mini-circle{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 99999;
+    border-radius: 50%;
+    background-color: #fff;
+    pointer-events: none;
+}
 
  #main{
     width: 100%;

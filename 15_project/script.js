@@ -118,3 +118,5 @@ function imagecontainer(){
   });
 });
 }
+
+imagecontainer();

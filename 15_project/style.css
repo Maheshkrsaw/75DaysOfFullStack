@@ -1,0 +1,113 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: general sans  ;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+
+ #main{
+    width: 100%;
+ }
+
+ #hero{
+    height: 100vh;
+     width: 100%;
+     background-color: black;
+     color: #fff;
+ }
+
+#nav{
+    width: 100%;
+    padding: 20px 40px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ #nav a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+ }
+
+#heading{
+    margin-top: 40px ;
+}
+
+ #heading h1{
+    margin-left: 30px;
+    line-height: 1; 
+    font-family: "Genral Sans Meduim";
+    font-size: 11vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: .7;
+ }
+
+
+ #heading #secondh1{
+    margin-left: 130px;
+ }
+
+ #block-text{
+    /* background-color: red; */
+    width: fit-content;
+ }
+
+#block-text h5{
+    text-align: right;
+}
+
+#chhotiheading{
+    margin-top: 100px;
+    padding-right: 30px;
+}
+
+#chhotiheading h5{
+    margin-top: 0.9  vw;
+    font-size: 1.9vw;
+text-transform: uppercase;
+text-align: right;
+}
+
+#herofooter{
+    width: 100%;
+    position: absolute;
+    bottom: 5% ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3.9vw;
+}
+
+
+#herofooter a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#herofooter #iconset{
+    display: flex;
+    gap: 5px;
+}
+
+#herofooter .circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

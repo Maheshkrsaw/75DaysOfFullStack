@@ -146,6 +146,8 @@ text-align: right;
     padding-right: 0;
     border-top: 1px solid white;
     position: relative;
+    /* overflow: hidden; */
+    z-index: 9999;
 }
 
 .elem h1{
@@ -165,7 +167,7 @@ text-align: right;
     border-radius: 8px;
     z-index: 999;
     object-fit:cover;
-    display: none;
+    opacity: 0;
 
  }
 

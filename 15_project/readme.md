@@ -1,0 +1,1 @@
+this is bascuacally for concept clear all things html css js 

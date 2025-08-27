@@ -75,7 +75,7 @@ tl.to(".line h2",{
 tl.to("#loader", {
   opacity: 0,
   duration: 0.00002, //.2
-  delay: 0,//4
+  delay: 4,//4
 });
 
 

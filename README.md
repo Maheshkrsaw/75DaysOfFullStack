@@ -83,6 +83,31 @@ Project 3 — Horizontal scroll, image carousel, flex layouts
 
 ---
 
+### ✅ Day 11 – JavaScript Loops & Input
+- Practiced `for` loop, user input (`prompt`), and validation (`isNaN`).  
+- Built **sum of n natural numbers** program.  
+
+### ✅ Day 12 – DOM Manipulation
+- Explored `querySelector`, `innerHTML`, and event listeners.  
+- Small project: **counter app** with increment/decrement.  
+
+### ✅ Day 13 – Animations with GSAP
+- Learned `gsap.timeline()`, `stagger`, `ease`.  
+- Built **hero section animation** (nav, heading, footer).  
+
+### ✅ Day 14 – Custom Cursor & Hover Effects
+- JavaScript `mousemove` + CSS transitions.  
+- Built **interactive cursor effect** with hover highlights.  
+
+### ✅ Day 15 – Locomotive Scroll + Portfolio Layout
+- Used `locomotive-scroll` for smooth scrolling.  
+- Built **portfolio sections**: hero, work showcase, about, footer.  
+
+### ✅ Day 16 – Tailwind CSS Basics
+- Installed Tailwind via CDN.  
+- Practiced utility classes (`flex`, `grid`, `text-xl`, `bg-*`).  
+- Converted **portfolio hero section** into Tailwind style.  
+
 ### Key Takeaways
 - Consistency builds skills & confidence  
 - Daily GitHub commits reinforce learning  

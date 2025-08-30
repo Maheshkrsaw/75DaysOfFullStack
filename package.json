@@ -1,0 +1,24 @@
+{
+  "name": "75daysoffullstack",
+  "version": "1.0.0",
+  "description": "**75 Days | 75 Professional README Files | GitHub Documentation**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maheshkrsaw/75DaysOfFullStack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maheshkrsaw/75DaysOfFullStack/issues"
+  },
+  "homepage": "https://github.com/Maheshkrsaw/75DaysOfFullStack#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
+}

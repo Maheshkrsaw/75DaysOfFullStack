@@ -1,3 +1,9 @@
+agar kuch normal type ka h to sirf cdn use karo "<script src="https://cdn.tailwindcss.com"></script>
+"
+agar thoda big and acha level pe tailwind code h to fir :- Tailwind cli use karo jisme depencies ke lie package.json , node modules ye sab ki jarurat padti h >.............................
+
+
+
 # 📅 Day 18 – GitHub Push + Vercel Deployment 🚀  
 Part of my #75DaysFullStackAI challenge  
 

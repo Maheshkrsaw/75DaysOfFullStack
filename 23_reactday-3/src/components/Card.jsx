@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 
-
-
 function Card() {
-const[val , setval]=useState(12);
+    const [val ,setval] = useState({name:"mahesh" , isBanned:false})
+
 
   return (
-    <div className='p-3'>
-      <h1 className='px-10'>{val}</h1>
-     <button onClick={()=>setval((prev)=>prev+1)} 
-     className='px-2 py-2 text-white bg-sky-300 rounded-full'>increament karo </button>
-     
-    </div>
+
+    <div className='px-2 py-4 '>
+        <h1> name :{val.name}</h1>
+        <h2>banned : {val.isBanned.toString()}</h2>
+        <button onClick={ ()=> setval({...val , isBanned:!val.isBanned}) } className='px-2 py-2 bg-blue-500 rounded-full text-sm mt-2  text-white'>Change </button>
+        </div>
+
+    
   )
 }
 

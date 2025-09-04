@@ -1,22 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 function Card() {
-  const [val, setval] = useState({ name: "mahesh", isBanned: false });
+const [val,setval]=useState([1,2,3,4,5])
 
   return (
-    <div className="px-2 py-4 ">
-      <h1> name :{val.name}</h1>
-      <h2>banned : {val.isBanned.toString()}</h2>
-      <button
-        onClick={() => setval({ ...val, isBanned: !val.isBanned })}
-        className={`px-2 py-2 ${
-          val.isBanned ? "bg-blue-500" : "bg-red-500"
-        } rounded-full text-sm mt-2  text-white`}
-      >
-        Change{" "}
-      </button>
+    <div className='p-4'>
+     {val.map(item => <h1>{item}</h1>)}
+     <button onClick={ ()=> setval (()=> val.filter ((elem,index)=> index != val.length-1))}
+     className='px-2 py-1 text-white rounded-full bg-sky-300 text-x '>click</button>
     </div>
-  );
+  )
 }
 
-export default Card;
+export default Card

@@ -1,0 +1,70 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  /* padding: 5px; */
+}
+
+/* h1{
+  font-size: 100PX;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+} */
+
+
+/* #tabs{
+  display: flex;
+  gap: 20px;
+}
+
+.tab{
+  padding: 5px ;
+  border: 2px solid black ;
+  background-color: #dadada;
+  
+}
+
+
+h3{
+  margin: 15px;
+  display: none;
+} */
+
+
+
+/* #center{
+    position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translateX(-50% , -50%);
+}
+
+#downloadcapsule{
+  height: 10px;
+  width: 300px;
+  background-color: #dadada;
+
+  border-radius: 100px;
+}
+
+
+#progress{
+  width: 80%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: rgb(89, 236, 89);
+}
+
+h3{
+  opacity: 0;
+} */

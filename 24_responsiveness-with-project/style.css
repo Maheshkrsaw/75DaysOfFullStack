@@ -37,7 +37,7 @@ html, body {
   color: var(--lgray);
 }
 
- nav{
+nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +50,6 @@ html, body {
   display: flex;
   align-items: center;
   gap: 7px;
-  /* background-color: red; */
 }
 
 .nav1 img{
@@ -63,15 +62,11 @@ html, body {
   font-weight: 100;
 }
 
-
-
-
 .nav2{
   display: flex;
   align-items: center;
   gap: 55px;
 }
-
 
 .nav2 h4{
   font-family: monospace;
@@ -80,7 +75,6 @@ html, body {
   font-family: helu;
 }
 
-
 .nav3{
   display: flex;
   align-items: center;
@@ -88,15 +82,12 @@ html, body {
   display: none;
 }
 
-
 .nav3 h4{
   font-family: monospace;
   font-size: 15px;
   font-weight: 100;
   font-family: helu;
 }
-
-
 
 main{
   padding-top: 100px; 
@@ -108,23 +99,18 @@ section{
   justify-content: space-between;
   padding: 0 70px;
   font-family: helu;
+  flex-wrap: wrap;   /* ✅ added to stop overflow */
 }
 
-
 .section1 .left{
-  /* background-color: red; */
   width: 45%;
 } 
-
-
 
 .section1 .left h1{
   font-size: 45px;
   line-height: 1.1;
   font-weight: 400;
 }
-
-
 
 .section1 .left .tag{
   display: flex;
@@ -134,85 +120,76 @@ section{
   margin-top: 20px ;
 }
 
-
 .section1 .left .tag h4{
   padding: 10px 20px;
-background-color: var(--gray);
+  background-color: var(--gray);
   border-radius: 4px;
   white-space: nowrap;
 }
 
-.section1 .left   .lgray{
+.section1 .left .lgray{
    font-size: 20px;
    text-decoration: line-through;
 }
-
 
 .left .price {
   margin-top: 45px;
   font-size: 35px;
 }
 
-
 .section1 .left h5{
   font-size: 18px;
 }
 
+.cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
 
-  .cta {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px; /* space between buttons */
-  }
+.cta button {
+  padding: 15px 30px;   /* ✅ reduced padding */
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-  .cta button {
-    padding: 20px 90px;
-    font-size: 20px;
+.cta .green {
+  font-weight: 700;
+  background-color: #00a56f;
+  color: white;
+  padding: 15px 40px;  /* ✅ reduced */
+}
 
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
+.cta .green:hover {
+  background-color: #008f5f;
+}
 
-  .cta .green {
-    font-weight: 700;
-    background-color: #00a56f; /* green */
-    color: white;
-    padding: 0 70px;
-  }
+.cta .gray {
+  font-weight: 500;
+  background-color: #2e2e2e;
+  color: white;
+}
 
-  .cta .green:hover {
-    background-color: #008f5f; /* darker hover */
-  }
-
-  .cta .gray {
-    font-weight: 500;
-    background-color: #2e2e2e; /* dark gray */
-    color: white;
-  }
-
-  .cta .gray:hover {
-    background-color: #1e1e1e;
-  }
-
+.cta .gray:hover {
+  background-color: #1e1e1e;
+}
 
 .left h6{
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 400;
-  }
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 400;
+}
 
 .section1 .right{
-  /* background-color: red; */
   width: 45%;
 } 
 
-
 .section1 .right .right-in{
-  /* height: 800px; */
-  width: 600px;
-  /* background-color: #02E797; */
+  width: 100%;        /* ✅ changed from 600px */
+  max-width: 600px;   /* ✅ still limits on large screens */
 }
 
 .section1 .right .right-in .image{
@@ -225,7 +202,6 @@ background-color: var(--gray);
   width: 100%;
 }
 
-
 .section1 .right .right-in .image-bottom{
   padding: 20px;
   padding-top: 40px;
@@ -235,25 +211,23 @@ background-color: var(--gray);
   gap: 5px ;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
-
 
 .right-in .image-bottom h4{
   padding: 10px 15px;
   margin-bottom: 10px;
   font-weight: 400;
-background-color:#151515;
+  background-color:#151515;
   border-radius: 5px;
   width: 45%;
 }
 
+/* ===================== */
+/* Media Queries */
+/* ===================== */
 
-
-
-@media (max-width :600px) {
+@media (max-width:600px) {
   nav{
-    
     padding: 13px 20px;
   }
 
@@ -266,8 +240,8 @@ background-color:#151515;
 
   .nav1 h4{
     font-size: 14px;
-    
   }
+
   .nav2{
     display: none;
   }
@@ -275,5 +249,41 @@ background-color:#151515;
   .nav3{
     display: flex;
   }
-  
+}
+
+@media (max-width:1200px) {
+  .section1 .left h1{
+    font-size: 4.5vw;
+  }
+}
+
+@media (max-width:800px) {
+  section {
+    padding: 0 20px;  /* ✅ reduced padding */
+  }
+  .section1 {
+    flex-direction: column-reverse;
+  }
+  .section1 .left,
+  .section1 .right {
+    width: 100%;
+  }
+
+  .section1 .left h1{
+    font-size: 33px;
+  }
+}
+
+@media (max-width:600px) {
+  .section1 .left h1{
+    font-size: 6vw;
+  }
+  .cta {
+    flex-direction: column; /* ✅ stack buttons */
+    width: 100%;
+  }
+  .cta button {
+    width: 100%;
+    text-align: center;
+  }
 }

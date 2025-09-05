@@ -1,0 +1,67 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  color: white;
+}
+
+nav{  
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+#nav1{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#nav1 img{
+    height: 40px;
+}
+
+
+#nav1 h6{
+    width: 50%;
+    font-size: 20px;
+}
+
+#nav2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+#nav2 h5{
+    font-size: 20px;
+    display: none;
+}
+
+
+@media (max-width:600px) {
+    nav{
+        /* background-color: darkcyan; */
+    }
+
+    #nav2 h4{
+    display: none;
+}
+
+    #nav2 h5{
+        display: block;
+    }
+}

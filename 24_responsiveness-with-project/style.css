@@ -1,3 +1,12 @@
+:root{
+  --gray:#212121;
+  --green:#02E797;
+  --black :#0C0C0C;
+  --white : #E9E9E9;
+  --lgray : #929292;
+}
+
+
 /* Basic CSS Boilerplate */
 
 @font-face {
@@ -9,7 +18,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
+  color: var(--white);
 }
 
 html, body {
@@ -17,15 +26,24 @@ html, body {
   background-color: #fff;
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: var(--black);
 }
 
+.green{
+  color: var(--green);
+}
+
+.lgray{
+  color: var(--lgray);
+}
 
  nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 70px 7px;
+  position: fixed;
+  width: 100%;
 }
 
 .nav1{
@@ -77,6 +95,159 @@ html, body {
   font-weight: 100;
   font-family: helu;
 }
+
+
+
+main{
+  padding-top: 100px; 
+}
+
+section{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 70px;
+  font-family: helu;
+}
+
+
+.section1 .left{
+  /* background-color: red; */
+  width: 45%;
+} 
+
+
+
+.section1 .left h1{
+  font-size: 45px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+
+
+.section1 .left .tag{
+  display: flex;
+  align-items: center;
+  gap: 5px 5px;
+  flex-wrap: wrap;
+  margin-top: 20px ;
+}
+
+
+.section1 .left .tag h4{
+  padding: 10px 20px;
+background-color: var(--gray);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.section1 .left   .lgray{
+   font-size: 20px;
+   text-decoration: line-through;
+}
+
+
+.left .price {
+  margin-top: 45px;
+  font-size: 35px;
+}
+
+
+.section1 .left h5{
+  font-size: 18px;
+}
+
+
+  .cta {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px; /* space between buttons */
+  }
+
+  .cta button {
+    padding: 20px 90px;
+    font-size: 20px;
+
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .cta .green {
+    font-weight: 700;
+    background-color: #00a56f; /* green */
+    color: white;
+    padding: 0 70px;
+  }
+
+  .cta .green:hover {
+    background-color: #008f5f; /* darker hover */
+  }
+
+  .cta .gray {
+    font-weight: 500;
+    background-color: #2e2e2e; /* dark gray */
+    color: white;
+  }
+
+  .cta .gray:hover {
+    background-color: #1e1e1e;
+  }
+
+
+.left h6{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+.section1 .right{
+  /* background-color: red; */
+  width: 45%;
+} 
+
+
+.section1 .right .right-in{
+  /* height: 800px; */
+  width: 600px;
+  /* background-color: #02E797; */
+}
+
+.section1 .right .right-in .image{
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.section1 .right .right-in .image img{
+  width: 100%;
+}
+
+
+.section1 .right .right-in .image-bottom{
+  padding: 20px;
+  padding-top: 40px;
+  background-color: var(--gray);
+  display: flex;
+  align-items: center; 
+  gap: 5px ;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+
+.right-in .image-bottom h4{
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-weight: 400;
+background-color:#151515;
+  border-radius: 5px;
+  width: 45%;
+}
+
 
 
 

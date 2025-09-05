@@ -1,8 +1,15 @@
 /* Basic CSS Boilerplate */
+
+@font-face {
+  font-family: helu ;
+  src: url(./font/HelveticaNowDisplay-Medium_2wEhlmo-TD_wsqqEEwmJC.woff2);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 html, body {
@@ -10,4 +17,92 @@ html, body {
   background-color: #fff;
   height: 100%;
   width: 100%;
+  background-color: black;
+}
+
+
+ nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 70px 7px;
+}
+
+.nav1{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  /* background-color: red; */
+}
+
+.nav1 img{
+  height: 50px;
+}
+
+.nav1 h4{
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+
+
+
+.nav2{
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+
+.nav2 h4{
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: helu;
+}
+
+
+.nav3{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  display: none;
+}
+
+
+.nav3 h4{
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: helu;
+}
+
+
+
+@media (max-width :600px) {
+  nav{
+    
+    padding: 13px 20px;
+  }
+
+  .nav1{
+    gap: 13px;
+  }
+  .nav1 img{
+    height: 30px;
+  }
+
+  .nav1 h4{
+    font-size: 14px;
+    
+  }
+  .nav2{
+    display: none;
+  }
+
+  .nav3{
+    display: flex;
+  }
+  
 }

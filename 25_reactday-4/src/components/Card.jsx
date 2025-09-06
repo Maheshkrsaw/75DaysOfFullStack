@@ -1,6 +1,7 @@
 import React from 'react'
 
-function card({image , name ,profession}) {
+function card({values}) {
+  const {image , name ,profession} = values;
   return (
     <div className='w-53 bg-white rounded-md overflow-hidden'>
       <div className='w-full h-42 bg-sky-500'>

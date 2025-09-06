@@ -16,7 +16,7 @@ const data = [
        <div className='w-full h-screen bg-zinc-200 flex items-center gap-4 justify-center'>
       {
         data.map((item,index)=>(
-          <Card image={item.image} name={item.name} profession={item.profession} />
+          <Card values={item} />
         ))
       }
     </div>

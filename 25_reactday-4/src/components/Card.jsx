@@ -1,26 +1,26 @@
 import React from 'react'
 
-function Card({ values, index, handleClick }) {
-  const { image, name, profession, friends } = values;
+function card({data , handelclick , index}) {
+
+    const {image , artist , added , name}=data;
+
 
   return (
-    <div className='w-52 bg-white rounded-md overflow-hidden shadow-md'>
-      <div className='w-full h-40 bg-sky-500'>
-        <img className='w-full h-full object-cover' src={image} alt={name} />
+    <div className='w-60 bg-zinc-100 rounded-md flex gap-4 p-4 pb-6 mt-5 relative'>
+      <div className='w-20 h-20 bg-orange-400 rounded-md overflow-hidden'>
+        <img className='w-full h-full object-cover ' src={image} alt="" />
       </div>
-      <div className='w-full p-3 font-semibold'>
-        <h3 className='text-2xl'>{name}</h3>
-        <h5 className='text-sm text-gray-600'>{profession}</h5>
-        <button
-          onClick={() => handleClick(index)}
-          className={`mt-2 px-3 py-1 text-xs text-white font-semibold rounded-md 
-            ${friends ? "bg-green-500" : "bg-blue-500"}`}
-        >
-          {friends ? "Friends" : "Add Friend"}
-        </button>
+      <div className='' >
+        <h3 className='text-xl leading-none font-semibold'>{name}</h3>
+        <h6 className='text-xs'>{artist}</h6>
+        <button onClick={()=>handelclick(index)}
+         className={` ${added=== false ? "bg-orange-600" : "bg-teal-500" } text-white rounded-full px-1 py-2 whitespace-nowrap absolute bottom-0 -translate-x-1/2 translate-y-1/2 left-1/2 text-xs`}>
+  {added === false ? "Add to Favourite" : "Added"}
+</button>
+
       </div>
     </div>
   )
-} 
+}
 
-export default Card
+export default card 

@@ -1,30 +1,58 @@
 import React, { useState } from 'react'
-import Card from './components/card'
+import Card from './components/Card'
+import Navbar from './components/Navbar'
+
 
 function App() {
+
   const raw = [
-    { name: "Mahesh", profession: "coder", image: "https://images.unsplash.com/photo-1621179314026-0f23b2835c1e?w=500&auto=format&fit=crop&q=60", friends: false },
-    { name: "sohan", profession: "artist", image: "https://plus.unsplash.com/premium_photo-1732117940281-e1598445016c?w=500&auto=format&fit=crop&q=60", friends: false },
-    { name: "rohan", profession: "painter", image: "https://images.unsplash.com/photo-1558357896-5e2eb7aff45b?w=500&auto=format&fit=crop&q=60", friends: false },
-    { name: "mohan", profession: "graphics", image: "https://images.unsplash.com/photo-1548842149-376b275ff705?w=500&auto=format&fit=crop&q=60", friends: false },
-  ]
-
-  const [data, setData] = useState(raw)
-
-  const handleClick = (changingIndex) => {
-    setData((prev) =>
-      prev.map((item, index) =>
-        index === changingIndex ? { ...item, friends: !item.friends } : item
-      )
-    )
+  {
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60", // Album cover
+    name: "Blinding Lights",
+    artist: "The Weeknd",
+    added: false
+  },
+  {
+    image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&auto=format&fit=crop&q=60",
+    name: "Levitating",
+    artist: "Dua Lipa",
+    added: false
+  },
+  {
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
+    name: "Peaches",
+    artist: "Justin Bieber",
+    added: false
+  },
+  {
+    image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=500&auto=format&fit=crop&q=60",
+    name: "Save Your Tears",
+    artist: "The Weeknd",
+    added: false
   }
+];
+
+
+   const [songData , setsongData]=useState(raw);
+  const handleClick = (index) => {
+  setsongData((prev) =>
+    prev.map((item, itemIndex) =>
+      itemIndex === index ? { ...item, added: !item.added } : item
+    )
+  );
+};
 
   return (
-    <div className='w-full h-screen bg-zinc-200 flex items-center gap-4 justify-center'>
-      {data.map((item, index) => (
-        <Card key={index} values={item} index={index} handleClick={handleClick} />
-      ))}
-    </div>
+    <>
+    <div className='w-full h-screen bg-zinc-300 '>
+      <Navbar data={songData} />
+      <div className='px-20 flex gap-10 mt-10 flex-wrap'>
+        {songData.map((obj , index) => {
+         return <Card data={obj} index={index} handelclick={handleClick} key={index}/>
+        })}       
+      </div>
+      </div>
+    </>
   )
 }
 

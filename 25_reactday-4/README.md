@@ -1,107 +1,61 @@
-# ⚛️ React (Vite) + 🎨 Tailwind CSS — Single-File Setup Guide
+# 🚀 75DaysFullStackAI – Day 25
 
-Follow these steps to create a React app with Vite and integrate Tailwind CSS using the official `@tailwindcss/vite` plugin. Everything is in one place for easy copy–paste.
+Day 25 of my journey felt challenging yet rewarding. React is slowly opening up, and with each topic, I realize that **grasping fundamentals takes time**. The progress may look slow, but every extra minute I spend now will save hours later.
 
---------------------------------------------------------------------------------
-01) CREATE YOUR PROJECT (Vite + React)
+---
 
-# Create project
-npm create vite@latest my-project
+## 📌 Topics Covered
+- **Deeper into React Hooks**
+  - Continued practice with `useState` for handling dynamic data
+  - Explored array and object manipulation inside state
+- **Props (in-depth)**
+  - Passing multiple props to child components  
+  - Handling props drilling across 2–3 component levels  
+  - Realizing where props start becoming hard to manage
+- **Event Handling**
+  - Writing clean `onClick` functions  
+  - Passing event handlers as props to children  
+  - Controlling data flow between parent ↔ child
+- **Reusable Components**
+  - Created multiple components like **Cards** and **Navbar**  
+  - Reused them in different scenarios with props variation  
+  - Practiced `key` prop usage & avoided warnings
 
-# Move into folder
-cd my-project
+---
 
-# Install dependencies
-npm install
+## 🛠️ Mini Projects & Practice
+1. **Song Favourites App (Extended)**  
+   - Added & removed items from a **favourite list**  
+   - Count updated dynamically in Navbar  
+   - Gained clarity on **state lifting + props drilling**
 
+2. **Card Component Practice**  
+   - Created multiple card variations using a **single component**  
+   - Handled button clicks inside cards with event handling  
 
---------------------------------------------------------------------------------
-02) INSTALL TAILWIND CSS
+---
 
-# Install Tailwind and the official Vite plugin
-npm install tailwindcss @tailwindcss/vite
+## 💡 Key Learnings
+- React’s **component reusability** saves a lot of code  
+- Props drilling is a real challenge → excited to explore **Context API** later  
+- Event handling is the backbone of React interactivity  
+- Debugging state updates teaches patience 😅  
 
+---
 
---------------------------------------------------------------------------------
-03) CONFIGURE THE VITE PLUGIN
+## 🎯 Reflection
+- ✅ Feeling more confident with React basics  
+- ✅ Finally seeing how **state + props + event handling** connect together  
+- ⚡ Slow progress, but I’ve accepted that **understanding > rushing**  
+- 🔜 Next: Explore **advanced props patterns & starting Context**  
 
-# File: vite.config.js  (or vite.config.ts if you prefer TS)
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+---
 
-export default defineConfig({
-  plugins: [
-    react(),        // React plugin
-    tailwindcss(),  // Tailwind plugin
-  ],
-})
+## 🔗 Connect with My Journey
+Follow my journey with **#75DaysFullStackAI**  
 
+🌐 GitHub: [Maheshkrsaw](https://github.com/Maheshkrsaw)  
+💼 LinkedIn: [maheshmahi07](https://www.linkedin.com/in/maheshmahi07)  
+🐦 Twitter (X): [@kumarMahesh9304](https://x.com/kumarMahesh9304)  
 
---------------------------------------------------------------------------------
-04) IMPORT TAILWIND CSS
-
-# File: src/index.css
-@import "tailwindcss";
-
-
---------------------------------------------------------------------------------
-05) REACT ENTRY (main.jsx) — INCLUDE REACT + CSS
-
-# File: src/main.jsx
-import React from 'react'                // (as you requested, explicitly included)
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'                     // IMPORTANT: this pulls in Tailwind
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
-
-
---------------------------------------------------------------------------------
-06) BASIC APP COMPONENT (use Tailwind utilities)
-
-# File: src/App.jsx
-function App() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <h1 className="text-3xl md:text-4xl font-bold underline">
-        🚀 Hello world! React + Tailwind is working.
-      </h1>
-    </div>
-  )
-}
-export default App
-
-
---------------------------------------------------------------------------------
-(OPTIONAL) PLAIN HTML EXAMPLE (IF NOT USING REACT)
-
-# If you were using plain HTML, include your compiled CSS in <head> like this:
-# (React + Vite users usually import CSS in main.jsx instead — as we did above.)
-# File: index.html
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Example path; for React+Vite we import CSS in main.jsx -->
-  <link href="/src/index.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
-  <div id="root"></div>
-</body>
-</html>
-
-
---------------------------------------------------------------------------------
-RUN THE DEV SERVER
-
-# Start Vite dev server
-npm run dev
-
-# Open the shown URL (e.g., http://localhost:5173/)
+---

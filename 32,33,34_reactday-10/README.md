@@ -60,3 +60,5 @@ const color = () => {
 let Unique_category =
   products && products.reduce((acc, cv) => [...acc, cv.category], []);
 Unique_category = [...new Set(Unique_category)];
+
+

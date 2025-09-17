@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Productcontext } from "../utils/Context";
 import { nanoid } from "nanoid";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify"; // <-- import toast
 
 const Create = () => {
   const [title, setTitle] = useState("");
@@ -15,7 +16,6 @@ const Create = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // Input validation
     if (
       title.trim().length < 5 ||
       image.trim().length < 5 ||
@@ -32,7 +32,7 @@ const Create = () => {
       title: title.trim(),
       image:
         image.trim() ||
-        "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29zbWV0aWN8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=500&auto=format&fit=crop&q=60",
       category: category.trim(),
       price: price.trim(),
       description: description.trim(),
@@ -41,6 +41,9 @@ const Create = () => {
     const newProducts = [...products, product];
     setProducts(newProducts); // update context
     localStorage.setItem("products", JSON.stringify(newProducts)); // save immediately
+
+    // Show toast **after adding**
+    toast.success("Product Added Successfully");
 
     // Reset form
     setTitle("");

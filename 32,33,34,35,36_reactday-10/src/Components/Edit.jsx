@@ -53,6 +53,7 @@ const Edit = () => {
     localStorage.setItem("products", JSON.stringify(updatedProducts));
 
     navigate("/"); // go back home
+            
   };
 
   return (

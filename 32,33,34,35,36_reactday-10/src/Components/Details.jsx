@@ -3,6 +3,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Loading from "../utils/Loading";
 import { Productcontext } from "../utils/Context";
 
+
+
 const Details = () => {
   const [products, setProducts] = useContext(Productcontext); // context
   const { id } = useParams();
@@ -18,7 +20,7 @@ const Details = () => {
     navigate("/"); // go back to Home
   };
 
-  if (!product) return <Loading />;
+
 
   return (
     <div className="w-[70%] flex h-full items-center justify-between m-auto p-[10%]">

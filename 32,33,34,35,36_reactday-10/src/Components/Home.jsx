@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Nav from "./Nav";
 import { Link, useLocation } from "react-router-dom";
 import { Productcontext } from "../utils/Context";
-import Loading from "../utils/Loading";
+import Loader from "../utils/Loading"; // ✅ renamed import
 
 function Home() {
   const [products] = useContext(Productcontext);
@@ -10,7 +10,7 @@ function Home() {
   const { search } = useLocation();
   const category = new URLSearchParams(search).get("category") || "";
 
-  if (!products) return <Loading />;
+  if (!products) return <Loader />; // ✅ replaced Loading with Loader
 
   // Filter products directly from context
   const displayedProducts = category

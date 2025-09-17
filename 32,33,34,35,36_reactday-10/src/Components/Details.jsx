@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loading from "../utils/Loading";
 import { Productcontext } from "../utils/Context";
 
@@ -29,6 +29,12 @@ const Details = () => {
             <h3 className="text-zinc-400 my-3">{product.category}</h3>
             <h3 className="text-red-300 mb-3">₹ {product.price}</h3>
             <p className="mb-5">{product.description}</p>
+             <Link className="mr-7 text-blue-200 border rounded border-blue-200 px-4 py-2">
+              Edit
+            </Link>
+            <Link className="mr-7 text-red-200 border rounded border-red-200 px-4 py-2">
+              Delete
+            </Link>
           </div>
         </div>
       ) : (

@@ -4,24 +4,24 @@ import axios from "axios";
 export const Productcontext = createContext();
 
 const Context = (props) => {
+  // Load from localStorage if available, else empty array
   const [products, setProducts] = useState(
-    JSON.parse(localStorage.getItem("products")) || null
+    JSON.parse(localStorage.getItem("products")) || []
   );
 
-  // API se products fetch karo
+  // Fetch products from API if localStorage is empty
   const getProducts = async () => {
     try {
       const { data } = await axios.get("https://fakestoreapi.com/products");
       setProducts(data);
-      localStorage.setItem("products", JSON.stringify(data)); // save to localStorage
+      localStorage.setItem("products", JSON.stringify(data));
     } catch (error) {
       console.log("API Error:", error);
     }
   };
 
   useEffect(() => {
-    // Agar localStorage me data nahi h, to API se fetch karo
-    if (!products) {
+    if (!products || products.length === 0) {
       getProducts();
     }
   }, []);

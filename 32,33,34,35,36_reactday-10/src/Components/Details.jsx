@@ -32,7 +32,7 @@ const Details = () => {
         <h3 className="text-zinc-400 my-3">{product.category}</h3>
         <h3 className="text-red-300 mb-3">₹ {product.price}</h3>
         <p className="mb-5">{product.description}</p>
-        <Link className="mr-7 text-blue-200 border rounded border-blue-200 px-4 py-2">
+        <Link to={`/edit/${product.id}`} className="mr-7 text-blue-200 border rounded border-blue-200 px-4 py-2">
           Edit
         </Link>
         <button

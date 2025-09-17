@@ -1,29 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import Loading from '../utils/Loading';
-import axios from '../utils/Axios';
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Loading from "../utils/Loading";
+import { Productcontext } from "../utils/Context";
 
 const Details = () => {
+  const [products] = useContext(Productcontext); // get products from context
   const [product, setProduct] = useState(null);
   const { id } = useParams();
 
-  const getSingleProduct = async () => {
-    try {
-      const { data } = await axios.get(`/products/${id}`);
-      setProduct(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
-    getSingleProduct();
-  }, [id]);
+    if (!product && products && products.length > 0) {
+      const found = products.filter((p) => p.id == id)[0]; // get first matching product
+      if (found) setProduct(found);
+    }
+  }, [products, product, id]); // run effect when products or id change
 
   return (
     <>
-      
-
       {product ? (
         <div className="w-[70%] flex h-full items-center justify-between m-auto p-[10%]">
           <img
@@ -36,8 +29,6 @@ const Details = () => {
             <h3 className="text-zinc-400 my-3">{product.category}</h3>
             <h3 className="text-red-300 mb-3">₹ {product.price}</h3>
             <p className="mb-5">{product.description}</p>
-            <Link className="mr-7 text-blue-200 border rounded border-blue-200 px-4 py-2">Edit</Link>
-            <Link className="mr-7 text-red-200 border rounded border-red-200 px-4 py-2">Delete</Link>
           </div>
         </div>
       ) : (

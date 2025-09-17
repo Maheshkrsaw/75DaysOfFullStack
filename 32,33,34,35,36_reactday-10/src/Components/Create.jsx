@@ -1,19 +1,21 @@
 import React, { useContext, useState } from "react";
 import { Productcontext } from "../utils/Context";
 import { nanoid } from "nanoid";
+import { Link } from "react-router-dom";
 
 const Create = () => {
-  const [title, settitle] = useState("");
-  const [image, setimage] = useState("");
-  const [category, setcategory] = useState("");
-  const [price, setprice] = useState("");
-  const [description, setdescription] = useState("");
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
 
-  const [products, setproducts] = useContext(Productcontext);
+  const [products, setProducts] = useContext(Productcontext);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
+    // Input validation
     if (
       title.trim().length < 5 ||
       image.trim().length < 5 ||
@@ -21,21 +23,31 @@ const Create = () => {
       price.trim().length < 1 ||
       description.trim().length < 5
     ) {
-      alert("Each and every input must have at least 5 characters");
-      return; // stop here if invalid
+      alert("Each input must have at least 5 characters (price at least 1)");
+      return;
     }
 
     const product = {
       id: nanoid(),
       title: title.trim(),
-      image: image.trim(),
+      image:
+        image.trim() ||
+        "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29zbWV0aWN8ZW58MHx8MHx8fDA%3D",
       category: category.trim(),
       price: price.trim(),
       description: description.trim(),
     };
 
-    setproducts([...products, product]); // ✅ add new product
-    console.log("New Product Added:", product); // check in console
+    const newProducts = [...products, product];
+    setProducts(newProducts); // update context
+    localStorage.setItem("products", JSON.stringify(newProducts)); // save immediately
+
+    // Reset form
+    setTitle("");
+    setImage("");
+    setCategory("");
+    setPrice("");
+    setDescription("");
   };
 
   return (
@@ -48,16 +60,16 @@ const Create = () => {
       <input
         className="text-xl bg-zinc-200 rounded p-3 mb-3 w-1/2"
         type="text"
-        placeholder="title"
-        onChange={(e) => settitle(e.target.value)}
+        placeholder="Title"
+        onChange={(e) => setTitle(e.target.value)}
         value={title}
       />
 
       <input
         className="text-xl bg-zinc-200 rounded p-3 mb-3 w-1/2"
         type="url"
-        placeholder="Image url"
-        onChange={(e) => setimage(e.target.value)}
+        placeholder="Image URL"
+        onChange={(e) => setImage(e.target.value)}
         value={image}
       />
 
@@ -65,8 +77,8 @@ const Create = () => {
         <input
           className="text-xl bg-zinc-200 rounded p-3 mb-3 w-[48%]"
           type="number"
-          placeholder="price"
-          onChange={(e) => setprice(e.target.value)}
+          placeholder="Price"
+          onChange={(e) => setPrice(e.target.value)}
           value={price}
         />
 
@@ -74,14 +86,14 @@ const Create = () => {
           className="text-xl bg-zinc-200 rounded p-3 mb-3 w-[48%]"
           type="text"
           placeholder="Category"
-          onChange={(e) => setcategory(e.target.value)}
+          onChange={(e) => setCategory(e.target.value)}
           value={category}
         />
       </div>
 
       <textarea
-        onChange={(e) => setdescription(e.target.value)}
-        placeholder="enter product description here.."
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Enter product description here.."
         value={description}
         className="text-1xl bg-zinc-200 rounded p-3 w-1/2 mb-3"
         rows="10"
@@ -91,6 +103,13 @@ const Create = () => {
         <button className="py-2 px-5 border rounded border-blue-200 text-blue-300">
           Add New Product
         </button>
+
+        <Link
+          to="/"
+          className="ml-3 py-2 px-5 border rounded border-green-200 text-green-300"
+        >
+          Home
+        </Link>
       </div>
     </form>
   );

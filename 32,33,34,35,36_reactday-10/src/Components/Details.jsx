@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Loading from "../utils/Loading";
 import { Productcontext } from "../utils/Context";
 
@@ -7,6 +7,7 @@ const Details = () => {
   const [products] = useContext(Productcontext); // get products from context
   const [product, setProduct] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!product && products && products.length > 0) {
@@ -14,6 +15,25 @@ const Details = () => {
       if (found) setProduct(found);
     }
   }, [products, product, id]); // run effect when products or id change
+
+
+    
+
+const DeleteHandler = (id) => {
+  const filteredProducts = products.filter((p) => p.id != id);
+  
+  // update context
+  setProduct(filteredProducts);
+
+  // update localStorage
+  localStorage.setItem("products", JSON.stringify(filteredProducts));
+
+  // product ko null karo (kyunki delete ho gaya)
+  setProduct(null);
+
+  // navigate home
+  navigate("/");
+};
 
   return (
     <>
@@ -32,9 +52,13 @@ const Details = () => {
              <Link className="mr-7 text-blue-200 border rounded border-blue-200 px-4 py-2">
               Edit
             </Link>
-            <Link className="mr-7 text-red-200 border rounded border-red-200 px-4 py-2">
-              Delete
-            </Link>
+          <button 
+  onClick={() => DeleteHandler(id)} 
+  className="mr-7 text-red-200 border rounded border-red-200 px-4 py-2"
+>
+  Delete
+</button>
+
           </div>
         </div>
       ) : (

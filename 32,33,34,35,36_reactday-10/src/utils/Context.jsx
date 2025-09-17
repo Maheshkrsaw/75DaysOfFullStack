@@ -4,23 +4,30 @@ import axios from "axios";
 export const Productcontext = createContext();
 
 const Context = (props) => {
-  const [products, setproducts] = useState(JSON.parse(localStorage.getItem("products")) || null);
+  const [products, setProducts] = useState(
+    JSON.parse(localStorage.getItem("products")) || null
+  );
 
-// const getproducts = async () => {
-//   try {
-//     const { data } = await axios.get("https://fakestoreapi.com/products");
-//     setproducts(data);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+  // API se products fetch karo
+  const getProducts = async () => {
+    try {
+      const { data } = await axios.get("https://fakestoreapi.com/products");
+      setProducts(data);
+      localStorage.setItem("products", JSON.stringify(data)); // save to localStorage
+    } catch (error) {
+      console.log("API Error:", error);
+    }
+  };
 
-  // useEffect(() => {
-  //   getproducts();
-  // }, []);
+  useEffect(() => {
+    // Agar localStorage me data nahi h, to API se fetch karo
+    if (!products) {
+      getProducts();
+    }
+  }, []);
 
   return (
-    <Productcontext.Provider value={[products, setproducts]}>
+    <Productcontext.Provider value={[products, setProducts]}>
       {props.children}
     </Productcontext.Provider>
   );

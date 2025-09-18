@@ -1,10 +1,14 @@
 import React from 'react'
 import Nav from './Components/Nav'
+import Work from './Components/Work'
 
 function App() {
   return (
     <>
-    <Nav />
+    <div className='m-3'>
+      <Nav />
+    <Work />
+    </div>
     </>
   )
 }

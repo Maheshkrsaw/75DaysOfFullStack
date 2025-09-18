@@ -36,7 +36,7 @@ function Products() {
 
   return (
     <div>
-      {products.map((elem,index)=> <Product val={elem} />)}
+      {products.map((elem,index)=> <Product val={elem} key={index} />)}
     </div>
   );
 }

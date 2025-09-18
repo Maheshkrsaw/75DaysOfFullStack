@@ -352,6 +352,62 @@ From **Day 23 to Day 30**, I went through major **React fundamentals** (useState
 
 ---
 
+# 🚀 React E-Commerce Project (Day 31–36 | #75DaysFullStackAI)
+
+This project is built as part of my **75 Days Full Stack Challenge**.  
+From **Day 31 → Day 36**, I developed a mini **E-Commerce app** step by step with **React, Routing, Context, API → LocalStorage, and Toastify**.
+
+---
+
+## 📅 Day-Wise Progress (Short)
+
+- **Day 31:** Setup with React + Vite, learned basics of components & props.  
+- **Day 32:** Fetched products via FakeStore API, Axios integration, basic routes.  
+- **Day 33:** Context API for global state, useState/useEffect practice.  
+- **Day 34:** React Router DOM – `useParams`, `useNavigate`, nested routes.  
+- **Day 35:** Dynamic Nav (unique categories), filter logic, category colors.  
+- **Day 36:** Migrated API → LocalStorage, added CRUD + React-Toastify, final polish.  
+
+---
+
+## ⚙️ Tech Stack
+- React + Vite  
+- Tailwind CSS  
+- Context API  
+- React Router DOM  
+- Axios → LocalStorage  
+- React-Toastify  
+
+---
+
+## ✨ Features
+- Dynamic Product Listing & Details  
+- Category-based Filtering  
+- Global State with Context API  
+- LocalStorage CRUD (Add, Edit, Delete)  
+- Toast Notifications  
+
+---
+
+## 🌐 Links
+- 🔗 **Live Demo:** [Check Here](https://reactproject-with-api.netlify.app/)  
+- 📂 **Code Repo:** [GitHub](https://github.com/Maheshkrsaw/75DaysFullStack/tree/main/32%2C33%2C34%2C35%2C36_reactday-10)  
+
+---
+
+## 📝 Reflection
+These 6 days taught me:
+- How to move step-by-step from basics → CRUD.  
+- Debugging & persistence when API + LocalStorage failed.  
+- **Coding builds skills, struggles build mindset.** 💡  
+
+---
+
+#ReactJS #WebDev #ContextAPI #LocalStorage #Toastify #75DaysFullStackAI
+
+---
+
+
 ## 📌 Hashtags  
 #75DaysFullStackAI #ReactJS #WebDevelopment #LearningInPublic #Consistency #Frontend #FullStack #Persistence
 

@@ -164,11 +164,6 @@ From **Day 32 → Day 36**, I built a mini E-Commerce application using **React,
 5. 🔹 **Toast Alerts** – Feedback for user actions.  
 6. 🔹 **LocalStorage Persistence** – Data stays even after refresh.  
 
----
-
-## 🌐 Live Demo & Repository
-- 🔗 **Live Project:** [Check Here](https://reactproject-with-api.netlify.app/)  
-- 📂 **GitHub Repo:** [View Code](https://github.com/Maheshkrsaw/75DaysFullStack/tree/main/32%2C33%2C34%2C35%2C36_reactday-10)  
 
 ---
 
@@ -181,3 +176,9 @@ These 5 days tested my **discipline, focus, and mindset** more than technicals.
 ---
 
 #ReactJS #WebDevelopment #API #LocalStorage #Toastify #ContextAPI #LearningInPublic #75DaysFullStackAI
+
+---
+
+## 🌐 Live Demo & Repository
+- 🔗 **Live Project:** [Check Here](https://reactproject-with-api.netlify.app/)  
+- 📂 **GitHub Repo:** [View Code](https://github.com/Maheshkrsaw/75DaysFullStack/tree/main/32%2C33%2C34%2C35%2C36_reactday-10)  

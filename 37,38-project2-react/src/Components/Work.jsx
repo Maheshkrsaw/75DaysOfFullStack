@@ -5,10 +5,10 @@ const Work = () => {
 
   const [images , setimages ] = useState([
     {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/67b89d9110d0a5d6615f273a_umaultAwards-p-1080.png" ,top:"50%" , left:"50%" , isActive:false },
-    {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d3d0fdcbfda7de0c21ed_Umlaut%20-%2016%209%20(B)-p-1080.webp" ,top:"53%" , left:"48%" , isActive:false },
+    {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d3d0fdcbfda7de0c21ed_Umlaut%20-%2016%209%20(B)-p-1080.webp" ,top:"53%" , left:"47%" , isActive:false },
     {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d880c1fd919b3709feb1_Cula-%2016%209%20(B)-p-1080.webp" ,top:"47%" , left:"52%" , isActive:false },
-    {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d8caf827831eb8ff92f7_Layout%20Land%20-%2016%209%20(B)-p-1080.webp" ,top:"51%" , left:"49%" , isActive:false },
-    {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/669d6f1f10e02f2cb6320ad9_669ad38beb29c99f7dfe1353_mockup-v3%402x%202-p-1600-p-1080.webp" ,top:"53%" , left:"53%" , isActive:false }
+    {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d8caf827831eb8ff92f7_Layout%20Land%20-%2016%209%20(B)-p-1080.webp" ,top:"47%" , left:"53%" , isActive:false },
+    {url:"https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/669d6f1f10e02f2cb6320ad9_669ad38beb29c99f7dfe1353_mockup-v3%402x%202-p-1600-p-1080.webp" ,top:"53%" , left:"57%" , isActive:false }
   ]);
 
   const { scrollYProgress } = useScroll()

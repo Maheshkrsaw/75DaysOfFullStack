@@ -1,12 +1,26 @@
-import React from 'react'
+import React from "react";
 
-const Marquee = ({logourl}) => {
+const Marquee = ({ logourl, direction = "left", speed = 5 }) => {
   return (
-    <div className='flex items-center w-full py-5 gap-10  whitespace-nowrap overflow-hidden '>
-      {logourl.map(url => <img src={url} key={url.id} className='' />)}
-      {logourl.map(url => <img src={url}  key={url.id} className='' />)}
+    <div className="relative w-full overflow-hidden">
+      <div
+        className={`flex gap-10 py-5 w-max
+          ${direction === "left" ? "animate-marquee" : "animate-marquee-reverse"}`}
+        style={{ animationDuration: `${speed}s` }} // 👈 fast speed
+      >
+        {Array(3).fill(null).map((_, i) =>
+          logourl.map((url, index) => (
+            <img
+              src={url}
+              key={`${i}-${index}`}
+              className="h-12 object-contain"
+              alt=""
+            />
+          ))
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Marquee
+export default Marquee;

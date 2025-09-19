@@ -35,7 +35,7 @@ function Products() {
   ];
 
   return (
-    <div>
+    <div className="mt-15">
       {products.map((elem,index)=> <Product val={elem} key={index} />)}
     </div>
   );

@@ -6,20 +6,3 @@ body{
 
 
 
-@layer utilities {
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-marquee {
-    animation: marquee 20s linear infinite;
-  }
-
-  @keyframes marquee-reverse {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-  }
-  .animate-marquee-reverse {
-    animation: marquee-reverse 20s linear infinite;
-  }
-}

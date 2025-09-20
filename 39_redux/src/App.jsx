@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { decrement, increment, incrementByAmount } from "./Store/reducers/CounterSlice"
+import { decrement, increment, incrementAsync, incrementByAmount } from "./Store/reducers/CounterSlice"
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         </button>
 
         <button
-          onClick={() => dispatch(incrementByAmount(5))}
+          onClick={() => dispatch(incrementAsync(5))}
           className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
         >
           +5

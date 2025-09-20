@@ -1,38 +1,34 @@
 import React from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { decrement, increment, incrementAsync, incrementByAmount } from "./Store/reducers/CounterSlice"
-
+import { useDispatch, useSelector } from "react-redux"
+import { userdelete } from "./Store/reducers/Userreducer";
 
 function App() {
-  const count = useSelector((state) => state.counter.value)
-  const dispatch = useDispatch()
+  const { users } = useSelector((state) => state.userReducer)
+   const dispatch=useDispatch();
+
+  const deletehandler = (index) => {
+    dispatch(userdelete(index));
+  } 
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 font-sans">
-      <h1 className="text-5xl font-bold mb-8">Counter: {count}</h1>
-
-      <div className="flex gap-4">
-        <button
-          onClick={() => dispatch(increment())}
-          className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-        >
-          +1
-        </button>
-
-        <button
-          onClick={() => dispatch(decrement())}
-          className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-        >
-          -1
-        </button>
-
-        <button
-          onClick={() => dispatch(incrementAsync(5))}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-        >
-          +5
-        </button>
-      </div>
+    <div className="p-6 bg-gray-100 min-h-screen flex flex-col items-center">
+      <h1 className="text-3xl font-bold mb-4">Users List</h1>
+      <ul className="bg-white rounded-lg shadow-md w-full max-w-md">
+        {users.map((user,index) => (
+          <li
+            key={user.id}
+            className="px-4 py-2 border-b last:border-b-0 hover:bg-gray-50 transition flex justify-between items-center"
+          >
+            {user.name}
+            <span
+              onClick={() => deletehandler(index)}
+              className="text-red-500 font-bold cursor-pointer"
+            >
+              X
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

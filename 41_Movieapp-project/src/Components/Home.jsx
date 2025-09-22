@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react';
-import SideNav from '../Partials/SideNav';
+import React, { useEffect } from "react";
+import SideNav from "../Partials/SideNav";
+import Topnav from "../Partials/Topnav";
 
 function Home() {
-  useEffect(() => {
-    document.title = "FILMYWORLD | HOMEPAGE";
-  }, []);
+  document.title = "FILMYWORLD | HOMEPAGE";
 
   return (
-    <div className="flex w-screen h-screen">
-      <SideNav />
-      <div className="w-[80%] h-full "></div>
-    </div>
+    <>
+      <div className="flex w-screen h-screen">
+        <SideNav />
+
+        <div className="w-[80%] h-full ">
+          <Topnav />
+        </div>
+      </div>
+    </>
   );
 }
 

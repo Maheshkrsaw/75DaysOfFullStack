@@ -346,6 +346,50 @@ These 6 days taught me:
 ---
 
 
+# 📘 Day 37–40 | Full Recap  
+
+This is a short summary of my #75DaysFullStackAI journey from Day 37 to Day 40.  
+
+---
+
+## 🚀 Day 37 | React Project Clone  
+- Created Nav, Work Section, Stripes, Product Section, Marquee, Footer.  
+- Practiced component hierarchy → Parent → Children.  
+- Focus on **reusability & props handling**.  
+🔗 [Repo](https://github.com/Maheshkrsaw/75DaysOfFullStack/tree/main/37%2C38-project2-react)  
+🔗 [Live](https://dapper-semifreddo-bead2e.netlify.app/)  
+
+---
+
+## 🎨 Day 38 | Animations & UI Upgrade  
+- Added animations in Work & Marquee sections.  
+- Product → simple divs (plan: replace with videos).  
+- Footer redesigned.  
+
+---
+
+## ⚡ Day 39 | Redux Toolkit Basics  
+- Learned: Store, Reducer, Actions, `useSelector`, `dispatch`, payloads.  
+- Understood boilerplate setup & Redux data flow.  
+
+---
+
+## 🌐 Day 40 | Redux Thunk + Async Redux  
+- Practiced async actions & API calls with Redux Thunk.  
+- Combined multiple reducers (counter + posts).  
+- Learned async flow with error handling.  
+
+---
+
+## 🌟 Key Takeaways  
+- Day 37–38 → Frontend + animation focus.  
+- Day 39 → Redux state management basics.  
+- Day 40 → Async Redux + Thunk mastery.  
+
+---
+
+
+
 ## 📌 Hashtags  
 #75DaysFullStackAI #ReactJS #WebDevelopment #LearningInPublic #Consistency #Frontend #FullStack #Persistence
 

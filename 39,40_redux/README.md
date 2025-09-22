@@ -48,7 +48,6 @@ export const counterSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 export default counterSlice.reducer;
 
-
 // asyncActions.js
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
@@ -86,3 +85,11 @@ export const productSlice = createSlice({
 });
 
 export default productSlice.reducer;
+
+
+## 🔗 Connect with Me  
+- 🌐 [GitHub](https://github.com/Maheshkrsaw)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/maheshmahi07)  
+- 🐦 [Twitter/X](https://x.com/kumarMahesh9304)  
+
+---

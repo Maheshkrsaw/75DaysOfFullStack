@@ -14,7 +14,7 @@ function SideNav() {
     New Feeds
   </h1>
 
-  <Link className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
+  <Link to="/trending" className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
     <i className="ri-fire-fill"></i> Trending
   </Link>
 

@@ -12,9 +12,10 @@ function Home() {
   const [wallpaper, setWallpaper] = useState(null);
   const [trending, setTrending] = useState([]);
   const [category, setCategory] = useState("all");
-  const [loading, setLoading] = useState(true); // Track loading
+  const [loadingTrending, setLoadingTrending] = useState(true);
+  const [loadingWallpaper, setLoadingWallpaper] = useState(true);
 
-  // Fetch wallpaper
+  // 1️⃣ Wallpaper fetch (mount only)
   const fetchWallpaper = async () => {
     try {
       const { data } = await axios.get(`/trending/movie/day`);
@@ -24,10 +25,16 @@ function Home() {
       }
     } catch (err) {
       console.log("Wallpaper fetch error:", err);
+    } finally {
+      setLoadingWallpaper(false);
     }
   };
 
-  // Fetch trending data
+  useEffect(() => {
+    fetchWallpaper();
+  }, []); // [] → only once on mount
+
+  // 2️⃣ Trending fetch (category change)
   const fetchTrending = async (cat) => {
     try {
       const url = cat === "all" ? `/trending/movie/day` : `/trending/${cat}/day`;
@@ -40,16 +47,14 @@ function Home() {
     }
   };
 
-  // Fetch data when component mounts or category changes
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true); // start loader
-      await fetchWallpaper();
+    const fetchTrendingData = async () => {
+      setLoadingTrending(true);
       await fetchTrending(category);
-      setLoading(false); // stop loader
+      setLoadingTrending(false);
     };
-    fetchData();
-  }, [category]);
+    fetchTrendingData();
+  }, [category]); // only trending updates when category changes
 
   return (
     <div className="flex w-screen h-screen">
@@ -57,20 +62,26 @@ function Home() {
       <div className="w-[80%] h-full overflow-auto overflow-x-hidden p-5">
         <Topnav />
 
-        {/* Conditional rendering in return */}
-        {loading ? (
-          <div className="flex justify-center items-center h-[80vh]">
+        {/* Wallpaper */}
+        {loadingWallpaper ? (
+          <div className="flex justify-center items-center h-[40vh]">
             <ClipLoader color="#36d7b7" size={60} />
           </div>
         ) : (
-          <>
-            {wallpaper && <Header data={wallpaper} />}
-            <HorizontalCards
-              data={trending}
-              category={category}
-              setCategory={setCategory}
-            />
-          </>
+          wallpaper && <Header data={wallpaper} />
+        )}
+
+        {/* HorizontalCards */}
+        {loadingTrending ? (
+          <div className="flex justify-center items-center h-[30vh]">
+            <ClipLoader color="#36d7b7" size={50} />
+          </div>
+        ) : (
+          <HorizontalCards
+            data={trending}
+            category={category}
+            setCategory={setCategory}
+          />
         )}
       </div>
     </div>

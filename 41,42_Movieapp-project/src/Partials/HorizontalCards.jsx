@@ -10,14 +10,13 @@ function HorizontalCards({ data, category, setCategory }) {
       {/* Heading + Dropdown */}
       <div className="mb-5 flex items-center justify-between">
         <h1 className="text-3xl font-semibold text-zinc-400">Trending</h1>
-        <div className="w-[200px]">
-          <Dropdown
-            title="Filter"
-            options={["tv", "movie", "all"]}
-            selected={category}
-            setSelected={setCategory} // onChange effect sirf yahan
-          />
-        </div>
+
+        <Dropdown
+          title="Filter"
+          options={["tv", "movie", "all"]}
+          selected={category}
+          setSelected={setCategory}
+        />
       </div>
 
       {/* Horizontal scroll cards */}

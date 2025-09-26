@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Trending from './Components/Trending'
 import Popular from './Components/Popular'
 import Movies from './Components/Movies'
+import TvShows from './Components/TvShows'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/trending" element={<Trending />} />
       <Route path="/popular" element={<Popular />} />
       <Route path="/movies" element={<Movies />} />
+      <Route path="/tvshows" element={<TvShows />} />
     </Routes>
     </div>
     </>

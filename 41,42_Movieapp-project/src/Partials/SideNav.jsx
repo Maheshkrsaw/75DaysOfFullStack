@@ -26,7 +26,7 @@ function SideNav() {
     <i className="ri-movie-2-fill"></i> Movies
   </Link>
 
-  <Link className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
+  <Link to="/tvshows" className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
     <i className="ri-tv-fill"></i> TV Shows
   </Link>
 

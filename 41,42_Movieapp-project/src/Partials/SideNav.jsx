@@ -22,7 +22,7 @@ function SideNav() {
     <i className="ri-bar-chart-fill"></i> Popular
   </Link>
 
-  <Link className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
+  <Link  to="/movies" className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
     <i className="ri-movie-2-fill"></i> Movies
   </Link>
 

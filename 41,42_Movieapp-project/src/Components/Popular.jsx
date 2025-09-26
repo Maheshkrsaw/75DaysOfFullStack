@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Dropdown from "../Partials/Dropdown";
 import Topnav from "../Partials/Topnav";
+import Dropdown from "../Partials/Dropdown";
 import Cards from "../Partials/Cards";
-import axios from "../Utils/Axios"; // your configured axios instance
+import axios from "../Utils/Axios"; // configured with baseURL & api_key
 import ClipLoader from "react-spinners/ClipLoader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 function Popular() {
-    document.title = "FW | POPULAR " ;
+  document.title = "FW | POPULAR MOVIES";
   const navigate = useNavigate();
-  const [category, setCategory] = useState("movie");
-  const [duration, setDuration] = useState("day"); // lowercase for API
+
   const [popular, setPopular] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
+  // Fetch movies from /movie/popular
   const GetPopular = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/trending/${category}/${duration}?page=${page}`);
+      const { data } = await axios.get(`/movie/popular?page=${page}`);
 
       if (data.results?.length > 0) {
         setPopular((prev) => [...prev, ...data.results]);
@@ -29,7 +29,7 @@ function Popular() {
         setHasMore(false);
       }
     } catch (error) {
-      console.error("Error fetching Popular:", error);
+      console.error("Error fetching popular movies:", error);
     } finally {
       setLoading(false);
     }
@@ -44,7 +44,7 @@ function Popular() {
 
   useEffect(() => {
     refreshHandler();
-  }, [category, duration]);
+  }, []);
 
   return (
     <div className="w-screen h-screen">
@@ -54,30 +54,18 @@ function Popular() {
         </div>
       ) : (
         <>
-          {/* Header + Dropdown */}
+          {/* Header + Topnav */}
           <div className="px-[10%] w-full flex items-center justify-between">
             <h1 className="text-2xl font-semibold text-zinc-400 flex items-center gap-2">
               <i
                 onClick={() => navigate(-1)}
                 className="hover:text-[#6556CD] ri-arrow-left-line cursor-pointer text-2xl"
               ></i>
-              Popular
+              Popular Movies
             </h1>
 
             <div className="flex justify-between items-center gap-4">
               <Topnav />
-              <Dropdown
-                title="Select Category"
-                options={["movie", "tv", "all"]}
-                selected={category}
-                setSelected={setCategory}
-              />
-              <Dropdown
-                title="Select Duration"
-                options={["day", "week"]}
-                selected={duration}
-                setSelected={setDuration}
-              />
             </div>
           </div>
 
@@ -94,7 +82,7 @@ function Popular() {
                 </div>
               }
             >
-              <Cards data={popular} title={category} />
+              <Cards data={popular} title="Movies" />
             </InfiniteScroll>
           </div>
         </>

@@ -72,12 +72,19 @@ function Trending() {
             <div className="flex  mr-20 items-center gap-4 ">
               <Topnav  />
 
-              <Dropdown
-                title="Select Category"
-                options={["movie", "tv", "all"]}
-                selected={category}
-                setSelected={setCategory}
-              />
+             <Dropdown
+  title="Select Category"
+  options={["Now Playing", "Popular", "Top Rated", "Upcoming"]}
+  selected={
+    ["Now Playing", "Popular", "Top Rated", "Upcoming"].find(
+      (label) => label.toLowerCase().replace(" ", "_") === category
+    ) || "Now Playing"
+  }
+  setSelected={(label) =>
+    setCategory(label.toLowerCase().replace(" ", "_"))
+  }
+/>
+
 
               <Dropdown
                 title="Select Duration"

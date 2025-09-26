@@ -18,7 +18,7 @@ function SideNav() {
     <i className="ri-fire-fill"></i> Trending
   </Link>
 
-  <Link className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
+  <Link  to="/popular" className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
     <i className="ri-bar-chart-fill"></i> Popular
   </Link>
 

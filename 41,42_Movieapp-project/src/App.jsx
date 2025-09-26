@@ -1,7 +1,8 @@
 import React from 'react'
 import Home from './Components/Home'
 import { Route, Routes } from 'react-router-dom'
-import Trending from './Partials/Trending'
+import Trending from './Components/Trending'
+import Popular from './Components/Popular'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/trending" element={<Trending />} />
+      <Route path="/popular" element={<Popular />} />
     </Routes>
     </div>
     </>

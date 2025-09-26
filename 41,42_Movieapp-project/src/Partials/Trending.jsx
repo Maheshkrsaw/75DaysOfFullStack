@@ -17,7 +17,7 @@ function Trending() {
     try {
       setLoading(true); // start loading
       const { data } = await axios.get(`/trending/${category}/${duration}`);
-    
+
       setTrending(data?.results || []);
     } catch (error) {
       console.error("Error:", error);
@@ -31,7 +31,7 @@ function Trending() {
   }, [category, duration]);
 
   return (
-    <div className="w-screen h-screen px-[3%]">
+    <div className="w-screen h-screen px-[3%] overflow-hidden overflow-y-auto">
       {loading ? (
         <div className="flex justify-center items-center h-[80vh]">
           <ClipLoader color="#36d7b7" size={60} />
@@ -64,8 +64,6 @@ function Trending() {
               />
             </div>
           </div>
-
-          
 
           <Cards data={trending} title={duration} />
         </>

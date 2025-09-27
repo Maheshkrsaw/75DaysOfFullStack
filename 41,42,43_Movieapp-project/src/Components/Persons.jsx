@@ -76,7 +76,7 @@ function Persons() {
             }
             className="flex flex-wrap justify-start gap-5"
           >
-            <Cards data={persons} title="Persons" />
+            <Cards data={persons} title="person" />
           </InfiniteScroll>
         </div>
       )}

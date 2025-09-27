@@ -105,7 +105,7 @@ function TvShows() {
               </div>
             }
           >
-            <Cards data={shows} title="TV Shows" />
+            <Cards data={shows} title="tv" />
           </InfiniteScroll>
         </div>
       )}

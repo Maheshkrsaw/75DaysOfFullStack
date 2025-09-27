@@ -99,7 +99,7 @@ function Movies() {
               </div>
             }
           >
-            <Cards data={movies} title="Movies" />
+            <Cards data={movies} title="movie" />
           </InfiniteScroll>
         </div>
       )}

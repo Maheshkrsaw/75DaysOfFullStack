@@ -31,7 +31,7 @@ const Topnav = () => {
   };
 
   return (
-    <div className="w-full h-[10vh] relative flex justify-start items-center px-[15%]">
+    <div className="z-[100] w-full h-[10vh] relative flex justify-start items-center px-[15%]">
       <i className="text-zinc-400 text-3xl ri-search-2-line"></i>
       <input
         type="text"

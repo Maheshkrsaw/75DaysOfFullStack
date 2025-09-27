@@ -8,7 +8,7 @@ const Cards = ({ data, title }) => {
         <Link
           className="relative w-[22%] mx-[1%] mb-5 flex flex-col items-start"
           key={i}
-          to="#"
+          to={`/${c.media_type || title }/details/${c.id}`}
         >
           <img
             className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[40vh] w-full object-cover rounded-md"

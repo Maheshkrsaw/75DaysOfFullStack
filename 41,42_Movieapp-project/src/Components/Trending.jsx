@@ -9,10 +9,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 function Trending() {
   const navigate = useNavigate();
-    document.title = "FW | TRENDING " ;
+  document.title = "FW | TRENDING";
 
   const [category, setCategory] = useState("all");
-  const [duration, setDuration] = useState("day"); // lowercase
+  const [duration, setDuration] = useState("day");
   const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -20,24 +20,23 @@ function Trending() {
 
   const GetTrending = async () => {
     try {
-      setLoading(true); // start loader
+      setLoading(true);
 
+      // ✅ Correct API call
       const { data } = await axios.get(
         `/trending/${category}/${duration}?page=${page}`
       );
 
       if (data.results?.length > 0) {
-        setTrending(prev => [...prev, ...data.results]);
-        setPage(prev => prev + 1);
+        setTrending((prev) => [...prev, ...data.results]);
+        setPage((prev) => prev + 1);
       } else {
         setHasMore(false);
       }
-
-     
     } catch (error) {
       console.error("Error fetching trending:", error);
     } finally {
-      setLoading(false); // stop loader
+      setLoading(false);
     }
   };
 
@@ -60,7 +59,8 @@ function Trending() {
         </div>
       ) : (
         <>
-          <div className="px-[10%] w-full flex items-center justify-between">
+          {/* Header */}
+          <div className="px-[2%] w-full flex items-center justify-between">
             <h1 className="text-2xl font-semibold text-zinc-400 flex items-center gap-2">
               <i
                 onClick={() => navigate(-1)}
@@ -69,23 +69,18 @@ function Trending() {
               Trending
             </h1>
 
-            <div className="flex  mr-20 items-center gap-4 ">
-              <Topnav  />
+            <div className="w-full flex mr-20 items-center justify-between gap-4">
+              <Topnav />
 
-             <Dropdown
-  title="Select Category"
-  options={["Now Playing", "Popular", "Top Rated", "Upcoming"]}
-  selected={
-    ["Now Playing", "Popular", "Top Rated", "Upcoming"].find(
-      (label) => label.toLowerCase().replace(" ", "_") === category
-    ) || "Now Playing"
-  }
-  setSelected={(label) =>
-    setCategory(label.toLowerCase().replace(" ", "_"))
-  }
-/>
+              {/* ✅ Correct Category Dropdown */}
+              <Dropdown
+                title="Select Category"
+                options={["all", "movie", "tv"]}
+                selected={category}
+                setSelected={setCategory}
+              />
 
-
+              {/* ✅ Correct Duration Dropdown */}
               <Dropdown
                 title="Select Duration"
                 options={["day", "week"]}
@@ -95,22 +90,22 @@ function Trending() {
             </div>
           </div>
 
-        <div className="w-full bg-[#1F1E24] min-h-screen px-[5%]">
-  <InfiniteScroll
-    dataLength={trending.length}
-    next={GetTrending}
-    hasMore={hasMore}
-    className="flex flex-wrap justify-start gap-5 mt-5"
-    loader={
-      <div className="w-full flex justify-center my-5">
-        <ClipLoader color="#36d7b7" size={60} />
-      </div>
-    }
-  >
-    <Cards data={trending} title={category} />
-  </InfiniteScroll>
-</div>
-
+          {/* Content */}
+          <div className="w-full bg-[#1F1E24] min-h-screen px-[5%]">
+            <InfiniteScroll
+              dataLength={trending.length}
+              next={GetTrending}
+              hasMore={hasMore}
+              className="flex flex-wrap justify-start gap-5 mt-5"
+              loader={
+                <div className="w-full flex justify-center my-5">
+                  <ClipLoader color="#36d7b7" size={60} />
+                </div>
+              }
+            >
+              <Cards data={trending} title={category} />
+            </InfiniteScroll>
+          </div>
         </>
       )}
     </div>

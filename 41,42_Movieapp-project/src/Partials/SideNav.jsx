@@ -30,8 +30,8 @@ function SideNav() {
     <i className="ri-tv-fill"></i> TV Shows
   </Link>
 
-  <Link className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
-    <i className="ri-team-fill"></i> People
+  <Link to="/persons" className="flex items-center gap-2 hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-3">
+    <i className="ri-team-fill"></i> Persons
   </Link>
 </nav>
 

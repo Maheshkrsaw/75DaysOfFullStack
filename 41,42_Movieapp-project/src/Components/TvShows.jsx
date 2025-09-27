@@ -57,19 +57,20 @@ function TvShows() {
     <div className="w-screen min-h-screen bg-[#1F1E24]">
       {/* Header + Dropdown */}
       <div className=" w-full flex items-center justify-between px-[10%] py-5">
-       <h1 className="text-2xl font-semibold text-zinc-400 flex items-center gap-2 ">
-  <i
-    onClick={() => navigate(-1)}
-    className="hover:text-[#6556CD] ri-arrow-left-line cursor-pointer text-2xl"
-  ></i>
-  TV Shows{" "}
-  <span className="text-sm text-zinc-300">
-    - {categories.find((c) => c.value === category)?.label || "Airing Today"}
-  </span>
-</h1>
+        <h1 className="text-2xl font-semibold text-zinc-400 flex items-center gap-2 ">
+          <i
+            onClick={() => navigate(-1)}
+            className="hover:text-[#6556CD] ri-arrow-left-line cursor-pointer text-2xl"
+          ></i>
+          TV Shows{" "}
+          <span className=" text-sm text-zinc-300">
+            -{" "}
+            {categories.find((c) => c.value === category)?.label ||
+              "Airing Today"}
+          </span>
+        </h1>
 
-
-        <div className="flex items-center gap-4">
+        <div className="px-[2%] w-full flex items-center justify-between">
           <Topnav />
           <Dropdown
             title="Select Category"

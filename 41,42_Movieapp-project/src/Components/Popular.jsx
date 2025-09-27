@@ -64,9 +64,7 @@ function Popular() {
               Popular Movies
             </h1>
 
-            <div className="flex justify-between items-center gap-4">
-              <Topnav />
-            </div>
+            <Topnav />
           </div>
 
           {/* Cards with Infinite Scroll */}

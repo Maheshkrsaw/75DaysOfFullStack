@@ -35,7 +35,8 @@ function Home() {
   const fetchTrending = async (cat) => {
     setLoadingTrending(true);
     try {
-      const url = cat === "all" ? `/trending/movie/day` : `/trending/${cat}/day`;
+      const url =
+        cat === "all" ? `/trending/movie/day` : `/trending/${cat}/day`;
       const { data } = await axios.get(url);
       setTrending(data.results || []);
     } catch (err) {

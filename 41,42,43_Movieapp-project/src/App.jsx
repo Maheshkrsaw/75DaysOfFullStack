@@ -18,7 +18,7 @@ function App() {
         <Route path="/trending" element={<Trending />} />
         <Route path="/popular" element={<Popular />} />
         {/* Movies */}
-        <Route path="/movie" element={<Movies />} />
+        <Route path="/movies" element={<Movies />} />
         <Route path="/movie/details/:id" element={<MovieDetails />} />
         {/* TV Shows */}
         <Route path="/tvshows" element={<TvShows />} />{" "}

@@ -2,22 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 
-function HorizontalCards({ data, category, setCategory }) {
+function HorizontalCards({ data, category, setCategory, showFilter = false }) {
   if (!data || !Array.isArray(data)) return null;
 
   return (
     <div className="w-full h-[40vh] p-5">
       {/* Heading + Dropdown */}
-      <div className="mb-5 flex items-center justify-between">
-        <h1 className="text-3xl font-semibold text-zinc-400">Trending</h1>
-
-        <Dropdown
-          title="Filter"
-          options={["tv", "movie", "all"]}
-          selected={category}
-          setSelected={setCategory}
-        />
-      </div>
+{showFilter && (
+  <div className="mb-5 flex items-center justify-between">
+    <h1 className="text-3xl font-semibold text-zinc-400">Trending</h1>
+    <Dropdown
+      title="Filter"
+      options={["tv", "movie", "all"]}
+      selected={category}
+      setSelected={setCategory}
+    />
+  </div>
+)}
 
       {/* Horizontal scroll cards */}
       <div className="w-full flex overflow-x-auto space-x-5 h-[30vh] pb-3">
@@ -25,9 +26,9 @@ function HorizontalCards({ data, category, setCategory }) {
           <Link
             key={i}
             to={`/${d.media_type}/details/${d.id}`}
-            className="w-[200px] flex-shrink-0"
+            className="w-[200px] h-[35vh] flex-shrink-0"
           >
-            <div className="bg-zinc-800 p-3 rounded-lg hover:scale-105 hover:shadow-lg duration-300">
+            <div className="bg-zinc-800 p-3 rounded-lg hover:scale-105 hover:shadow-lg duration-300 overflow-y-auto">
               <img
                 className="w-full h-[55%] object-cover rounded-md mb-2"
                 src={`https://image.tmdb.org/t/p/original${

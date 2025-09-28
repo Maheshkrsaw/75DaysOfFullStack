@@ -1,9 +1,9 @@
-import { loadMovie, removeMovie } from "../reducers/movieSlice"; // You can rename to tvSlice if needed
+import { loadMovie, removeMovie } from "../reducers/movieSlice";
 import axios from "../../utils/axios";
 
 export const asyncloadtv = (id) => async (dispatch, getState) => {
   try {
-    // Fetch TV show details
+    // Fetch all TV details
     const detail = await axios.get(`/tv/${id}`);
     const externalid = await axios.get(`/tv/${id}/external_ids`);
     const recommendations = await axios.get(`/tv/${id}/recommendations`);
@@ -11,24 +11,22 @@ export const asyncloadtv = (id) => async (dispatch, getState) => {
     const videos = await axios.get(`/tv/${id}/videos`);
     const watchproviders = await axios.get(`/tv/${id}/watch/providers`);
 
-    // Pick the first trailer if available
-    const trailerVideo = videos.data.results.find(
-      (video) => video.type === "Trailer" && video.site === "YouTube"
-    );
+    // Pick first Trailer video (if exists)
+    const trailerVideo = videos.data.results.find((m) => m.type === "Trailer");
 
-    const theultimatedetails = {
+    // Prepare final object
+    const tvDetails = {
       detail: detail.data,
       externalid: externalid.data,
       recommendations: recommendations.data.results,
       similar: similar.data.results,
-      videos: trailerVideo || null, // ensure always object or null
-      watchproviders: watchproviders.data.results?.IN || {},
+      videos: trailerVideo || null,
+      watchproviders: watchproviders.data.results?.IN || null,
     };
 
-    // Dispatch to store
-    dispatch(loadMovie(theultimatedetails)); // use tvSlice if separate
-    console.log("TV Details Loaded:", theultimatedetails);
+    dispatch(loadMovie(tvDetails));
+    console.log(tvDetails);
   } catch (error) {
-    console.error("Error loading TV details:", error);
+    console.log("Error loading TV details: ", error);
   }
 };

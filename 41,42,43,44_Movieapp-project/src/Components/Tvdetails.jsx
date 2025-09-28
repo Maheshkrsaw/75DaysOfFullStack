@@ -10,7 +10,7 @@ const Tvdetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { info } = useSelector((state) => state.movie); // can be state.tv if using separate slice
+  const { info } = useSelector((state) => state.movie); // or state.tv if using separate slice
 
   useEffect(() => {
     dispatch(asyncloadtv(id));
@@ -28,16 +28,20 @@ const Tvdetails = () => {
     );
   }
 
+  const posterUrl = info.detail.poster_path || info.detail.backdrop_path
+    ? `https://image.tmdb.org/t/p/original/${info.detail.poster_path || info.detail.backdrop_path}`
+    : "/noimage.jpeg"; // fallback from public folder
+
   return (
     <div
       style={{
-        background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.7), rgba(0,0,0,.9)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path})`,
+        background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.7), rgba(0,0,0,.9)), url(${posterUrl})`,
         backgroundPosition: "top",
         backgroundSize: "cover",
       }}
-      className="relative w-screen min-h-screen px-[10%] py-5"
+      className="relative w-screen min-h-[185vh] px-[10%] py-5"
     >
-      {/* Part 1: Nav */}
+      {/* Nav */}
       <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-xl">
         <button
           onClick={() => navigate(-1)}
@@ -67,22 +71,17 @@ const Tvdetails = () => {
         )}
       </nav>
 
-      {/* Part 2: Poster & Info */}
+      {/* Poster & Info */}
       <div className="w-full flex flex-col md:flex-row mt-5">
         <img
-          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[50vh] object-cover"
-          src={`https://image.tmdb.org/t/p/original/${
-            info.detail.poster_path || info.detail.backdrop_path
-          }`}
-          alt={info.detail.name || info.detail.title}
+          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[50vh] object-cover rounded-lg"
+          src={posterUrl}
+          alt={info.detail.name}
         />
 
         <div className="content ml-0 md:ml-[5%] mt-5 md:mt-0 text-white flex-1">
           <h1 className="text-5xl font-black text-white">
-            {info.detail.name ||
-              info.detail.title ||
-              info.detail.original_name ||
-              info.detail.original_title}
+            {info.detail.name}
             <small className="text-2xl font-bold text-zinc-200 ml-2">
               ({info.detail.first_air_date?.split("-")[0]})
             </small>
@@ -92,7 +91,9 @@ const Tvdetails = () => {
             <span className="rounded-full text-xl font-semibold bg-yellow-600 text-white w-[7vh] h-[7vh] flex justify-center items-center">
               {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
             </span>
-            <h1 className="w-[60px] font-semibold text-2xl leading-6">User Score</h1>
+            <h1 className="w-[60px] font-semibold text-2xl leading-6">
+              User Score
+            </h1>
             <h1>{info.detail.first_air_date}</h1>
             <h1>{info.detail.genres?.map((g) => g.name).join(",")}</h1>
             <h1 className="font-bold">{info.detail.number_of_seasons} Seasons</h1>
@@ -120,8 +121,8 @@ const Tvdetails = () => {
         </div>
       </div>
 
-      {/* Part 3: Providers */}
-      <div className="flex flex-col gap-y-5 mt-10 mb-3">
+      {/* Watch Providers */}
+      <div className="flex flex-col gap-y-5 mt-10 mb-2">
         {info.watchproviders?.flatrate?.length > 0 && (
           <div className="flex items-center gap-2 flex-wrap">
             <h1 className="text-white mr-2">Available on Flatrate:</h1>
@@ -135,7 +136,6 @@ const Tvdetails = () => {
             ))}
           </div>
         )}
-
         {info.watchproviders?.rent?.length > 0 && (
           <div className="flex items-center gap-2 flex-wrap mt-3">
             <h1 className="text-white mr-2">Available on Rent:</h1>
@@ -149,7 +149,6 @@ const Tvdetails = () => {
             ))}
           </div>
         )}
-
         {info.watchproviders?.buy?.length > 0 && (
           <div className="flex items-center gap-2 flex-wrap mt-3">
             <h1 className="text-white mr-2">Available to Buy:</h1>
@@ -165,11 +164,34 @@ const Tvdetails = () => {
         )}
       </div>
 
-      {/* Part 4: Recommendations */}
+      {/* Seasons */}
       <hr className="mt-10 mb-5 border-none h-[2px] bg-zinc-500" />
-      <h1 className="text-3xl font-bold text-white">
-        Recommendations & Similar Stuff
-      </h1>
+      <h1 className="text-3xl font-bold text-white mb-5">Seasons</h1>
+      <div className="flex overflow-x-auto gap-6 py-4 px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
+        {info.detail.seasons.map((s, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-40 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              className="w-full h-[30vh] object-cover rounded-lg"
+              src={
+                s.poster_path
+                  ? `https://image.tmdb.org/t/p/original/${s.poster_path}`
+                  : "/noimage.jpeg"
+              }
+              alt={s.name || s.title || s.original_name || s.original_title}
+            />
+            <h1 className="text-xl text-zinc-300 mt-2 font-semibold text-center">
+              {s.name || s.title || s.original_name || s.original_title}
+            </h1>
+          </div>
+        ))}
+      </div>
+
+      {/* Recommendations */}
+      <hr className="mt-5 mb-5 border-none h-[2px] bg-zinc-500" />
+      <h1 className="text-3xl font-bold text-white">Recommendations & Similar Stuff</h1>
       <HorizontalCards
         data={info.recommendations.length > 0 ? info.recommendations : info.similar}
       />

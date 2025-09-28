@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import SideNav from "../Partials/SideNav";
 import Topnav from "../Partials/Topnav";
-import axios from "../Utils/Axios";
 import Header from "../Partials/Header";
 import HorizontalCards from "../Partials/HorizontalCards";
 import ClipLoader from "react-spinners/ClipLoader"; // Loader
+import axios from "../Utils/Axios";
 
 function Home() {
   document.title = "FILMYWORLD | HOMEPAGE";
@@ -82,6 +82,7 @@ function Home() {
             data={trending}
             category={category}
             setCategory={setCategory}
+            showFilter
           />
         )}
       </div>

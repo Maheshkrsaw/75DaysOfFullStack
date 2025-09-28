@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncloadmovie } from "../Store/Actions/Movieactions";
-import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation, Outlet } from "react-router-dom";
 import { removeMovie } from "../Store/reducers/movieSlice";
 import ClipLoader from "react-spinners/ClipLoader";
 import HorizontalCards from "../Partials/HorizontalCards";
+import { asyncloadmovie } from "../Store/actions/Movieactions";
 
 const Moviedetails = () => {
   const { pathname } = useLocation();
@@ -37,7 +37,7 @@ const Moviedetails = () => {
         backgroundPosition: "top",
         backgroundSize: "cover",
       }}
-      className="w-screen h-[148vh] px-[10%]"
+      className=" relative w-screen h-[148vh] px-[10%]"
     >
       {/* Part1 (Nav) */}
       <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-xl">
@@ -176,6 +176,8 @@ const Moviedetails = () => {
           info.recommendations.length > 0 ? info.recommendations : info.similar
         }
       />
+    <Outlet />
+
     </div>
   );
 };

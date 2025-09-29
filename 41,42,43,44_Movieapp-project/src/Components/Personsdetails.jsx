@@ -1,45 +1,33 @@
 // path: 41,42,43,44_Movieapp-project/src/Components/PersonsDetails.jsx
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { asyncLoadPerson, removeperson } from "../Store/actions/personsActions";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import axios from "../Utils/Axios";
-import ClipLoader from "react-spinners/ClipLoader";
 import HorizontalCards from "../Partials/HorizontalCards";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const PersonsDetails = () => {
   document.title = "FW | Person Details";
+
   const navigate = useNavigate();
   const { id } = useParams();
+  const dispatch = useDispatch();
 
-  const [info, setInfo] = useState(null);
-  const [category, setCategory] = useState("movie"); // movie or tv
+  const info = useSelector((state) => state.persons?.info);
+  const [category, setCategory] = useState("movie");
   const [loading, setLoading] = useState(true);
 
-  const fetchPersonDetails = async () => {
-    try {
-      setLoading(true);
-      const { data: detail } = await axios.get(`/person/${id}`);
-      const { data: externalid } = await axios.get(`/person/${id}/external_ids`);
-      const { data: combinedCredits } = await axios.get(`/person/${id}/combined_credits`);
-      const { data: tvCredits } = await axios.get(`/person/${id}/tv_credits`);
-      const { data: movieCredits } = await axios.get(`/person/${id}/movie_credits`);
-
-      setInfo({
-        detail,
-        externalid,
-        combinedCredits,
-        tvCredits,
-        movieCredits,
-      });
-    } catch (error) {
-      console.error("Error fetching person details:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchPersonDetails = async () => {
+      setLoading(true);
+      await dispatch(asyncLoadPerson(id));
+      setLoading(false);
+    };
     fetchPersonDetails();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    return () => {
+      dispatch(removeperson());
+    };
   }, [id]);
 
   if (loading || !info) {
@@ -50,6 +38,31 @@ const PersonsDetails = () => {
     );
   }
 
+  const { detail, externalid, combinedCredits } = info;
+
+  const personalInfo = [
+    { label: "Known For", value: detail.known_for_department },
+    { label: "Gender", value: detail.gender === 2 ? "Male" : "Female" },
+    { label: "Birthday", value: detail.birthday },
+    { label: "Deathday", value: detail.deathday || "Still Alive" },
+    { label: "Place of Birth", value: detail.place_of_birth },
+    { label: "Also Known As", value: detail.also_known_as.join(", ") },
+  ];
+
+  const socialLinks = [
+    { id: externalid.twitter_id, url: `https://twitter.com/${externalid.twitter_id}`, icon: "ri-twitter-fill", color: "text-blue-400" },
+    { id: externalid.instagram_id, url: `https://instagram.com/${externalid.instagram_id}`, icon: "ri-instagram-fill", color: "text-pink-500" },
+    { id: externalid.facebook_id, url: `https://facebook.com/${externalid.facebook_id}`, icon: "ri-facebook-fill", color: "text-blue-600" },
+  ].filter(link => link.id);
+
+  // Format biography line by line
+  const formatBiography = (bio) => {
+    if (!bio) return <p className="text-zinc-400">No biography available.</p>;
+    return bio.split("\n").map((line, idx) => (
+      <p key={idx} className="mt-2 text-zinc-400 break-words">{line}</p>
+    ));
+  };
+
   return (
     <div className="w-screen min-h-screen bg-[#1F1E24] text-white px-[10%] py-10">
       {/* Navigation */}
@@ -58,84 +71,59 @@ const PersonsDetails = () => {
           onClick={() => navigate(-1)}
           className="ri-arrow-left-line text-2xl cursor-pointer hover:text-[#6556CD]"
         ></i>
-        <h1 className="text-2xl font-semibold text-zinc-400">{info.detail.name}</h1>
+        <h1 className="text-xl font-bold text-zinc-400">{detail.name}</h1>
       </div>
 
       <div className="flex flex-col md:flex-row gap-10">
         {/* Left: Profile & Info */}
         <div className="w-[250px] flex-shrink-0">
           <img
-            src={
-              info.detail.profile_path
-                ? `https://image.tmdb.org/t/p/w300/${info.detail.profile_path}`
-                : "/no-image.png"
-            }
-            alt={info.detail.name}
+            src={detail.profile_path ? `https://image.tmdb.org/t/p/w300/${detail.profile_path}` : "/noimage.jpeg"}
+            alt={detail.name}
             className="w-[250px] h-[350px] object-cover rounded-lg shadow-lg"
           />
 
           <div className="mt-5 text-zinc-400">
-            <h2 className="text-lg font-semibold">Known For</h2>
-            <p>{info.detail.known_for_department}</p>
-
-            <h2 className="text-lg font-semibold mt-3">Gender</h2>
-            <p>{info.detail.gender === 2 ? "Male" : "Female"}</p>
-
-            <h2 className="text-lg font-semibold mt-3">Birthday</h2>
-            <p>{info.detail.birthday}</p>
-
-            <h2 className="text-lg font-semibold mt-3">Deathday</h2>
-            <p>{info.detail.deathday || "Still Alive"}</p>
-
-            <h2 className="text-lg font-semibold mt-3">Place of Birth</h2>
-            <p>{info.detail.place_of_birth}</p>
-
-            <h2 className="text-lg font-semibold mt-3">Also Known As</h2>
-            <p>{info.detail.also_known_as.join(", ")}</p>
+            {personalInfo.map((item, index) => (
+              <div key={index} className="mt-3">
+                <h2 className="text-lg font-semibold">{item.label}</h2>
+                <p>{item.value}</p>
+              </div>
+            ))}
 
             {/* Social Links */}
             <div className="mt-5 flex gap-3 text-2xl">
-              {info.externalid.twitter_id && (
+              {socialLinks.map((link, idx) => (
                 <a
-                  href={`https://twitter.com/${info.externalid.twitter_id}`}
+                  key={idx}
+                  href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-400"
+                  className={`hover:${link.color}`}
                 >
-                  <i className="ri-twitter-fill"></i>
+                  <i className={link.icon}></i>
                 </a>
-              )}
-              {info.externalid.instagram_id && (
-                <a
-                  href={`https://instagram.com/${info.externalid.instagram_id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-pink-500"
-                >
-                  <i className="ri-instagram-fill"></i>
-                </a>
-              )}
-              {info.externalid.facebook_id && (
-                <a
-                  href={`https://facebook.com/${info.externalid.facebook_id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-600"
-                >
-                  <i className="ri-facebook-fill"></i>
-                </a>
-              )}
+              ))}
             </div>
           </div>
         </div>
 
         {/* Right: Biography & Credits */}
-        <div className="flex-1">
-          <h2 className="text-3xl font-bold text-zinc-400">{info.detail.name}</h2>
+        <div className="flex-1 bg-[#1F1E24] overflow-x-hidden">
+          {/* Name */}
+          <h2 className="text-5xl font-bold text-zinc-400">{detail.name}</h2>
 
+          {/* Biography */}
           <h2 className="text-xl font-semibold mt-5">Biography</h2>
-          <p className="mt-2 text-zinc-400">{info.detail.biography || "No biography available."}</p>
+          <div>{formatBiography(detail.biography)}</div>
 
+          {/* HorizontalCards with Known For */}
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold text-zinc-400 mb-2">Known For</h2>
+            <HorizontalCards data={combinedCredits?.cast || []} />
+          </div>
+
+          {/* Acting Credits */}
           <div className="mt-8 flex justify-between items-center">
             <h2 className="text-xl font-semibold text-zinc-400">Acting Credits</h2>
             <select
@@ -148,7 +136,7 @@ const PersonsDetails = () => {
             </select>
           </div>
 
-          <div className="mt-4 list-disc text-zinc-400 max-h-[50vh] overflow-y-auto overflow-x-hidden border border-zinc-700 p-4 rounded shadow-lg">
+          <ul className="mt-4 list-disc text-zinc-400 max-h-[50vh] overflow-y-auto overflow-x-hidden border border-zinc-700 p-4 rounded shadow-lg">
             {(info[category + "Credits"]?.cast || []).map((c) => (
               <li
                 key={c.id}
@@ -160,7 +148,7 @@ const PersonsDetails = () => {
                 </Link>
               </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* in index.css or global CSS */
+body, html, #root {
+  background-color: #1F1E24;  /* ensure full dark background */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;          /* prevent horizontal scroll */
+}
+
+
 /* 
 primary - #1F1F24
 secondry - #6556CD 

@@ -11,13 +11,17 @@ import Personsdetails from "./Components/Personsdetails";
 import Trailer from "./Partials/Trailer";
 import Moviedetails from "./Components/Moviedetails";
 
+// ✅ Import ScrollToTopButton
+import ScrollToTopButton from "./Partials/ScrollToTopButton";
+
 function App() {
   return (
-    <div className="bg-[#1F1F24] w-screen h-screen flex">
+    <div className="bg-[#1F1F24] w-screen h-screen flex relative">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/popular" element={<Popular />} />
+
         {/* Movies */}
         <Route path="/movies" element={<Movies />} />
         <Route path="/movie/details/:id" element={<Moviedetails />}>
@@ -34,6 +38,9 @@ function App() {
         <Route path="/persons" element={<Persons />} />
         <Route path="/person/details/:id" element={<Personsdetails />} />
       </Routes>
+
+      {/* ✅ Scroll To Top Button globally */}
+      <ScrollToTopButton />
     </div>
   );
 }

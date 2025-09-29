@@ -1,15 +1,23 @@
-// personsSlice.jsx
-import { createSlice } from '@reduxjs/toolkit';
+// path: 41,42,43,44_Movieapp-project/src/Store/Reducers/personsSlice.jsx
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { persons: [] };
+const initialState = {
+  info: null, // single person details
+};
 
-const personsSlice = createSlice({
-  name: 'persons',
+export const personsSlice = createSlice({
+  name: "person",
   initialState,
   reducers: {
-    setPersons: (state, action) => { state.persons = action.payload; },
+    loadperson: (state, action) => {
+      state.info = action.payload;
+    },
+    removeperson: (state) => {
+      state.info = null;
+    },
   },
 });
 
-export const { setPersons } = personsSlice.actions;
+export const { loadperson, removeperson } = personsSlice.actions;
+
 export default personsSlice.reducer;

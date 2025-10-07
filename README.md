@@ -388,6 +388,93 @@ This is a short summary of my #75DaysFullStackAI journey from Day 37 to Day 40.
 
 ---
 
+# 🚀 Full-Stack Movie App — Development Log (Day 41–45)
+
+This document tracks my progress from **Day 41 to Day 45** in building the **React Movie App Project**.  
+Focus: Implementing advanced frontend features with API integration, infinite scrolling, and detailed pages.  
+
+---
+
+## 📅 Day 41  
+**Focus:** Redux Setup + State Management  
+- Integrated **Redux Toolkit** for global state management.  
+- Created slices for **movies, TV shows, trending, and persons**.  
+- Connected Redux with API calls to centralize state.  
+- Improved data flow: categories (Movies/TV/Persons) now update dynamically.  
+- Debugged state re-renders to avoid unnecessary API calls.  
+
+---
+
+## 📅 Day 42  
+**Focus:** Infinite Scroll + Sections  
+- Implemented **infinite scrolling** with [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component).  
+- Functionalities added for:  
+  - 🔥 Trending  
+  - ⭐ Popular  
+  - 🎬 Movies  
+  - 📺 TV Shows  
+  - 👤 Persons  
+- Category dropdown → fetches correct data dynamically.  
+- Added **ratings display** for all sections.  
+
+---
+
+## 📅 Day 43  
+**Focus:** UI Fixes + Item Details  
+- Fixed alignment issues in **Topnav (search box)**.  
+- Trending section now supports **all categories** properly.  
+- Added **item details view** (Movies/TV/Persons).  
+- External links integrated: **Wikipedia, IMDb, Official pages**.  
+- Debugging session with GPT support made workflow smoother.  
+
+---
+
+## 📅 Day 44  
+**Focus:** Movie & TV Details + Trailers  
+- Completed **Movie Details Page**:  
+  - Title, IMDb Score, Tagline, Overview, Duration in minutes.  
+  - Similar Movies section.  
+  - Trailer layout (UI done but functionality pending).  
+- Completed **TV Show Details Page**:  
+  - Seasons data integrated.  
+  - Similar TV shows displayed.  
+  - Episode details structured.  
+
+---
+
+## 📅 Day 45  
+**Focus:** People (Persons) Section  
+
+### Persons.jsx (People List Page)
+- Dynamic page title → `FW | People Shows`.  
+- Filters: **Popular / Latest / Trending**.  
+- Infinite scroll for loading more people.  
+- Responsive **cards with fallback images**.  
+- Dark theme + Loader animations.  
+
+### PersonDetails.jsx (Single Person Page)
+- Dynamic page title → `FW | Person Details`.  
+- Full bio, profile, and personal info:  
+  - Gender, DOB, Place of Birth, Aliases.  
+- External IDs & **social links (Twitter, Instagram, Facebook)**.  
+- Biography formatted line-by-line.  
+- **Known For Section** (scrollable cards).  
+- **Acting Credits** categorized by Movie/TV.  
+- Loader + Back navigation.  
+
+---
+
+## ⚡ Key Learning (Day 41–45)  
+- Component reuse is good, but **blind copying causes bugs**.  
+- Debugging is part of the journey—fixing PersonDetails took **1+ hr**.  
+- Redux made state management cleaner & scalable.  
+- Infinite scrolling improved UX but required careful API handling.  
+- Consistency in **dark theme + loaders** makes UI professional.  
+
+---
+
+✅ **Next Step → Full Project Overview (Day 46).**
+ completed overview 
 
 
 ## 📌 Hashtags  

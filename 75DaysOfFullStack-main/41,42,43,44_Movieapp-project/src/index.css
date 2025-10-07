@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* in index.css or global CSS */
+body, html, #root {
+  background-color: #1F1E24;  /* ensure full dark background */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;          /* prevent horizontal scroll */
+}
+
+
+/* 
+primary - #1F1F24
+secondry - #6556CD 
+*/
+
+::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #181819;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #6556CD ;
+    border-radius: 10px;
+}
+
+
+
+
+select {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  background: #272720;
+  color: #fff;
+  padding: 0 1em;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  width: 10em;
+  /* margin-right: 5px; */
+  height: 3em;
+  border-radius: 0.25em;
+  line-height: 3;
+  transition: all 0.3s ease;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 2em;
+  height: 3em;
+  background: #272720;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+.select::after {
+  content: "▼";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #272720;
+  color: #fff;
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.select:hover::after {
+  color: #6556cd;
+}

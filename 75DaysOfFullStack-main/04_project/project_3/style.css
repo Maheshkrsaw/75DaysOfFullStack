@@ -1,0 +1,139 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+}
+
+
+#nav{
+    height: 80px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+#nav1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.gola{
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+#nav2   {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+#nav2 h4{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#nav2 span{
+    color: rgb(51, 51, 58);
+    margin-left: 25px;
+}
+
+
+#nav_part2{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    padding: 0 40px;
+    /* background-color: red; */
+}
+
+#nav_part2 h3{
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#content{
+    height: calc(100% - 150px);
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+
+#text-content{
+    height: 40%;
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+
+#text-content::-webkit-scrollbar{
+   background-color: transparent;
+   height: 5px;
+
+}
+
+
+#text-content::-webkit-scrollbar-thumb{
+    background-color: orangered;
+}
+
+
+.elem{
+    flex-shrink: 0;
+    height: 100%;
+    width: 50%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.elem h1{
+    font-size: 100px;
+    font-weight: 100;
+}
+
+#image-content{
+    height: 60%;
+    width: 100%;
+    /* color: black; */
+    display: flex;
+    overflow-x: auto;
+}
+
+#image-content img{
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

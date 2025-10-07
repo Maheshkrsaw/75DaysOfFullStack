@@ -1,0 +1,26 @@
+@import "tailwindcss";
+body{
+    background-color: #121212;
+    color: white;
+}
+
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); } /* 1/3 part shift */
+}
+
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse linear infinite;
+}
+
+

@@ -1,0 +1,266 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: general sans  ;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+#mini-circle{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 99999;
+    border-radius: 50%;
+    background-color: #fff;
+    pointer-events: none;
+}
+
+ #main{
+    width: 100%;
+    background-color: #000;
+ }
+
+ #hero{
+    position: relative;
+    height: 100vh;
+     width: 100%;
+     background-color: black;
+     color: #fff;
+ }
+
+#nav{
+    width: 100%;
+    padding: 20px 40px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ #nav a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+ }
+
+#heading{
+    margin-top: 40px ;
+}
+
+ #heading h1{
+    margin-left: 30px;
+    line-height: 1; 
+    font-family: "Genral Sans Meduim";
+    font-size: 11vw;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: .7;
+ }
+
+
+ #heading #secondh1{
+    margin-left: 130px;
+ }
+
+ #block-text{
+    /* background-color: red; */
+    width: fit-content;
+ }
+
+#block-text h5{
+    text-align: right;
+}
+
+#chhotiheading{
+    margin-top: 100px;
+    padding-right: 30px;
+}
+
+#chhotiheading h5{
+    margin-top: 0.9  vw;
+    font-size: 1.9vw;
+text-transform: uppercase;
+text-align: right;
+}
+
+#herofooter{
+    width: 100%;
+    position: absolute;
+    bottom: 5% ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3.9vw;
+}
+
+
+#herofooter a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#herofooter #iconset{
+    display: flex;
+    gap: 5px;
+}
+
+#herofooter .circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#second{
+    position: relative;
+    color: white;
+    padding-top: 100px;
+    padding-right: 10vw;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+}
+
+
+.elem{
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 3vw;
+    padding-right: 0;
+    border-top: 1px solid white;
+    position: relative;
+    /* overflow: hidden; */
+    z-index: 9999;
+}
+
+.elem h1{
+    font-size: 8vw;
+    text-transform: uppercase;
+    opacity: .7;
+}
+
+
+.elem:last-child {
+  border-bottom: 1px solid white;
+}
+
+ .elem img{
+    position: absolute;
+    height: 140%;
+    border-radius: 8px;
+    z-index: 999;
+    object-fit:cover;
+    opacity: 0;
+
+ }
+
+ #about{
+    width: 100%;
+    background-color: black;
+    padding: 10vw 5vw;
+    color: white;
+    display: flex;
+    padding-left: 35vw;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 50px;
+ }
+
+ #about img{
+    width: 20vw;
+ }
+
+
+ #text-about{
+    width: 25rem;
+    /* background-color: red; */
+ }
+
+ #text-about h5{
+     text-transform: uppercase;
+    opacity: .6;
+    margin-bottom: 10px;
+ }
+
+
+  #text-about p{
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+
+   #text-about button{
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-size: 12px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #fff;
+   }
+
+
+
+   #subscribe{
+    color: #fff;
+    padding: 20px 30px;
+    background-color: black; 
+    padding-bottom: 10vw; 
+   }
+
+   #subscribe h5{
+    text-transform: uppercase;
+    opacity: .6;
+   }
+
+   #subscribe h3{
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 10px;
+   }
+
+
+   #footer{
+    color: white;
+    background-color: #000;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 0;
+   }
+
+   #left-footer{
+    display: flex;
+    font-size: 2.5vw;
+    gap: 20px;
+    padding-left: 2vw;
+   }
+
+   #right-footer{
+    display: flex;
+    gap: 20px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+   }
+
+   #footer a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #fff;
+   }

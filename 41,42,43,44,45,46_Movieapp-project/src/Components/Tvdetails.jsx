@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams, useNavigate, Outlet } from "react-router-dom";
-import { removeMovie } from "../Store/reducers/movieSlice";
+// import { removeMovie } from "../Store/reducers/movieSlice";
 import ClipLoader from "react-spinners/ClipLoader";
 import HorizontalCards from "../Partials/HorizontalCards";
 import { asyncloadtv } from "../Store/actions/Tvactions";
+import { removeMovie } from "../Store/Reducers/Movieslice";
 
 const Tvdetails = () => {
   const { id } = useParams();

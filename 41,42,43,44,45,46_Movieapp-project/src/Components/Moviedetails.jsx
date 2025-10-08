@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams, useNavigate, useLocation, Outlet } from "react-router-dom";
-// import { removeMovie } from "../Store/reducers/movieSlice";
 import ClipLoader from "react-spinners/ClipLoader";
 import HorizontalCards from "../Partials/HorizontalCards";
 import { asyncloadmovie } from "../Store/actions/Movieactions";
+// import { removeMovie } from "../Store/reducers/movieSlice";
 import { removeMovie } from "../Store/Reducers/Movieslice";
 
 const Moviedetails = () => {

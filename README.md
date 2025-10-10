@@ -390,7 +390,7 @@ This is a short summary of my #75DaysFullStackAI journey from Day 37 to Day 40.
 
 ---
 
-# 🚀 Full-Stack Movie App — Development Log (Day 41–45)
+# 🚀 Full-Stack Movie App — Development Log (Day 41–46)
 
 This document tracks my progress from **Day 41 to Day 45** in building the **React Movie App Project**.  
 Focus: Implementing advanced frontend features with API integration, infinite scrolling, and detailed pages.  
@@ -466,7 +466,7 @@ Focus: Implementing advanced frontend features with API integration, infinite sc
 
 ---
 
-## ⚡ Key Learning (Day 41–45)  
+## ⚡ Key Learning (Day 41–46)  
 - Component reuse is good, but **blind copying causes bugs**.  
 - Debugging is part of the journey—fixing PersonDetails took **1+ hr**.  
 - Redux made state management cleaner & scalable.  
@@ -475,8 +475,102 @@ Focus: Implementing advanced frontend features with API integration, infinite sc
 
 ---
 
-✅ **Next Step → Full Project Overview (Day 46).**
+✅ ** → Full Project Overview (Day 46).**
 ## [FilmyWorld — React Final Project](https://react-filmyworld.netlify.app/)  
+
+
+# 🗓️ Day 47–51 – React Deep Dive & Problem Solving Journey  
+> Part of the #75DaysFullStackAI Challenge  
+> Focus: React core concepts, async JavaScript, DOM manipulation, and revision.
+
+---
+
+## 📅 Day 47 – React State Management & Props Flow  
+### 🎯 Focus
+- Deep dive into `useState`, `useEffect`, and component props flow.
+- Practiced multiple state updates and rendering behaviors.
+- Understood data passing between parent and child components.
+
+### 💡 Key Learnings
+- Re-rendering happens whenever state or props change.
+- `useEffect` dependencies determine execution flow.
+- Importance of cleanup functions in avoiding memory leaks.
+
+---
+
+## 📅 Day 48 – Async JavaScript (Callbacks, Promises, Async/Await)  
+### 🎯 Focus
+- Learned JavaScript asynchronous behavior.
+- Covered: **Callbacks → Promises → Fetch → Async/Await.**
+- Used **Gemini & GPT live session** (voice + camera) to understand execution flow — though recording failed, it helped conceptually.
+
+### 💡 Key Learnings
+- Async flow helps avoid blocking code.
+- Error handling with `try/catch` in async functions.
+- Real-world practice using API calls with `fetch`.
+
+---
+
+## 📅 Day 49 – DOM Manipulation Practice (1–50 Questions)  
+### 🎯 Focus
+- Practiced **basic to advanced DOM manipulation** questions.
+- Strengthened fundamentals of selectors, events, and updates.
+- Realized gap between concept learning and UI design implementation.
+
+### 🧠 Reflection
+> “Concepts are easy; design needs practice.”  
+So next 2 days dedicated to improving frontend design and visual layout implementation.
+
+### 💡 Key Learnings
+- DOM = direct link between logic and visuals.
+- Small mistakes in query selectors lead to big rendering issues.
+- Will now focus on converting logic into interactive UI.
+
+---
+
+## 📅 Day 50 – React Revision & Distraction Management  
+### 🎯 Focus
+- Revised React core topics:
+  - `useState`, `useEffect`, `props`, conditional rendering,
+  - children, list & keys, inline styling,
+  - class-based vs functional components,
+  - error boundaries, and fragments.
+- Faced distractions but continued with consistency.
+
+### 💡 Key Learnings
+- Revision helps connect scattered topics.
+- Realized productivity decreases with distractions — focus > duration.
+- Backend journey starts soon after React completion.
+
+---
+
+## 📅 Day 51 – React Revision Continues + Setup for Deployment  
+### 🎯 Focus
+- Continued React core revision.
+- Planned for **final React project deployment** (`FilmyWorld`).
+- Issue: GitHub mess and deployment failure (build errors on Netlify).
+- Decided to reorganize repos and fix deployment next day.
+
+### 💡 Key Learnings
+- Case sensitivity matters in file imports during deployment.
+- Local success ≠ deployment success.
+- Every failure adds understanding to real-world dev workflow.
+
+---
+
+## 🧩 Summary (Code View)
+```js
+// Day 47–51 Summary
+const learningPath = {
+  47: "React useState & useEffect deep dive, props flow",
+  48: "Async JS – Callbacks, Promises, Fetch, Async/Await using Gemini+GPT",
+  49: "DOM manipulation (1–50 questions), frontend design practice plan",
+  50: "React revision & distraction control, preparing for backend",
+  51: "React core revision + deployment prep for FilmyWorld project"
+};
+
+console.log("Key Takeaway:", "Learning consistency matters more than perfection!");
+
 
 
 ## 📌 Hashtags  

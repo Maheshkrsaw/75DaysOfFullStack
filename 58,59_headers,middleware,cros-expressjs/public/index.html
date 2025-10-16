@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sum App</title>
+  <!-- ✅ load axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h2>Find Sum</h2>
+  <input type="text" id="a" placeholder="First number">
+  <input type="text" id="b" placeholder="Second number">
+  <button onclick="sendRequest()">Find Sum</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    async function sendRequest() {
+      const a = document.getElementById("a").value;
+      const b = document.getElementById("b").value;
+
+      const response = await axios.post("http://localhost:3001/sum", {
+        a: a,
+        b: b
+      });
+
+      document.getElementById("result").innerText = "Sum: " + response.data.answer;
+      console.log(response.data);
+    }
+  </script>
+</body>
+</html>

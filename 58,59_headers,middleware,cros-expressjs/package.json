@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "expess": "^0.0.1-security",
+    "express": "^5.1.0",
+    "serve": "^14.2.5"
+  },
+  "name": "58_headers-and-expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

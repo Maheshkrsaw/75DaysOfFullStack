@@ -1,0 +1,289 @@
+:root{
+  --gray:#212121;
+  --green:#02E797;
+  --black :#0C0C0C;
+  --white : #E9E9E9;
+  --lgray : #929292;
+}
+
+
+/* Basic CSS Boilerplate */
+
+@font-face {
+  font-family: helu ;
+  src: url(./font/HelveticaNowDisplay-Medium_2wEhlmo-TD_wsqqEEwmJC.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--white);
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  background-color: var(--black);
+}
+
+.green{
+  color: var(--green);
+}
+
+.lgray{
+  color: var(--lgray);
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 70px 7px;
+  position: fixed;
+  width: 100%;
+}
+
+.nav1{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav1 img{
+  height: 50px;
+}
+
+.nav1 h4{
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.nav2{
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.nav2 h4{
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: helu;
+}
+
+.nav3{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  display: none;
+}
+
+.nav3 h4{
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: helu;
+}
+
+main{
+  padding-top: 100px; 
+}
+
+section{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 70px;
+  font-family: helu;
+  flex-wrap: wrap;   /* ✅ added to stop overflow */
+}
+
+.section1 .left{
+  width: 45%;
+} 
+
+.section1 .left h1{
+  font-size: 45px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.section1 .left .tag{
+  display: flex;
+  align-items: center;
+  gap: 5px 5px;
+  flex-wrap: wrap;
+  margin-top: 20px ;
+}
+
+.section1 .left .tag h4{
+  padding: 10px 20px;
+  background-color: var(--gray);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.section1 .left .lgray{
+   font-size: 20px;
+   text-decoration: line-through;
+}
+
+.left .price {
+  margin-top: 45px;
+  font-size: 35px;
+}
+
+.section1 .left h5{
+  font-size: 18px;
+}
+
+.cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.cta button {
+  padding: 15px 30px;   /* ✅ reduced padding */
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cta .green {
+  font-weight: 700;
+  background-color: #00a56f;
+  color: white;
+  padding: 15px 40px;  /* ✅ reduced */
+}
+
+.cta .green:hover {
+  background-color: #008f5f;
+}
+
+.cta .gray {
+  font-weight: 500;
+  background-color: #2e2e2e;
+  color: white;
+}
+
+.cta .gray:hover {
+  background-color: #1e1e1e;
+}
+
+.left h6{
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.section1 .right{
+  width: 45%;
+} 
+
+.section1 .right .right-in{
+  width: 100%;        /* ✅ changed from 600px */
+  max-width: 600px;   /* ✅ still limits on large screens */
+}
+
+.section1 .right .right-in .image{
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.section1 .right .right-in .image img{
+  width: 100%;
+}
+
+.section1 .right .right-in .image-bottom{
+  padding: 20px;
+  padding-top: 40px;
+  background-color: var(--gray);
+  display: flex;
+  align-items: center; 
+  gap: 5px ;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.right-in .image-bottom h4{
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  background-color:#151515;
+  border-radius: 5px;
+  width: 45%;
+}
+
+/* ===================== */
+/* Media Queries */
+/* ===================== */
+
+@media (max-width:600px) {
+  nav{
+    padding: 13px 20px;
+  }
+
+  .nav1{
+    gap: 13px;
+  }
+  .nav1 img{
+    height: 30px;
+  }
+
+  .nav1 h4{
+    font-size: 14px;
+  }
+
+  .nav2{
+    display: none;
+  }
+
+  .nav3{
+    display: flex;
+  }
+}
+
+@media (max-width:1200px) {
+  .section1 .left h1{
+    font-size: 4.5vw;
+  }
+}
+
+@media (max-width:800px) {
+  section {
+    padding: 0 20px;  /* ✅ reduced padding */
+  }
+  .section1 {
+    flex-direction: column-reverse;
+  }
+  .section1 .left,
+  .section1 .right {
+    width: 100%;
+  }
+
+  .section1 .left h1{
+    font-size: 33px;
+  }
+}
+
+@media (max-width:600px) {
+  .section1 .left h1{
+    font-size: 6vw;
+  }
+  .cta {
+    flex-direction: column; /* ✅ stack buttons */
+    width: 100%;
+  }
+  .cta button {
+    width: 100%;
+    text-align: center;
+  }
+}

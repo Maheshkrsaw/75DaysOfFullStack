@@ -1,0 +1,13 @@
+{
+  "name": "53_nodejs_basics",
+  "version": "1.0.0",
+  "description": "> Part of the #75DaysFullStackAI Challenge  \r > Focus: Node.js runtime, npm, package management, and hands-on CLI/project assignments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

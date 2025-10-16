@@ -130,4 +130,3 @@ Consistency matters more than duration — and every small concept builds the st
 
 
 
-thats asll

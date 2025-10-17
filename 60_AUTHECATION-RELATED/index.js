@@ -33,7 +33,7 @@ app.post("/signup", (req, res) => {
   res.json({ message: "✅ You are signed up successfully!" });
 });
 
-// 🔹 SIGNIN route
+// 🔹 SIGNIN route 
 app.post("/signin", (req, res) => {
   const { username, password } = req.body;
 
@@ -46,6 +46,23 @@ app.post("/signin", (req, res) => {
     res.status(401).json({ message: "❌ Invalid username or password" });
   }
 });
+
+
+app.get("/me",(req,res)=>{
+  const token = req.headers.token;
+
+  const foundUser=users.find(u=>u.token===token);
+  if(foundUser){
+    res.json({
+      username:foundUser.username,
+      password: foundUser.password
+    })
+  }else{
+    res.json({
+      message:"sorry your account not found"
+    })
+  }
+})
 
 // 🔹 Start server
 app.listen(3000, () => {

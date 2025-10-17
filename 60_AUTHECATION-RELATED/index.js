@@ -4,81 +4,50 @@ app.use(express.json());
 
 const users = [];
 
+// 🔹 Function to generate random token
 function generateToken() {
-  let options = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "K",
-    "L",
-    "M",
-    "N",
-    "D",
-    "P",
-    "0",
-    "R",
-    "S",
-    "U",
-    "U",
-    "V",
-    "w",
-    "x",
-    "Y",
-    "2",
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
+  const options = [
+    "A","B","C","D","E","F","K","L","M","N","P",
+    "R","S","U","V","W","X","Y",
+    "0","1","2","3","4","5","6","7","8","9"
   ];
   let token = "";
-  for (let i = 0; i < 132; i++) {
-    token = token + options[Math.floor(Math.random() * options.length)];
+  for (let i = 0; i < 32; i++) {
+    token += options[Math.floor(Math.random() * options.length)];
   }
   return token;
 }
 
-app.post("/signup",(req,res)=>{
-    const username=req.body.username;
-    const password=req.body.password;
+// 🔹 SIGNUP route
+app.post("/signup", (req, res) => {
+  const { username, password } = req.body;
 
-    users.push({
-        username:username,
-        password:password
-    })
+  const existingUser = users.find(u => u.username === username);
+  if (existingUser) {
+    return res.status(400).json({
+      message: "❌ Username already exists! Please choose another."
+    });
+  }
 
-    res.json({
-        messgae: "you are sign in"
-    })
-})
+  users.push({ username, password });
+  res.json({ message: "✅ You are signed up successfully!" });
+});
 
+// 🔹 SIGNIN route
 app.post("/signin", (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  const { username, password } = req.body;
 
-  // find user from the list
-  const foundUser = users.find(
-    (u) => u.username === username && u.password === password
-  );
-
+  const foundUser = users.find(u => u.username === username && u.password === password);
   if (foundUser) {
-    const token =generateToken();
-    foundUser.token=token;
-    res.json({ message: "✅ Sign-in successful!" , token });
+    const token = generateToken();
+    foundUser.token = token;
+    res.json({ message: "✅ Sign-in successful!", token });
   } else {
     res.status(401).json({ message: "❌ Invalid username or password" });
   }
-}); 
+});
 
+// 🔹 Start server
 app.listen(3000, () => {
   console.log("🚀 Server running on http://localhost:3000");
 });
- 

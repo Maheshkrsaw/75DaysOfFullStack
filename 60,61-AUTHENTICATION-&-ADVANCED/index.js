@@ -39,7 +39,7 @@ app.post("/signup", (req, res) => {
 });
 
 // 🔹 SIGNIN route
-app.post("/signin", (req, res) => { 
+app.post("/signin", (req, res) => {
   const { username, password } = req.body;
 
   const foundUser = users.find(
@@ -59,9 +59,16 @@ app.post("/signin", (req, res) => {
 
 app.get("/me", (req, res) => {
   const token = req.headers.token;
-  const decodedinformation= jwt.verify(token,JWT_SECRET);
-  const username =decodedinformation.username;
-  const foundUser = users.find((u) => u.token === token);
+  // ✅ Decode and verify the token
+  const decoded = jwt.verify(token, JWT_SECRET);
+  let foundUser = null;
+  for (i = 0; i < users.length; i++) {
+    if (users[i].username == decoded.username) {
+      foundUser = users[i];
+    }
+  }
+
+  // ✅ Respond based on result
   if (foundUser) {
     res.json({
       username: foundUser.username,
@@ -69,7 +76,7 @@ app.get("/me", (req, res) => {
     });
   } else {
     res.json({
-      message: "sorry your account not found",
+      message: "❌ Sorry, your account was not found.",
     });
   }
 });

@@ -23,8 +23,18 @@ function generateToken() {
 }
 */
 
+
+function logger(req,res,next){
+  console.log(`${req.method} requested came`);
+  next()
+}
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html"); // note: / instead of ./
+});
+
 // 🔹 SIGNUP route
-app.post("/signup", (req, res) => {
+app.post("/signup",logger, (req, res) => {
   const { username, password } = req.body;
 
   const existingUser = users.find((u) => u.username === username);
@@ -39,7 +49,7 @@ app.post("/signup", (req, res) => {
 });
 
 // 🔹 SIGNIN route
-app.post("/signin", (req, res) => {
+app.post("/signin",logger, (req, res) => {
   const { username, password } = req.body;
 
   const foundUser = users.find(
@@ -57,28 +67,38 @@ app.post("/signin", (req, res) => {
   }
 });
 
-app.get("/me", (req, res) => {
+function auth(req,res,next){
   const token = req.headers.token;
-  // ✅ Decode and verify the token
   const decoded = jwt.verify(token, JWT_SECRET);
+  if(decoded.username){
+    req.username=decoded.username;
+    next()
+  }else{
+    res.json({
+      message:"you are not loged in "
+    })
+  }
+}
+
+app.get("/me",logger,auth, (req, res) => {
+
   let foundUser = null;
   for (i = 0; i < users.length; i++) {
-    if (users[i].username == decoded.username) {
+    if (users[i].username == req.username) {
       foundUser = users[i];
     }
   }
 
-  // ✅ Respond based on result
-  if (foundUser) {
+
     res.json({
       username: foundUser.username,
       password: foundUser.password,
-    });
-  } else {
-    res.json({
-      message: "❌ Sorry, your account was not found.",
-    });
-  }
+    })
+  //  else {
+  //   res.json({
+  //     message: "❌ Sorry, your account was not found.",
+  //   });
+  // }
 });
 
 // 🔹 Start server

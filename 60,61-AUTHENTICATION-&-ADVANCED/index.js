@@ -1,10 +1,14 @@
 const express = require("express");
 const app = express();
+const jwt = require("jsonwebtoken");
 app.use(express.json());
-
+const JWT_SECRET = "my_super_secret_key";
 const users = [];
 
-// 🔹 Function to generate random token
+//  Function to generate random token
+// this is manually done ans rreplaced by the jwts token
+
+/*
 function generateToken() {
   const options = [
     "A","B","C","D","E","F","K","L","M","N","P",
@@ -17,15 +21,16 @@ function generateToken() {
   }
   return token;
 }
+*/
 
 // 🔹 SIGNUP route
 app.post("/signup", (req, res) => {
   const { username, password } = req.body;
 
-  const existingUser = users.find(u => u.username === username);
+  const existingUser = users.find((u) => u.username === username);
   if (existingUser) {
     return res.status(400).json({
-      message: "❌ Username already exists! Please choose another."
+      message: "❌ Username already exists! Please choose another.",
     });
   }
 
@@ -33,36 +38,41 @@ app.post("/signup", (req, res) => {
   res.json({ message: "✅ You are signed up successfully!" });
 });
 
-// 🔹 SIGNIN route 
-app.post("/signin", (req, res) => {
+// 🔹 SIGNIN route
+app.post("/signin", (req, res) => { 
   const { username, password } = req.body;
 
-  const foundUser = users.find(u => u.username === username && u.password === password);
+  const foundUser = users.find(
+    (u) => u.username === username && u.password === password
+  );
   if (foundUser) {
-    const token = generateToken();
-    foundUser.token = token;
+    const token = jwt.sign(
+      { username: foundUser.username }, // payload
+      JWT_SECRET
+    );
+    // foundUser.token = token;
     res.json({ message: "✅ Sign-in successful!", token });
   } else {
     res.status(401).json({ message: "❌ Invalid username or password" });
   }
 });
 
-
-app.get("/me",(req,res)=>{
+app.get("/me", (req, res) => {
   const token = req.headers.token;
-
-  const foundUser=users.find(u=>u.token===token);
-  if(foundUser){
+  const decodedinformation= jwt.verify(token,JWT_SECRET);
+  const username =decodedinformation.username;
+  const foundUser = users.find((u) => u.token === token);
+  if (foundUser) {
     res.json({
-      username:foundUser.username,
-      password: foundUser.password
-    })
-  }else{
+      username: foundUser.username,
+      password: foundUser.password,
+    });
+  } else {
     res.json({
-      message:"sorry your account not found"
-    })
+      message: "sorry your account not found",
+    });
   }
-})
+});
 
 // 🔹 Start server
 app.listen(3000, () => {

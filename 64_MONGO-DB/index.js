@@ -4,7 +4,7 @@ const { UserModel, TodoModel } = require("./db");
 const { auth, JWT_SECRET } = require("./auth");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
-
+const bcrypt=require("bcrypt");
 const app = express();
 
 app.use(express.json());
@@ -18,24 +18,37 @@ mongoose.connect("mongodb+srv://Mahesh:MaheshMahi@cluster0.cjdwieg.mongodb.net/t
 app.post("/signup", async (req, res) => {
     const { email, password, name } = req.body;
 
-    await UserModel.create({ email, password, name });
+    // Hash password before saving
+    const hashedPassword = await bcrypt.hash(password, 5);
+
+    await UserModel.create({ 
+        email, 
+        password: hashedPassword, 
+        name 
+    });
 
     res.json({ message: "You are signed up" });
 });
 
+
 // Signin route
 app.post("/signin", async (req, res) => {
-    const { email, password } = req.body;
+  const { email, password } = req.body;
 
-    const user = await UserModel.findOne({ email, password });
+  const user = await UserModel.findOne({ email });
+  if (!user) {
+    return res.status(403).json({ message: "User does not exist" });
+  }
 
-    if (user) {
-        const token = jwt.sign({ id: user._id.toString() }, JWT_SECRET);
-        res.json({ token });
-    } else {
-        res.status(403).json({ message: "Incorrect credentials" });
-    }
+  const passMatch = await bcrypt.compare(password, user.password);
+  if (!passMatch) {
+    return res.status(403).json({ message: "Incorrect password" });
+  }
+
+  const token = jwt.sign({ id: user._id.toString() }, JWT_SECRET);
+  res.json({ token });
 });
+
 
 // Add a new todo
 app.post("/todo", auth, async (req, res) => {

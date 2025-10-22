@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const app = express();
 
+
 app.use(express.json());
 
 // Connect to MongoDB
@@ -21,6 +22,13 @@ mongoose
 let errorthrown = false;
 app.post("/signup", async (req, res) => {
   const { email, password, name } = req.body;
+
+  if(typeof email!== "string" || email.length<5 || !email.includes("@")){
+    res.json({
+        message:"email-incorrect"
+    })
+    return
+  }
   try {
     // Hash password before saving
     const hashedPassword = await bcrypt.hash(password, 5);

@@ -30,7 +30,8 @@ app.post("/signup", async (req, res) => {
   const parsed = schema.safeParse(req.body);
 
   if (!parsed.success) {
-    return res.status(400).json({ message: "Incorrect format", errors: parsed.error.errors });
+    res.json({ message: "Incorrect format", errors: parsed.error });
+    return 
   }
 
   try {

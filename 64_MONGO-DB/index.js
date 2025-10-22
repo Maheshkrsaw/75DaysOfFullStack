@@ -4,32 +4,42 @@ const { UserModel, TodoModel } = require("./db");
 const { auth, JWT_SECRET } = require("./auth");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
-const bcrypt=require("bcrypt");
+const bcrypt = require("bcrypt");
 const app = express();
 
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://Mahesh:MaheshMahi@cluster0.cjdwieg.mongodb.net/testing")
-.then(() => console.log("✅ MongoDB Connected"))
-.catch((err) => console.error("❌ MongoDB Connection Error:", err));
+mongoose
+  .connect(
+    "mongodb+srv://Mahesh:MaheshMahi@cluster0.cjdwieg.mongodb.net/testing"
+  )
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 // Signup route
+let errorthrown = false;
 app.post("/signup", async (req, res) => {
-    const { email, password, name } = req.body;
-
+  const { email, password, name } = req.body;
+  try {
     // Hash password before saving
     const hashedPassword = await bcrypt.hash(password, 5);
 
-    await UserModel.create({ 
-        email, 
-        password: hashedPassword, 
-        name 
+    await UserModel.create({
+      email,
+      password: hashedPassword,
+      name,
     });
-
+  } catch (e) {
+    res.json({
+      message: "user already exists",
+    });
+    errorthrown = true;
+  }
+  if (!errorthrown) {
     res.json({ message: "You are signed up" });
+  }
 });
-
 
 // Signin route
 app.post("/signin", async (req, res) => {
@@ -49,25 +59,23 @@ app.post("/signin", async (req, res) => {
   res.json({ token });
 });
 
-
 // Add a new todo
 app.post("/todo", auth, async (req, res) => {
-       const userId = req.userId;
-    res.json({
-        userId: userId
-    });
+  const userId = req.userId;
+  res.json({
+    userId: userId,
+  });
 });
 
 // Get all todos
 app.get("/todos", auth, async (req, res) => {
-    const userId = req.userId;
-    res.json({
-        userId: userId
-    });
+  const userId = req.userId;
+  res.json({
+    userId: userId,
+  });
 });
-
 
 // Start server
 app.listen(3000, () => {
-    console.log("🚀 Server running on http://localhost:3000");
+  console.log("🚀 Server running on http://localhost:3000");
 });

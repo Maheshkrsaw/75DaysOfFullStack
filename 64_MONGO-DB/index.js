@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const app = express();
-
+const {z}=require("zod");
 
 app.use(express.json());
 
@@ -18,34 +18,33 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
-// Signup route
-let errorthrown = false;
 app.post("/signup", async (req, res) => {
   const { email, password, name } = req.body;
 
-  if(typeof email!== "string" || email.length<5 || !email.includes("@")){
-    res.json({
-        message:"email-incorrect"
-    })
-    return
-  }
-  try {
-    // Hash password before saving
-    const hashedPassword = await bcrypt.hash(password, 5);
+  const schema = z.object({
+    email: z.string().email().min(3).max(100),
+    password: z.string().min(3).max(100),
+    name: z.string().min(3).max(100),
+  });
 
-    await UserModel.create({
-      email,
-      password: hashedPassword,
-      name,
-    });
-  } catch (e) {
-    res.json({
-      message: "user already exists",
-    });
-    errorthrown = true;
+  const parsed = schema.safeParse(req.body);
+
+  if (!parsed.success) {
+    return res.status(400).json({ message: "Incorrect format", errors: parsed.error.errors });
   }
-  if (!errorthrown) {
+
+  try {
+    const existingUser = await UserModel.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 5);
+    await UserModel.create({ email, password: hashedPassword, name });
+
     res.json({ message: "You are signed up" });
+  } catch (e) {
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 

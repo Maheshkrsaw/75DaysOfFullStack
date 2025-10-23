@@ -1,5 +1,6 @@
 const{Router}=require("express")
 const userRouter=Router();
+const{UserModel}=require("../db")
   userRouter.post("/signup", (req, res) => {
     res.json({
       message: "signup-endpoint",

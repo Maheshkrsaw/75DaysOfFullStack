@@ -12,12 +12,12 @@ adminRouter.post("/signin",(req,res)=>{
       message: "admin signin point ",
     });
 })
-adminRouter.post("/course",(req,res)=>{
+adminRouter.put("/",(req,res)=>{
     res.json({
       message: "course point ",
     });
 })
-adminRouter.post("/course/bulk",(req,res)=>{
+adminRouter.get("/bulk",(req,res)=>{
     res.json({
       message: "course bulk - point ",
     });

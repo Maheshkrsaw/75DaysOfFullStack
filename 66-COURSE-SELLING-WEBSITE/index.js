@@ -6,7 +6,6 @@ const {adminRouter}=require("./routes/admin")
 //manually routes using impoer export 
 // createUserRoute(app);
 // courseRoute(app);
-
 //now express routes 
 app.use("/user",userRouter);
 app.use("/course",courseRouter);

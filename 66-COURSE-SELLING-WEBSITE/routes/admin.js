@@ -1,5 +1,5 @@
 const {Router}=require("express");
-
+const{AdminModel}=require("../db")
 const adminRouter=Router();
 
 adminRouter.post("/signup",(req,res)=>{

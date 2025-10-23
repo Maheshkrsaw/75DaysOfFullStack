@@ -1,10 +1,14 @@
 const express = require("express");
 const app = express();
-const { createUserRoute } = require("./routes/user");
-const { courseRoute } = require("./routes/user");
+const {  userRouter } = require("./routes/user");
+const { courseRouter } = require("./routes/course");
+//manually routes using impoer export 
+// createUserRoute(app);
+// courseRoute(app);
 
-createUserRoute(app);
-courseRoute(app);
+//now express routes 
+app.use("/user",userRouter);
+app.use("/course",courseRouter);
 
 app.listen(3000, () => {
   console.log("🚀 Server running on http://localhost:3000");

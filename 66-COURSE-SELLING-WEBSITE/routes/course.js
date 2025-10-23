@@ -1,12 +1,12 @@
 const {Router}=require("express")
 const courseRouter=Router();
 
-  app.post("/purchase", (req, res) => {
+  courseRouter.post("/purchase", (req, res) => {
     res.json({
       message: "-purchase-endpoint",
     });
   });
-  app.get("/preview", (req, res) => {
+  courseRouter.get("/preview", (req, res) => {
     res.json({
       message: "courses-endpoint",
     });

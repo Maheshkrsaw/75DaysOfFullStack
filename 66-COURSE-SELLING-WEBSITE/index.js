@@ -1,32 +1,11 @@
-const express=require("express");
-const app=express();
+const express = require("express");
+const app = express();
+const { createUserRoute } = require("./user");
+const { courseRoute } = require("./user");
 
-app.post("/user/signup",(req,res)=>{
-    res.json({
-        message:"signup-endpoint"
-    })
-})
-app.post("/user/signin",(req,res)=>{
-    res.json({
-        message:"signin-endpoint"
-    })
-})
-app.get("/user/purchases",(req,res)=>{
-    res.json({
-        message:"user purcaheses-endpoint"
-    })
-})
-app.post("/course/purchase",(req,res)=>{
-    res.json({
-        message:"course-purchase-endpoint"
-    })
-})
-app.get("/courses",(req,res)=>{
-    res.json({
-        message:"courses-endpoint"
-    })
-})
+createUserRoute(app);
+courseRoute(app);
 
-app.listen(3000,()=>{
-   console.log("🚀 Server running on http://localhost:3000");
-})
+app.listen(3000, () => {
+  console.log("🚀 Server running on http://localhost:3000");
+});

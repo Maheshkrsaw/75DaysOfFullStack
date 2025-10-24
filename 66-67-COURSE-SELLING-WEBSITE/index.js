@@ -4,6 +4,8 @@ const app = express();
 const {  userRouter } = require("./routes/user");
 const { courseRouter } = require("./routes/course");
 const {adminRouter}=require("./routes/admin")
+app.use(express.json());
+
 //manually routes using impoer export 
 // createUserRoute(app);
 // courseRoute(app);

@@ -15,7 +15,7 @@ app.use("/course",courseRouter);
 app.use("/admin",adminRouter);
 
 async function main() {
-  await mongoose.connect("mongodb+srv://Mahesh:MaheshMahi@cluster0.cjdwieg.mongodb.net/Course-Selling-db");
+  await mongoose.connect("");
   app.listen(3000, () => {
   console.log("🚀 Server running on http://localhost:3000");
 })

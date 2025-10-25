@@ -1,3 +1,5 @@
+require('dotenv').config();
+console.log(process.env.mongoUrl);
 const express = require("express");
 const mongoose=require("mongoose");
 const app = express();
@@ -15,9 +17,9 @@ app.use("/course",courseRouter);
 app.use("/admin",adminRouter);
 
 async function main() {
-  await mongoose.connect("");
+  await mongoose.connect(process.env.mongoUrl);
   app.listen(3000, () => {
   console.log("🚀 Server running on http://localhost:3000");
 })
-}
+ }
 main();

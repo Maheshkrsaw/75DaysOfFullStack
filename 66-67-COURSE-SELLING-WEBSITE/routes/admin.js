@@ -5,7 +5,7 @@ const { z } = require("zod");
 const jwt = require("jsonwebtoken");
 
 const adminRouter = Router();
-const JWT_Admin_SECRET =  "Mahesh@825406";
+const{ JWT_Admin_SECRET} =require("../config") ;
 
 // 🔹 Signup Endpoint
 adminRouter.post("/signup", async (req, res) => {

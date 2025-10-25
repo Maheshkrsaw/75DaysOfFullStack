@@ -4,7 +4,8 @@ const { UserModel } = require("../db");
 const bcrypt = require("bcrypt");
 const { z } = require("zod");
 const jwt = require("jsonwebtoken");
-const JWT_User_SECRET="Mahesh@123"
+const {JWT_User_SECRET}=require("../config") ;
+
 
 
 

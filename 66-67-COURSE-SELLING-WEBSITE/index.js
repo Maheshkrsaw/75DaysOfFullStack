@@ -1,26 +1,19 @@
 require('dotenv').config();
-console.log("JWT_ADMIN_SECRET:", process.env.JWT_ADMIN_SECRET);
-
 const express = require("express");
-const mongoose=require("mongoose");
-const app = express();
-const {  userRouter } = require("./routes/user");
+const mongoose = require("mongoose");
+const { userRouter } = require("./routes/users");
 const { courseRouter } = require("./routes/course");
-const {adminRouter}=require("./routes/admin")
+const { adminRouter } = require("./routes/admin");
+
+const app = express();
 app.use(express.json());
 
-//manually routes using impoer export 
-// createUserRoute(app);
-// courseRoute(app);
-//now express routes 
-app.use("/user",userRouter);
-app.use("/course",courseRouter);
-app.use("/admin",adminRouter);
+app.use("/user", userRouter);
+app.use("/course", courseRouter);
+app.use("/admin", adminRouter);
 
 async function main() {
   await mongoose.connect(process.env.mongoUrl);
-  app.listen(3000, () => {
-  console.log("🚀 Server running on http://localhost:3000");
-})
- }
+  app.listen(3000, () => console.log("🚀 Server running on http://localhost:3000"));
+}
 main();

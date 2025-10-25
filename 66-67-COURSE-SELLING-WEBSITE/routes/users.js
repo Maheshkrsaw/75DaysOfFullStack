@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const { z } = require("zod");
 const jwt = require("jsonwebtoken");
 const {JWT_User_SECRET}=require("../config") ;
+const { userMiddleware } = require("../middleware/users");
 
 
 
@@ -72,11 +73,29 @@ userRouter.post("/signin", async (req, res) => {
   res.json({ token });
 });
 
-userRouter.get("/purchases", (req, res) => {
-  res.json({
-    message: "user purcaheses-endpoint",
-  });
-});
+userRouter.get("/purchases", userMiddleware, async function(req, res) {
+    const userId = req.userId;
+
+    const purchases = await PurchaseModel.find({
+        userId,
+    });
+
+    let PurchasedCourseIds = [];
+
+    for (let i = 0; i<Purchases.length;i++){ 
+        purchasedCourseIds.push(Purchases[i].courseId)
+    }
+
+    const coursesData = await CourseModel.find({
+        _id: { $in: PurchasedCourseIds }
+    })
+
+    res.json({
+        Purchases,
+        coursesData
+    })
+})
+
 module.exports = {
   userRouter: userRouter,
 };

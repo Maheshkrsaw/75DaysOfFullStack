@@ -26,62 +26,105 @@ adminRouter.post("/signup", async (req, res) => {
       .json({ message: "❌ Invalid input format", errors: parsed.error });
   }
 
-  try {
-    const existingAdmin = await AdminModel.findOne({ email });
-    if (existingAdmin) {
-      return res.status(400).json({ message: "❌ Admin already exists" });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 5);
-    await AdminModel.create({
-      email,
-      password: hashedPassword,
-      firstname,
-      lastname,
-    });
-
-    res.json({ message: "✅ Admin signed up successfully!" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "❌ Internal server error" });
+  const existingAdmin = await AdminModel.findOne({ email });
+  if (existingAdmin) {
+    return res.status(400).json({ message: "❌ Admin already exists" });
   }
+
+  const hashedPassword = await bcrypt.hash(password, 5);
+  await AdminModel.create({
+    email,
+    password: hashedPassword,
+    firstname,
+    lastname,
+  });
+
+  res.json({ message: "✅ Admin signed up successfully!" });
 });
 
-// 🔹 Signin Endpoint
+// Make sure to load .env at the top of your server or config file
+require('dotenv').config();
+
 adminRouter.post("/signin", async (req, res) => {
   const { email, password } = req.body;
 
+  // Check if admin exists
   const admin = await AdminModel.findOne({ email });
   if (!admin) return res.status(403).json({ message: "Admin does not exist" });
 
+  // Check password
   const passMatch = await bcrypt.compare(password, admin.password);
-  if (!passMatch)
-    return res.status(403).json({ message: "Incorrect password" });
+  if (!passMatch) return res.status(403).json({ message: "Incorrect password" });
 
-  const token = jwt.sign({ id: admin._id.toString() }, JWT_Admin_SECRET);
+  // Check if JWT secret exists
+  if (!process.env.JWT_ADMIN_SECRET) {
+    return res.status(500).json({ message: "JWT secret not set in .env" });
+  }
+
+  // Generate JWT
+  const token = jwt.sign({ id: admin._id.toString() }, process.env.JWT_ADMIN_SECRET, {
+    expiresIn: "1h", // optional: token expiry
+  });
+
+  // Send response
   res.json({ token });
 });
 
-adminRouter.post("/course", adminMiddleware, async (req, res) => {
-  const adminId = req.userId;
-  const { title, description, imageUrl, price } = req.body;
-  const course = await CourseModel.create({
-    title,
-    description,
-    imageUrl,
-    price,
-    creatorid: adminId,
-  })
-  res.json({
-    message:"course created",
-    courseId:course._id
-  })
-});
+adminRouter.post("/course", adminMiddleware, async function(req, res) {
+    const adminId = req.userId;
 
-adminRouter.put("/", (req, res) => res.json({ message: "Course point" }));
+    const { title, description, imageUrl, price } = req.body;
 
-adminRouter.get("/bulk", (req, res) =>
-  res.json({ message: "Course bulk point" })
-);
+    // creating a web3 saas in 6 hours
+    const course = await CourseModel.create({
+        title: title, 
+        description: description, 
+        imageUrl: imageUrl, 
+        price: price, 
+        creatorId: adminId
+    })
 
-module.exports = { adminRouter };
+    res.json({
+        message: "Course created",
+        courseId: course._id
+    })
+})
+
+adminRouter.put("/course", adminMiddleware, async function(req, res) {
+    const adminId = req.userId;
+
+    const { title, description, imageUrl, price, courseId } = req.body;
+
+    // creating a web3 saas in 6 hours
+    const course = await CourseModel.updateOne({
+        _id: courseId, 
+        creatorId: adminId 
+    }, {
+        title: title, 
+        description: description, 
+        imageUrl: imageUrl, 
+        price: price
+    })
+
+    res.json({
+        message: "Course updated",
+        courseId: course._id
+    })
+})
+
+adminRouter.get("/course/bulk", adminMiddleware,async function(req, res) {
+    const adminId = req.userId;
+
+    const courses = await CourseModel.find({
+        creatorId: adminId 
+    });
+
+    res.json({
+        message: "Course updated",
+        courses
+    })
+})
+
+module.exports = {
+    adminRouter: adminRouter
+}

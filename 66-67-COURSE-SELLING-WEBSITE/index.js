@@ -1,5 +1,6 @@
 require('dotenv').config();
-console.log(process.env.mongoUrl);
+console.log("JWT_ADMIN_SECRET:", process.env.JWT_ADMIN_SECRET);
+
 const express = require("express");
 const mongoose=require("mongoose");
 const app = express();

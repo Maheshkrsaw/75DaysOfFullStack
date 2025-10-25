@@ -1,11 +1,12 @@
 const { Router } = require("express");
-const { AdminModel } = require("../db");
+const { AdminModel, CourseModel } = require("../db");
 const bcrypt = require("bcrypt");
 const { z } = require("zod");
 const jwt = require("jsonwebtoken");
 
 const adminRouter = Router();
-const{ JWT_Admin_SECRET} =require("../config") ;
+const { JWT_Admin_SECRET } = require("../config");
+const { adminMiddleware } = require("../middleware/admin");
 
 // 🔹 Signup Endpoint
 adminRouter.post("/signup", async (req, res) => {
@@ -20,7 +21,9 @@ adminRouter.post("/signup", async (req, res) => {
 
   const parsed = schema.safeParse(req.body);
   if (!parsed.success) {
-    return res.status(400).json({ message: "❌ Invalid input format", errors: parsed.error });
+    return res
+      .status(400)
+      .json({ message: "❌ Invalid input format", errors: parsed.error });
   }
 
   try {
@@ -30,7 +33,12 @@ adminRouter.post("/signup", async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 5);
-    await AdminModel.create({ email, password: hashedPassword, firstname, lastname });
+    await AdminModel.create({
+      email,
+      password: hashedPassword,
+      firstname,
+      lastname,
+    });
 
     res.json({ message: "✅ Admin signed up successfully!" });
   } catch (error) {
@@ -47,13 +55,33 @@ adminRouter.post("/signin", async (req, res) => {
   if (!admin) return res.status(403).json({ message: "Admin does not exist" });
 
   const passMatch = await bcrypt.compare(password, admin.password);
-  if (!passMatch) return res.status(403).json({ message: "Incorrect password" });
+  if (!passMatch)
+    return res.status(403).json({ message: "Incorrect password" });
 
   const token = jwt.sign({ id: admin._id.toString() }, JWT_Admin_SECRET);
   res.json({ token });
 });
 
+adminRouter.post("/course", adminMiddleware, async (req, res) => {
+  const adminId = req.userId;
+  const { title, description, imageUrl, price } = req.body;
+  const course = await CourseModel.create({
+    title,
+    description,
+    imageUrl,
+    price,
+    creatorid: adminId,
+  })
+  res.json({
+    message:"course created",
+    courseId:course._id
+  })
+});
+
 adminRouter.put("/", (req, res) => res.json({ message: "Course point" }));
-adminRouter.get("/bulk", (req, res) => res.json({ message: "Course bulk point" }));
+
+adminRouter.get("/bulk", (req, res) =>
+  res.json({ message: "Course bulk point" })
+);
 
 module.exports = { adminRouter };

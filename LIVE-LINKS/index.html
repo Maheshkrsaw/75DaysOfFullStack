@@ -3,109 +3,116 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mahesh — 75Days Live Links / Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Mahesh — Project Decrypt Index</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Sleek Background: Pure Deep Black with subtle texture/noise */
+    /* Base: Deep Space Black */
     body {
       background-color: #000000; /* Pure Black */
-      color: #f3f4f6; /* Light Gray text */
-      font-family: 'Inter', sans-serif;
+      color: #f3f4f6;
+      font-family: 'Oxanium', monospace; /* Futuristic Monospace font */
+      background-image: radial-gradient(at 0% 100%, rgba(127, 29, 29, 0.2) 0, transparent 50%),
+                        radial-gradient(at 100% 0%, rgba(127, 29, 29, 0.2) 0, transparent 50%);
+      background-attachment: fixed;
     }
 
-    /* Primary Accent Color: Vibrant Turquoise/Cyan */
-    .accent-color {
-      color: #14b8a6; /* Teal-500 */
+    /* Primary Accent Color: Cyber Red */
+    .cyber-red {
+      color: #ef4444; /* Red-500 */
     }
-    .accent-bg {
-      background-color: #14b8a6;
+
+    /* Card Style: Decrypted Glass */
+    .decrypt-glass {
+      background: rgba(18, 0, 0, 0.6); /* Very dark, transparent red base */
+      backdrop-filter: blur(12px) saturate(150%);
+      border: 1px solid rgba(239, 68, 68, 0.4); /* Faint red glow border */
+      border-radius: 4px; /* Sharp corners for technical feel */
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); /* Soft initial glow */
+      transition: all 0.3s ease;
+    }
+
+    /* Card Hover Effect: Intense Red Glow */
+    .decrypt-glass:hover {
+      transform: scale(1.02);
+      border-color: #ef4444; /* Solid red border on hover */
+      box-shadow: 0 0 25px rgba(239, 68, 68, 0.6); /* Aggressive glow */
+    }
+
+    /* Button Style: High-Impact Red CTA */
+    .cta-button-red {
+      background-color: #ef4444;
       color: #000000;
-    }
-
-    /* Card Style: Sharp, Bordered, and Highly Defined */
-    .card-flat {
-      background-color: #0a0a0a; /* Off-black for contrast */
-      border: 1px solid #1f2937; /* Dark gray border */
-      border-radius: 12px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      /* Subtle inset shadow for depth */
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Card Hover Effect: High-Contrast Highlight */
-    .card-flat:hover {
-      transform: translateY(-4px);
-      border-color: #14b8a6; /* Highlight border with accent color */
-      box-shadow: 0 15px 30px rgba(20, 184, 166, 0.25); /* Turquoise shadow */
-    }
-
-    /* Button Style: Sharp corners, strong contrast */
-    .cta-button {
-      background-color: #14b8a6;
-      color: #000000;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      border-radius: 2px; /* Ultra-sharp corners */
       transition: background-color 0.2s, transform 0.2s;
     }
-    .cta-button:hover {
-      background-color: #0d9488;
-      transform: translateY(-1px);
+    .cta-button-red:hover {
+      background-color: #dc2626;
+      transform: translateY(-1px) scale(1.02);
     }
 
     /* Active Filter Button */
     .filter-btn.active {
-      background-color: #14b8a6;
+      background-color: #ef4444;
       color: #000000;
       font-weight: 700;
-      box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
     }
     .filter-btn {
         background-color: #1f2937;
-        color: #d1d5db;
-        transition: background-color 0.2s;
+        color: #f3f4f6;
+    }
+
+    /* Title Glitch Effect (Subtle) */
+    .glitch-text {
+        text-shadow: 2px 2px 0 #dc2626, -2px -2px 0 #3b82f6;
     }
   </style>
 </head>
 <body class="antialiased">
-  <main class="min-h-screen p-6 md:p-16 max-w-8xl mx-auto">
+  <main class="min-h-screen p-6 md:p-16 max-w-7xl mx-auto">
 
-    <header class="flex flex-col md:flex-row items-center justify-between gap-8 mb-16 pt-8">
+    <header class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16 pb-6 border-b-4 border-b-red-600">
       <div>
-        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-white">
-          <span class="accent-color">Mahesh's</span> Dev Index
+        <p class="text-xl cyber-red">// STATUS: DECRYPTING PROJECT DATA...</p>
+        <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight text-white mt-2 glitch-text">
+          MAHESH'S <span class="cyber-red">DATA CORE</span>
         </h1>
-        <p class="text-gray-400 mt-4 text-2xl font-light">
-            **75 Days of Full Stack** — All Projects & Live Demos.
+        <p class="text-gray-400 mt-4 text-lg">
+            Project Index :: 75 Days of Full Stack Challenge Log.
         </p>
       </div>
 
       <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
-        <input id="search" type="search" placeholder="Search projects, day, or tags..." class="w-full sm:w-80 px-4 py-3 rounded-lg bg-[#0a0a0a] border border-[#1f2937] text-lg focus:outline-none focus:ring-2 focus:ring-[#14b8a6]" />
+        <input id="search" type="search" placeholder="SEARCH_HASH_OR_TAGS..." class="w-full sm:w-80 px-4 py-3 rounded-sm bg-[#111] border border-[#dc2626] text-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
         <div class="flex gap-3">
-          <button id="copyAll" class="cta-button px-6 py-3 rounded-lg text-lg">COPY ALL</button>
-          <a href="https://github.com/Maheshkrsaw/75DaysOfFullStack" target="_blank" class="px-5 py-3 rounded-lg bg-[#1f2937] text-gray-300 font-medium hover:bg-[#374151] transition text-lg">GITHUB</a>
+          <button id="copyAll" class="cta-button-red px-6 py-3 rounded-sm text-base uppercase">COPY ALL HASHES</button>
+          <a href="https://github.com/Maheshkrsaw/75DaysOfFullStack" target="_blank" class="px-5 py-3 rounded-sm bg-[#374151] text-gray-300 font-medium hover:bg-[#4b5563] transition text-base uppercase">GITHUB REPO</a>
         </div>
       </div>
     </header>
 
     <nav class="mb-12 flex flex-wrap gap-3">
-      <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium">✨ All Demos</button>
-      <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-full text-sm font-medium">Frontend</button>
-      <button data-filter="backend" class="filter-btn px-4 py-2 rounded-full text-sm font-medium">Backend</button>
-      <button data-filter="react" class="filter-btn px-4 py-2 rounded-full text-sm font-medium">React</button>
-      <button data-filter="tailwind" class="filter-btn px-4 py-2 rounded-full text-sm font-medium">Tailwind</button>
-      <button data-filter="deploy" class="filter-btn px-4 py-2 rounded-full text-sm font-medium">Deployed</button>
-      <button data-filter="design" class="filter-btn px-4 py-2 rounded-full text-sm font-medium">Design (Figma)</button>
+      <button data-filter="all" class="filter-btn active px-4 py-2 rounded-sm text-sm font-medium uppercase">ALL DATA</button>
+      <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">FRONTEND</button>
+      <button data-filter="backend" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">BACKEND</button>
+      <button data-filter="react" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">REACT</button>
+      <button data-filter="tailwind" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">TAILWIND</button>
+      <button data-filter="deploy" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">DEPLOY</button>
+      <button data-filter="design" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">DESIGN</button>
     </nav>
 
-    <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       </section>
 
-    <footer class="mt-24 text-gray-500 text-center text-md pt-10 border-t border-[#1f2937]">
-      <p class="mb-2">Code Crafted by <strong class="text-white">Mahesh Kumar Saw</strong>.</p>
-      <p class="text-sm italic">
-          STATUS: <span class="accent-color font-semibold">Mission 75 Days of Full Stack</span> is Live!
+    <footer class="mt-24 text-gray-500 text-center text-sm pt-8 border-t border-[#374151]">
+      <p class="mb-1">
+        // **LOG COMPLETE** | TIMESTAMP: <span class="text-white">NOV 04 2025</span> | STATUS: <span class="cyber-red">LIVE</span>
+      </p>
+      <p class="italic">
+          &gt; Initiate Data Transfer Protocol.
       </p>
     </footer>
   </main>
@@ -114,93 +121,93 @@
     // ======= Data: Add all live links here (edit/add as needed) =======
     const items = [
       {
-        day: "Final Project",
-        title: "FilmyWorld — React Movie App",
+        day: "HASH:FXW2A",
+        title: "FILMYWORLD (REACT APP)",
         url: "https://react-filmyworld.netlify.app/",
         tags: ["react","deploy","project"],
-        desc: "A fully functional movie browsing application built with React and API integration."
+        desc: "Encrypted project data for a movie browsing application. Final project module."
       },
       {
-        day: "Day 01",
-        title: "Project 1 — HTML/CSS UI",
+        day: "HASH:D01P1",
+        title: "PROJECT 1 (HTML/CSS UI)",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/03_project/PROJECT_1/",
         tags: ["frontend","html","css","deploy"],
-        desc: "Initial project showcasing basic modern product UI layout and styling."
+        desc: "Initial commit data for basic modern product UI layout structure."
       },
       {
-        day: "Day 02",
-        title: "Project 2 — Advanced CSS Layouts",
+        day: "HASH:D02P2",
+        title: "PROJECT 2 (CSS LAYOUTS)",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_2/",
         tags: ["frontend","css","deploy"],
-        desc: "Deep dive into complex Flexbox and Grid structures for responsive design."
+        desc: "Decrypted file for complex Flexbox and Grid responsive designs."
       },
       {
-        day: "Day 04",
-        title: "Project 3 — Horizontal Carousel",
+        day: "HASH:D04P3",
+        title: "PROJECT 3 (CAROUSEL)",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_3/",
         tags: ["frontend","animation","deploy"],
-        desc: "Interactive image carousel with smooth horizontal scrolling and visual effects."
+        desc: "Data stream for interactive image carousel and scroll effects."
       },
       {
-        day: "Day 05",
-        title: "Project 4 — Video Background UI",
+        day: "HASH:D05P4",
+        title: "PROJECT 4 (VIDEO BG)",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project_4/",
         tags: ["frontend","css","deploy"],
-        desc: "Modern landing page featuring a full-screen video background and clear CTA."
+        desc: "Landing page module featuring full-screen video background component."
       },
       {
-        day: "Day 05b",
-        title: "Project 5 — Interactive UI Effects",
+        day: "HASH:D05P5",
+        title: "PROJECT 5 (UI EFFECTS)",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project5/",
         tags: ["frontend","ui","deploy"],
-        desc: "Focus on advanced JavaScript and CSS for hover effects and scroll animations."
+        desc: "Advanced JavaScript/CSS file for hover and scroll animation analysis."
       },
       {
-        day: "Day 18",
-        title: "Tailwind Vercel Deployment",
+        day: "HASH:D18TWD",
+        title: "TAILWIND VERCEL DEPLOY",
         url: "https://75-days-of-full-stack-fr72.vercel.app/",
         tags: ["deploy","tailwind","frontend"],
-        desc: "Vercel deployment of a project built using the Tailwind CSS framework."
+        desc: "Vercel deployment record for Tailwind CSS based project."
       },
       {
-        day: "Day 29",
-        title: "React Routing & Structure",
+        day: "HASH:D29RT",
+        title: "REACT ROUTING STRUCTURE",
         url: "https://75-days-of-full-stack-rvch.vercel.app/",
         tags: ["react","deploy"],
-        desc: "Demonstration of React Router Dom for single-page application navigation."
+        desc: "React Router Dom implementation data for SPA navigation architecture."
       },
       {
-        day: "Day 31-36",
-        title: "React E-Commerce Store",
+        day: "HASH:D36COM",
+        title: "REACT E-COMMERCE STORE",
         url: "https://reactproject-with-api.netlify.app/",
         tags: ["react","project","deploy"],
-        desc: "Complete E-Commerce demo using React, Context API for state, and LocalStorage."
+        desc: "E-Commerce module: Context API, LocalStorage, and payment gateway simulation."
       }
       // <-- Add more items below as you want
     ];
 
-    // ======= Render logic - updated for new flat design =======
+    // ======= Render logic - updated for Decrypt Theme look =======
     const grid = document.getElementById('grid');
     const searchInput = document.getElementById('search');
     const copyAllBtn = document.getElementById('copyAll');
 
     function render(list) {
       grid.innerHTML = list.map(it => {
-        // Tag styles: Clean, dark, and uppercase
-        const tagsHtml = it.tags.map(t => `<span class="inline-block text-xs uppercase font-medium px-3 py-1 mr-1 rounded-full bg-[#1f2937] text-gray-300">${t}</span>`).join(' ');
+        // Tag styles: Red chip look
+        const tagsHtml = it.tags.map(t => `<span class="inline-block text-xs uppercase px-2 py-0.5 rounded-full mr-1 border border-red-500 text-red-400 bg-black/50">${t}</span>`).join(' ');
         return `
-          <article class="card-flat p-6 flex flex-col justify-between h-full">
+          <article class="decrypt-glass p-6 flex flex-col justify-between h-full">
             <div class="mb-4">
-              <h3 class="text-xl font-bold text-white mb-2">${escapeHTML(it.title)}</h3>
+              <h3 class="text-xl font-extrabold text-white mb-2 uppercase">${escapeHTML(it.title)}</h3>
               <p class="text-sm text-gray-400">${escapeHTML(it.desc)}</p>
             </div>
             <div class="mt-4">
                 <div class="mb-4">${tagsHtml}</div>
-                <div class="flex items-center justify-between pt-4 border-t border-[#1f2937]">
-                    <div class="text-lg font-extrabold accent-color">${escapeHTML(it.day)}</div>
-                    <div class="flex gap-3">
-                        <a href="${it.url}" target="_blank" rel="noopener" class="cta-button px-4 py-2 text-sm rounded-lg">LIVE DEMO</a>
-                        <button data-url="${it.url}" class="copy-btn px-4 py-2 text-sm rounded-lg bg-[#1f2937] text-gray-300 hover:bg-[#374151] transition">COPY URL</button>
+                <div class="flex items-center justify-between pt-4 border-t border-red-900/40">
+                    <div class="text-md font-bold text-red-400">${escapeHTML(it.day)}</div>
+                    <div class="flex gap-2">
+                        <a href="${it.url}" target="_blank" rel="noopener" class="cta-button-red px-4 py-2 text-xs uppercase">DECRYPT & OPEN</a>
+                        <button data-url="${it.url}" class="copy-btn px-4 py-2 text-xs uppercase bg-[#1f2937] text-gray-300 hover:bg-[#374151] transition">COPY HASH</button>
                     </div>
                 </div>
             </div>
@@ -249,8 +256,8 @@
         b.onclick = async (ev) => {
           const url = b.getAttribute('data-url');
           await navigator.clipboard.writeText(url);
-          b.textContent = "Copied ✅";
-          setTimeout(()=> b.textContent = "COPY URL", 1500);
+          b.textContent = "COPIED ✅";
+          setTimeout(()=> b.textContent = "COPY HASH", 1500);
         };
       });
     }
@@ -260,7 +267,7 @@
       const all = items.map(i => `${i.day} — ${i.title} — ${i.url}`).join('\n');
       await navigator.clipboard.writeText(all);
       copyAllBtn.textContent = "ALL COPIED ✅";
-      setTimeout(()=> copyAllBtn.textContent = "COPY ALL", 1800);
+      setTimeout(()=> copyAllBtn.textContent = "COPY ALL HASHES", 1800);
     });
 
     window.__LIVE_LINKS = items;

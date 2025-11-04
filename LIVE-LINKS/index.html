@@ -3,211 +3,230 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mahesh — Project Decrypt Index</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Mahesh — Sketchbook / Work In Progress Links</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Base: Deep Space Black */
+    /* Base: Whiteboard Look (Light background with grid lines) */
     body {
-      background-color: #000000; /* Pure Black */
-      color: #f3f4f6;
-      font-family: 'Oxanium', monospace; /* Futuristic Monospace font */
-      background-image: radial-gradient(at 0% 100%, rgba(127, 29, 29, 0.2) 0, transparent 50%),
-                        radial-gradient(at 100% 0%, rgba(127, 29, 29, 0.2) 0, transparent 50%);
-      background-attachment: fixed;
+      background-color: #f7f7f7; /* Very light gray/off-white */
+      color: #1e293b; /* Dark Slate (Black Marker) */
+      font-family: 'Permanent Marker', cursive; /* Hand-drawn look */
+      padding: 20px;
     }
 
-    /* Primary Accent Color: Cyber Red */
-    .cyber-red {
-      color: #ef4444; /* Red-500 */
+    /* Grid/Notebook Line Effect */
+    .notebook-bg {
+        background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+                          linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+        background-size: 20px 20px; /* Size of the grid cells */
+        min-height: 100vh;
+        padding: 2rem;
     }
 
-    /* Card Style: Decrypted Glass */
-    .decrypt-glass {
-      background: rgba(18, 0, 0, 0.6); /* Very dark, transparent red base */
-      backdrop-filter: blur(12px) saturate(150%);
-      border: 1px solid rgba(239, 68, 68, 0.4); /* Faint red glow border */
-      border-radius: 4px; /* Sharp corners for technical feel */
-      box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); /* Soft initial glow */
-      transition: all 0.3s ease;
+    /* Accent Color: Highlighter Yellow */
+    .highlight-yellow {
+      color: #facc15; /* Yellow-400 */
+    }
+    .highlight-bg {
+      background-color: #facc15;
+      color: #1e293b;
     }
 
-    /* Card Hover Effect: Intense Red Glow */
-    .decrypt-glass:hover {
-      transform: scale(1.02);
-      border-color: #ef4444; /* Solid red border on hover */
-      box-shadow: 0 0 25px rgba(239, 68, 68, 0.6); /* Aggressive glow */
+    /* Card Style: Paper Note */
+    .card-sketch {
+      background-color: #ffffff;
+      border: 3px solid #1e293b; /* Thick, hand-drawn marker border */
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 0 #334155; /* Offset shadow for 3D sketch effect */
+      transition: all 0.2s ease;
     }
 
-    /* Button Style: High-Impact Red CTA */
-    .cta-button-red {
-      background-color: #ef4444;
-      color: #000000;
-      font-weight: 800;
-      letter-spacing: 1px;
-      border-radius: 2px; /* Ultra-sharp corners */
-      transition: background-color 0.2s, transform 0.2s;
-    }
-    .cta-button-red:hover {
-      background-color: #dc2626;
-      transform: translateY(-1px) scale(1.02);
+    /* Card Hover Effect: Slight lift and deeper shadow */
+    .card-sketch:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 0 #facc15; /* Yellow highlight shadow on hover */
+      border-color: #facc15;
     }
 
-    /* Active Filter Button */
-    .filter-btn.active {
-      background-color: #ef4444;
-      color: #000000;
+    /* Button Style: Hand-drawn shape */
+    .cta-button {
+      background-color: #1e293b;
+      color: #ffffff;
       font-weight: 700;
-      box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+      border: 3px solid #1e293b;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
     }
-    .filter-btn {
-        background-color: #1f2937;
-        color: #f3f4f6;
+    .cta-button:hover {
+      background-color: #facc15;
+      color: #1e293b;
+      border-color: #1e293b;
+    }
+    
+    /* Tag Style: Scribbled text */
+    .tag-scribble {
+        background-color: #fffbeb; /* Very light yellow paper */
+        border: 1px dashed #475569;
+        color: #475569;
+        font-size: 0.6rem;
     }
 
-    /* Title Glitch Effect (Subtle) */
-    .glitch-text {
-        text-shadow: 2px 2px 0 #dc2626, -2px -2px 0 #3b82f6;
+    /* Filter buttons mimic the CTA style */
+    .filter-btn {
+        border: 2px dashed #475569;
+        color: #475569;
+        background-color: transparent;
     }
+    .filter-btn.active {
+      background-color: #fef08a; /* Light yellow background */
+      color: #1e293b;
+      border: 2px solid #1e293b;
+    }
+
+    /* Fix tiny font issue with marker style */
+    .text-sm { font-size: 0.75rem; }
+    .text-xs { font-size: 0.6rem; }
+
   </style>
 </head>
 <body class="antialiased">
-  <main class="min-h-screen p-6 md:p-16 max-w-7xl mx-auto">
-
-    <header class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16 pb-6 border-b-4 border-b-red-600">
-      <div>
-        <p class="text-xl cyber-red">// STATUS: DECRYPTING PROJECT DATA...</p>
-        <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight text-white mt-2 glitch-text">
-          MAHESH'S <span class="cyber-red">DATA CORE</span>
-        </h1>
-        <p class="text-gray-400 mt-4 text-lg">
-            Project Index :: 75 Days of Full Stack Challenge Log.
-        </p>
-      </div>
-
-      <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
-        <input id="search" type="search" placeholder="SEARCH_HASH_OR_TAGS..." class="w-full sm:w-80 px-4 py-3 rounded-sm bg-[#111] border border-[#dc2626] text-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-        <div class="flex gap-3">
-          <button id="copyAll" class="cta-button-red px-6 py-3 rounded-sm text-base uppercase">COPY ALL HASHES</button>
-          <a href="https://github.com/Maheshkrsaw/75DaysOfFullStack" target="_blank" class="px-5 py-3 rounded-sm bg-[#374151] text-gray-300 font-medium hover:bg-[#4b5563] transition text-base uppercase">GITHUB REPO</a>
+  <div class="notebook-bg">
+    <main class="mx-auto max-w-6xl">
+      <header class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 pb-6 border-b-4 border-b-gray-400/50">
+        <div>
+          <p class="text-xl highlight-yellow mb-1">// SKETCHBOOK ENTRY</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-800 mt-1">
+            MAHESH'S <span class="highlight-yellow">W.I.P.</span> INDEX
+          </h1>
+          <p class="text-sm text-gray-600 mt-4">
+              75 DAYS OF FULL STACK CHALLENGE. (WORK IN PROGRESS)
+          </p>
         </div>
-      </div>
-    </header>
 
-    <nav class="mb-12 flex flex-wrap gap-3">
-      <button data-filter="all" class="filter-btn active px-4 py-2 rounded-sm text-sm font-medium uppercase">ALL DATA</button>
-      <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">FRONTEND</button>
-      <button data-filter="backend" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">BACKEND</button>
-      <button data-filter="react" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">REACT</button>
-      <button data-filter="tailwind" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">TAILWIND</button>
-      <button data-filter="deploy" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">DEPLOY</button>
-      <button data-filter="design" class="filter-btn px-4 py-2 rounded-sm text-sm font-medium uppercase">DESIGN</button>
-    </nav>
+        <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
+          <input id="search" type="search" placeholder="SEARCH FOR IDEAS..." class="w-full sm:w-80 px-4 py-3 bg-white border-4 border-gray-400 text-base focus:outline-none focus:ring-0" style="font-family: monospace;" />
+          <div class="flex gap-2">
+            <button id="copyAll" class="cta-button px-5 py-3 uppercase">COPY LOGS</button>
+            <a href="https://github.com/Maheshkrsaw/75DaysOfFullStack" target="_blank" class="cta-button px-5 py-3 bg-gray-400 text-gray-800 hover:bg-gray-700 hover:text-white uppercase">VIEW REPO</a>
+          </div>
+        </div>
+      </header>
 
-    <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      </section>
+      <nav class="mb-10 flex flex-wrap gap-3">
+        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-md text-sm uppercase">ALL</button>
+        <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">FRONTEND</button>
+        <button data-filter="backend" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">BACKEND</button>
+        <button data-filter="react" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">REACT</button>
+        <button data-filter="tailwind" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">TAILWIND</button>
+        <button data-filter="deploy" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">DEPLOYED</button>
+      </nav>
 
-    <footer class="mt-24 text-gray-500 text-center text-sm pt-8 border-t border-[#374151]">
-      <p class="mb-1">
-        // **LOG COMPLETE** | TIMESTAMP: <span class="text-white">NOV 04 2025</span> | STATUS: <span class="cyber-red">LIVE</span>
-      </p>
-      <p class="italic">
-          &gt; Initiate Data Transfer Protocol.
-      </p>
-    </footer>
-  </main>
+      <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </section>
+
+      <footer class="mt-16 text-xs text-gray-600 pt-6 border-t-2 border-t-gray-300">
+        <p class="mb-1">// NOTE: THESE ARE ALL LIVE DEMOS. KEEP CODING.</p>
+        <p class="italic">
+            // LAST UPDATED: <span class="text-gray-900">NOV 04 2025</span>
+        </p>
+      </footer>
+    </main>
+  </div>
 
   <script>
     // ======= Data: Add all live links here (edit/add as needed) =======
     const items = [
       {
-        day: "HASH:FXW2A",
-        title: "FILMYWORLD (REACT APP)",
+        day: "FINAL PROJECT IDEA",
+        title: "FILMYWORLD REACT APP",
         url: "https://react-filmyworld.netlify.app/",
         tags: ["react","deploy","project"],
-        desc: "Encrypted project data for a movie browsing application. Final project module."
+        desc: "FINAL PROJECT: MOVIE BROWSING APP. NEEDS REFINEMENT."
       },
       {
-        day: "HASH:D01P1",
-        title: "PROJECT 1 (HTML/CSS UI)",
+        day: "DAY 01 SKETCH",
+        title: "PROJECT 1: HTML/CSS UI",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/03_project/PROJECT_1/",
         tags: ["frontend","html","css","deploy"],
-        desc: "Initial commit data for basic modern product UI layout structure."
+        desc: "BASIC UI LAYOUT. CHECK RESPONSIVENESS."
       },
       {
-        day: "HASH:D02P2",
-        title: "PROJECT 2 (CSS LAYOUTS)",
+        day: "DAY 02 SKETCH",
+        title: "PROJECT 2: CSS LAYOUTS",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_2/",
         tags: ["frontend","css","deploy"],
-        desc: "Decrypted file for complex Flexbox and Grid responsive designs."
+        desc: "FLEXBOX AND GRID PRACTICE."
       },
       {
-        day: "HASH:D04P3",
-        title: "PROJECT 3 (CAROUSEL)",
+        day: "DAY 04 IDEA",
+        title: "PROJECT 3: HORIZONTAL CAROUSEL",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_3/",
         tags: ["frontend","animation","deploy"],
-        desc: "Data stream for interactive image carousel and scroll effects."
+        desc: "SCROLLING DEMO. ADD MORE IMAGES."
       },
       {
-        day: "HASH:D05P4",
-        title: "PROJECT 4 (VIDEO BG)",
+        day: "DAY 05 IDEA",
+        title: "PROJECT 4: VIDEO BG UI",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project_4/",
         tags: ["frontend","css","deploy"],
-        desc: "Landing page module featuring full-screen video background component."
+        desc: "VIDEO BACKGROUND MODULE."
       },
       {
-        day: "HASH:D05P5",
-        title: "PROJECT 5 (UI EFFECTS)",
+        day: "DAY 05B IDEA",
+        title: "PROJECT 5: INTERACTIVE UI",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project5/",
         tags: ["frontend","ui","deploy"],
-        desc: "Advanced JavaScript/CSS file for hover and scroll animation analysis."
+        desc: "JS EFFECTS PRACTICE."
       },
       {
-        day: "HASH:D18TWD",
-        title: "TAILWIND VERCEL DEPLOY",
+        day: "DAY 18 LOG",
+        title: "TAILWIND DEPLOYMENT",
         url: "https://75-days-of-full-stack-fr72.vercel.app/",
         tags: ["deploy","tailwind","frontend"],
-        desc: "Vercel deployment record for Tailwind CSS based project."
+        desc: "VERCEL DEPLOYMENT CHECK."
       },
       {
-        day: "HASH:D29RT",
-        title: "REACT ROUTING STRUCTURE",
+        day: "DAY 29 LOG",
+        title: "REACT ROUTING DEMO",
         url: "https://75-days-of-full-stack-rvch.vercel.app/",
         tags: ["react","deploy"],
-        desc: "React Router Dom implementation data for SPA navigation architecture."
+        desc: "REACT ROUTER TEST."
       },
       {
-        day: "HASH:D36COM",
+        day: "DAY 31-36 LOG",
         title: "REACT E-COMMERCE STORE",
         url: "https://reactproject-with-api.netlify.app/",
         tags: ["react","project","deploy"],
-        desc: "E-Commerce module: Context API, LocalStorage, and payment gateway simulation."
+        desc: "CONTEXT API & LOCALSTORAGE."
       }
       // <-- Add more items below as you want
     ];
 
-    // ======= Render logic - updated for Decrypt Theme look =======
+    // ======= Render logic - updated for Sketch Theme look =======
     const grid = document.getElementById('grid');
     const searchInput = document.getElementById('search');
     const copyAllBtn = document.getElementById('copyAll');
 
     function render(list) {
       grid.innerHTML = list.map(it => {
-        // Tag styles: Red chip look
-        const tagsHtml = it.tags.map(t => `<span class="inline-block text-xs uppercase px-2 py-0.5 rounded-full mr-1 border border-red-500 text-red-400 bg-black/50">${t}</span>`).join(' ');
+        // Tag styles: Scribbled look
+        const tagsHtml = it.tags.map(t => `<span class="tag-scribble inline-block uppercase px-2 py-0.5 rounded-sm mr-1">${t}</span>`).join(' ');
         return `
-          <article class="decrypt-glass p-6 flex flex-col justify-between h-full">
+          <article class="card-sketch p-5 flex flex-col justify-between h-full">
             <div class="mb-4">
-              <h3 class="text-xl font-extrabold text-white mb-2 uppercase">${escapeHTML(it.title)}</h3>
-              <p class="text-sm text-gray-400">${escapeHTML(it.desc)}</p>
+              <h3 class="text-xl font-extrabold text-gray-900 mb-2 uppercase">${escapeHTML(it.title)}</h3>
+              <p class="text-sm text-gray-700">${escapeHTML(it.desc)}</p>
             </div>
             <div class="mt-4">
                 <div class="mb-4">${tagsHtml}</div>
-                <div class="flex items-center justify-between pt-4 border-t border-red-900/40">
-                    <div class="text-md font-bold text-red-400">${escapeHTML(it.day)}</div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-300">
+                    <div class="text-base font-bold text-gray-800">${escapeHTML(it.day)}</div>
                     <div class="flex gap-2">
-                        <a href="${it.url}" target="_blank" rel="noopener" class="cta-button-red px-4 py-2 text-xs uppercase">DECRYPT & OPEN</a>
-                        <button data-url="${it.url}" class="copy-btn px-4 py-2 text-xs uppercase bg-[#1f2937] text-gray-300 hover:bg-[#374151] transition">COPY HASH</button>
+                        <a href="${it.url}" target="_blank" rel="noopener" class="cta-button px-4 py-2 text-xs uppercase">VIEW SKETCH</a>
+                        <button data-url="${it.url}" class="copy-btn px-4 py-2 text-xs uppercase bg-gray-200 text-gray-700 hover:bg-gray-400">COPY LINK</button>
                     </div>
                 </div>
             </div>
@@ -257,7 +276,7 @@
           const url = b.getAttribute('data-url');
           await navigator.clipboard.writeText(url);
           b.textContent = "COPIED ✅";
-          setTimeout(()=> b.textContent = "COPY HASH", 1500);
+          setTimeout(()=> b.textContent = "COPY LINK", 1500);
         };
       });
     }
@@ -266,8 +285,8 @@
     copyAllBtn.addEventListener('click', async () => {
       const all = items.map(i => `${i.day} — ${i.title} — ${i.url}`).join('\n');
       await navigator.clipboard.writeText(all);
-      copyAllBtn.textContent = "ALL COPIED ✅";
-      setTimeout(()=> copyAllBtn.textContent = "COPY ALL HASHES", 1800);
+      copyAllBtn.textContent = "COPIED LOGS ✅";
+      setTimeout(()=> copyAllBtn.textContent = "COPY LOGS", 1800);
     });
 
     window.__LIVE_LINKS = items;

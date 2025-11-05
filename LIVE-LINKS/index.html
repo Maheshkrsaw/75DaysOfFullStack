@@ -3,294 +3,310 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mahesh — Sketchbook / Work In Progress Links</title>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <title>Mahesh — Volcanic 3D Interactive Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Base: Whiteboard Look (Light background with grid lines) */
+    /* Base: Deepest Charcoal/Black */
     body {
-      background-color: #f7f7f7; /* Very light gray/off-white */
-      color: #1e293b; /* Dark Slate (Black Marker) */
-      font-family: 'Permanent Marker', cursive; /* Hand-drawn look */
-      padding: 20px;
-    }
-
-    /* Grid/Notebook Line Effect */
-    .notebook-bg {
-        background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
-                          linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
-        background-size: 20px 20px; /* Size of the grid cells */
-        min-height: 100vh;
-        padding: 2rem;
-    }
-
-    /* Accent Color: Highlighter Yellow */
-    .highlight-yellow {
-      color: #facc15; /* Yellow-400 */
-    }
-    .highlight-bg {
-      background-color: #facc15;
-      color: #1e293b;
-    }
-
-    /* Card Style: Paper Note */
-    .card-sketch {
-      background-color: #ffffff;
-      border: 3px solid #1e293b; /* Thick, hand-drawn marker border */
-      border-radius: 8px;
-      box-shadow: 4px 4px 0 0 #334155; /* Offset shadow for 3D sketch effect */
-      transition: all 0.2s ease;
-    }
-
-    /* Card Hover Effect: Slight lift and deeper shadow */
-    .card-sketch:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 0 #facc15; /* Yellow highlight shadow on hover */
-      border-color: #facc15;
-    }
-
-    /* Button Style: Hand-drawn shape */
-    .cta-button {
-      background-color: #1e293b;
-      color: #ffffff;
-      font-weight: 700;
-      border: 3px solid #1e293b;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-      font-size: 0.8rem;
-      letter-spacing: 0.5px;
-    }
-    .cta-button:hover {
-      background-color: #facc15;
-      color: #1e293b;
-      border-color: #1e293b;
+      background-color: #0a0a0a; /* Slightly off-black for depth */
+      color: #f0f4f8; /* Light icy blue text */
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      position: relative;
     }
     
-    /* Tag Style: Scribbled text */
-    .tag-scribble {
-        background-color: #fffbeb; /* Very light yellow paper */
-        border: 1px dashed #475569;
-        color: #475569;
-        font-size: 0.6rem;
+    /* 1. Aurora Background (NEW COLORS: Red/Gold) */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        pointer-events: none;
+        background: radial-gradient(
+            800px circle at var(--x) var(--y),
+            rgba(239, 68, 68, 0.2),  /* Vibrant Red glow */
+            rgba(245, 158, 11, 0.15), /* Warm Gold glow */
+            transparent 70%
+        );
+        z-index: 0;
+        opacity: 0.8;
+    }
+    
+    main {
+        position: relative;
+        z-index: 1;
     }
 
-    /* Filter buttons mimic the CTA style */
-    .filter-btn {
-        border: 2px dashed #475569;
-        color: #475569;
-        background-color: transparent;
+    /* 2. 3D Tilt Card Style (NEW COLORS: Red/Gold) */
+    .card-3d {
+      background: rgba(26, 26, 26, 0.7); /* Dark charcoal base */
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(239, 68, 68, 0.2); /* Faint Red border */
+      border-radius: 16px;
+      transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-style: preserve-3d;
+      will-change: transform;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
-    .filter-btn.active {
-      background-color: #fef08a; /* Light yellow background */
-      color: #1e293b;
-      border: 2px solid #1e293b;
+    
+    .card-3d:hover {
+        border-color: rgba(239, 68, 68, 0.8); /* Strong Red border */
+        box-shadow: 0 20px 40px rgba(239, 68, 68, 0.4); /* Red shadow */
     }
 
-    /* Fix tiny font issue with marker style */
-    .text-sm { font-size: 0.75rem; }
-    .text-xs { font-size: 0.6rem; }
+    /* 3. GIF/Video Preview Placeholder (NEW COLORS) */
+    .preview-placeholder {
+      width: 100%;
+      height: 180px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Animated scanline with Red tint */
+    .preview-placeholder::before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, rgba(239, 68, 68, 0.3), transparent);
+        animation: scan 2.5s infinite linear;
+    }
 
+    /* Button Style: Gradient Blast (NEW COLORS: Red/Gold) */
+    .cta-button {
+      background: linear-gradient(90deg, #ef4444, #f59e0b); /* Red to Gold */
+      color: #000000;
+      font-weight: 700;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+    .cta-button:hover {
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.7);
+      transform: scale(1.05);
+    }
+    
+    /* Animation Keyframes */
+    @keyframes scan {
+        0% { top: -100%; }
+        100% { top: 100%; }
+    }
   </style>
 </head>
 <body class="antialiased">
-  <div class="notebook-bg">
-    <main class="mx-auto max-w-6xl">
-      <header class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 pb-6 border-b-4 border-b-gray-400/50">
-        <div>
-          <p class="text-xl highlight-yellow mb-1">// SKETCHBOOK ENTRY</p>
-          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-800 mt-1">
-            MAHESH'S <span class="highlight-yellow">W.I.P.</span> INDEX
-          </h1>
-          <p class="text-sm text-gray-600 mt-4">
-              75 DAYS OF FULL STACK CHALLENGE. (WORK IN PROGRESS)
-          </p>
-        </div>
+  <main class="min-h-screen p-6 md:p-16 max-w-7xl mx-auto">
 
-        <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
-          <input id="search" type="search" placeholder="SEARCH FOR IDEAS..." class="w-full sm:w-80 px-4 py-3 bg-white border-4 border-gray-400 text-base focus:outline-none focus:ring-0" style="font-family: monospace;" />
-          <div class="flex gap-2">
-            <button id="copyAll" class="cta-button px-5 py-3 uppercase">COPY LOGS</button>
-            <a href="https://github.com/Maheshkrsaw/75DaysOfFullStack" target="_blank" class="cta-button px-5 py-3 bg-gray-400 text-gray-800 hover:bg-gray-700 hover:text-white uppercase">VIEW REPO</a>
-          </div>
-        </div>
-      </header>
-
-      <nav class="mb-10 flex flex-wrap gap-3">
-        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-md text-sm uppercase">ALL</button>
-        <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">FRONTEND</button>
-        <button data-filter="backend" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">BACKEND</button>
-        <button data-filter="react" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">REACT</button>
-        <button data-filter="tailwind" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">TAILWIND</button>
-        <button data-filter="deploy" class="filter-btn px-4 py-2 rounded-md text-sm uppercase">DEPLOYED</button>
-      </nav>
-
-      <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        </section>
-
-      <footer class="mt-16 text-xs text-gray-600 pt-6 border-t-2 border-t-gray-300">
-        <p class="mb-1">// NOTE: THESE ARE ALL LIVE DEMOS. KEEP CODING.</p>
-        <p class="italic">
-            // LAST UPDATED: <span class="text-gray-900">NOV 04 2025</span>
+    <header class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16 pb-6 border-b-2 border-b-red-500/30">
+      <div>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mt-2" style="text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);">
+          MAHESH'S <span style="color: #ef4444;">DATA-CORE</span>
+        </h1>
+        <p class="text-xl text-slate-400 mt-4">
+            75 Days of Full Stack: An Interactive Experience.
         </p>
-      </footer>
-    </main>
-  </div>
+      </div>
+
+      <div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
+        <input id="search" type="search" placeholder="FILTER MODULES..." class="w-full sm:w-80 px-4 py-3 rounded-md bg-black/50 border border-red-500/50 text-base focus:outline-none focus:ring-2 focus:ring-red-400" />
+        <div class="flex gap-3">
+          <button id="copyAll" class="cta-button px-6 py-3 text-base uppercase">COPY ALL</button>
+          <a href="https://github.com/Maheshkrsaw/75DaysOfFullStack" target="_blank" class="px-5 py-3 rounded-md bg-slate-700 text-slate-200 font-medium hover:bg-slate-600 transition text-base uppercase">REPO</a>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mb-12 flex flex-wrap gap-3">
+      <button data-filter="all" class="filter-btn active px-4 py-2 rounded-md text-sm uppercase bg-black/30 text-slate-300 border border-red-500/50">ALL</button>
+      <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-md text-sm uppercase bg-black/30 text-slate-300 border border-red-500/50">FRONTEND</button>
+      <button data-filter="backend" class="filter-btn px-4 py-2 rounded-md text-sm uppercase bg-black/30 text-slate-300 border border-red-500/50">BACKEND</button>
+      <button data-filter="react" class="filter-btn px-4 py-2 rounded-md text-sm uppercase bg-black/30 text-slate-300 border border-red-500/50">REACT</button>
+      <button data-filter="tailwind" class="filter-btn px-4 py-2 rounded-md text-sm uppercase bg-black/30 text-slate-300 border border-red-500/50">TAILWIND</button>
+    </nav>
+
+    <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      </section>
+
+    <footer class="mt-24 text-slate-500 text-center text-sm pt-8 border-t border-red-500/30">
+      <p class="mb-1">
+        Developed by <strong class="text-red-500">Mahesh Kumar Saw</strong>.
+      </p>
+      <p class="italic">
+          &gt; Experience the next level of interaction.
+      </p>
+    </footer>
+  </main>
 
   <script>
-    // ======= Data: Add all live links here (edit/add as needed) =======
+    // ======= Data: (No changes needed) =======
     const items = [
       {
-        day: "FINAL PROJECT IDEA",
-        title: "FILMYWORLD REACT APP",
+        day: "MODULE: FINAL",
+        title: "FILMYWORLD - REACT APP",
         url: "https://react-filmyworld.netlify.app/",
         tags: ["react","deploy","project"],
-        desc: "FINAL PROJECT: MOVIE BROWSING APP. NEEDS REFINEMENT."
+        desc: "High-performance movie browsing application with API integration."
       },
       {
-        day: "DAY 01 SKETCH",
-        title: "PROJECT 1: HTML/CSS UI",
+        day: "MODULE: D01",
+        title: "PROJECT 1 - HTML/CSS UI",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/03_project/PROJECT_1/",
         tags: ["frontend","html","css","deploy"],
-        desc: "BASIC UI LAYOUT. CHECK RESPONSIVENESS."
+        desc: "Initial UI/UX structure for modern product presentation."
       },
       {
-        day: "DAY 02 SKETCH",
-        title: "PROJECT 2: CSS LAYOUTS",
+        day: "MODULE: D02",
+        title: "PROJECT 2 - CSS LAYOUTS",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_2/",
         tags: ["frontend","css","deploy"],
-        desc: "FLEXBOX AND GRID PRACTICE."
+        desc: "Advanced Flexbox and Grid structures for responsive architecture."
       },
       {
-        day: "DAY 04 IDEA",
-        title: "PROJECT 3: HORIZONTAL CAROUSEL",
+        day: "MODULE: D04",
+        title: "PROJECT 3 - CAROUSEL",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/04_project/project_3/",
         tags: ["frontend","animation","deploy"],
-        desc: "SCROLLING DEMO. ADD MORE IMAGES."
+        desc: "Interactive image carousel with smooth horizontal scrolling."
       },
       {
-        day: "DAY 05 IDEA",
-        title: "PROJECT 4: VIDEO BG UI",
+        day: "MODULE: D05",
+        title: "PROJECT 4 - VIDEO BG UI",
         url: "https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project_4/",
         tags: ["frontend","css","deploy"],
-        desc: "VIDEO BACKGROUND MODULE."
+        desc: "Modern landing page featuring a full-screen video background."
       },
       {
-        day: "DAY 05B IDEA",
-        title: "PROJECT 5: INTERACTIVE UI",
-        url: "https://maheshkrsaw.github.io/75DaysOfFullStack/05_project/Project5/",
-        tags: ["frontend","ui","deploy"],
-        desc: "JS EFFECTS PRACTICE."
-      },
-      {
-        day: "DAY 18 LOG",
-        title: "TAILWIND DEPLOYMENT",
-        url: "https://75-days-of-full-stack-fr72.vercel.app/",
-        tags: ["deploy","tailwind","frontend"],
-        desc: "VERCEL DEPLOYMENT CHECK."
-      },
-      {
-        day: "DAY 29 LOG",
-        title: "REACT ROUTING DEMO",
-        url: "https://75-days-of-full-stack-rvch.vercel.app/",
-        tags: ["react","deploy"],
-        desc: "REACT ROUTER TEST."
-      },
-      {
-        day: "DAY 31-36 LOG",
+        day: "MODULE: D31-36",
         title: "REACT E-COMMERCE STORE",
         url: "https://reactproject-with-api.netlify.app/",
         tags: ["react","project","deploy"],
-        desc: "CONTEXT API & LOCALSTORAGE."
+        desc: "Complete E-Commerce demo using React Context and LocalStorage."
       }
-      // <-- Add more items below as you want
     ];
 
-    // ======= Render logic - updated for Sketch Theme look =======
+    // ======= Render logic - (Updated for new color classes) =======
     const grid = document.getElementById('grid');
     const searchInput = document.getElementById('search');
     const copyAllBtn = document.getElementById('copyAll');
 
     function render(list) {
       grid.innerHTML = list.map(it => {
-        // Tag styles: Scribbled look
-        const tagsHtml = it.tags.map(t => `<span class="tag-scribble inline-block uppercase px-2 py-0.5 rounded-sm mr-1">${t}</span>`).join(' ');
-        return `
-          <article class="card-sketch p-5 flex flex-col justify-between h-full">
-            <div class="mb-4">
-              <h3 class="text-xl font-extrabold text-gray-900 mb-2 uppercase">${escapeHTML(it.title)}</h3>
-              <p class="text-sm text-gray-700">${escapeHTML(it.desc)}</p>
+        const tagsHtml = it.tags.map(t => `<span class="inline-block text-xs uppercase px-2 py-0.5 rounded-full mr-1 bg-slate-700 text-red-300 border border-red-700">${t}</span>`).join(' ');
+        
+        const previewPlaceholder = `
+            <div class="preview-placeholder">
+                <span>LOADING PREVIEW...</span>
             </div>
-            <div class="mt-4">
-                <div class="mb-4">${tagsHtml}</div>
-                <div class="flex items-center justify-between pt-4 border-t border-gray-300">
-                    <div class="text-base font-bold text-gray-800">${escapeHTML(it.day)}</div>
-                    <div class="flex gap-2">
-                        <a href="${it.url}" target="_blank" rel="noopener" class="cta-button px-4 py-2 text-xs uppercase">VIEW SKETCH</a>
-                        <button data-url="${it.url}" class="copy-btn px-4 py-2 text-xs uppercase bg-gray-200 text-gray-700 hover:bg-gray-400">COPY LINK</button>
-                    </div>
+        `;
+
+        return `
+          <article class="card-3d" data-tilt>
+            ${previewPlaceholder}
+            <div class="p-6 flex flex-col justify-between flex-grow">
+              <div class="mb-4">
+                <div class="text-sm font-light text-slate-400 mb-1">${escapeHTML(it.day)}</div>
+                <h3 class="text-xl font-bold text-white mb-2">${escapeHTML(it.title)}</h3>
+                <p class="text-sm text-slate-300">${escapeHTML(it.desc)}</D>
+              </div>
+              <div class="mt-auto">
+                  <div class="mb-4">${tagsHtml}</div>
+                  <div class="flex items-center justify-between pt-4 border-t border-red-500/30">
+                      <a href="${it.url}" target="_blank" rel="noopener" class="cta-button px-4 py-2 text-xs uppercase">LAUNCH MODULE</a>
+                      <button data-url="${it.url}" class="copy-btn px-4 py-2 text-xs uppercase rounded-md bg-slate-700 text-slate-200 hover:bg-slate-600 transition">COPY LINK</button>
+                  </div>
                 </div>
             </div>
           </article>
         `;
       }).join('');
+      
       attachCopyHandlers();
+      
+      // Attach 3D Tilt and Aurora listeners AFTER rendering
+      attachAdvancedEffects();
     }
 
     function escapeHTML(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
 
-    // initial render
-    render(items);
+    // ======= ADVANCED JAVASCRIPT EFFECTS (Same as before) =======
+    
+    function attachAdvancedEffects() {
+        // 1. Aurora Background Effect
+        document.body.addEventListener('mousemove', (e) => {
+            document.body.style.setProperty('--x', e.clientX + 'px');
+            document.body.style.setProperty('--y', e.clientY + 'px');
+        });
 
-    // search/filter (Logic is reused)
+        // 2. 3D Tilt Card Effect
+        const cards = document.querySelectorAll('.card-3d');
+        cards.forEach(card => {
+            const tiltAmount = 15; 
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const { width, height } = rect;
+                const rotateX = (tiltAmount * (y - height / 2)) / (height / 2);
+                const rotateY = -(tiltAmount * (x - width / 2)) / (width / 2);
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+            });
+        });
+    }
+
+    // ======= Standard JS Functions (Search, Filter, Copy) (Same as before) =======
+    
+    render(items); // Initial render
+
     searchInput.addEventListener('input', (e) => {
       const q = e.target.value.trim().toLowerCase();
-      const filtered = items.filter(it => {
-        return (
-          it.title.toLowerCase().includes(q) ||
-          it.desc.toLowerCase().includes(q) ||
-          it.day.toLowerCase().includes(q) ||
-          it.tags.join(' ').toLowerCase().includes(q)
-        );
-      });
+      const filtered = items.filter(it => 
+          it.title.toLowerCase().includes(q) || it.desc.toLowerCase().includes(q) ||
+          it.day.toLowerCase().includes(q) || it.tags.join(' ').toLowerCase().includes(q)
+      );
       render(filtered);
     });
 
-    // filter buttons (Logic is reused)
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'bg-red-500', 'text-black'));
+        btn.classList.add('active', 'bg-red-500', 'text-black'); // Changed to red
         const f = btn.dataset.filter;
-        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-
-        if (f === 'all') render(items);
-        else {
-          render(items.filter(it => it.tags.includes(f)));
-        }
+        render(f === 'all' ? items : items.filter(it => it.tags.includes(f)));
       });
     });
 
-    // copy handlers (Logic is reused)
     function attachCopyHandlers(){
       document.querySelectorAll('.copy-btn').forEach(b => {
         b.onclick = async (ev) => {
-          const url = b.getAttribute('data-url');
-          await navigator.clipboard.writeText(url);
+          await navigator.clipboard.writeText(b.getAttribute('data-url'));
           b.textContent = "COPIED ✅";
-          setTimeout(()=> b.textContent = "COPY LINK", 1500);
+          setTimeout(() => b.textContent = "COPY LINK", 1500);
         };
       });
     }
 
-    // copy all button (Logic is reused)
     copyAllBtn.addEventListener('click', async () => {
       const all = items.map(i => `${i.day} — ${i.title} — ${i.url}`).join('\n');
       await navigator.clipboard.writeText(all);
-      copyAllBtn.textContent = "COPIED LOGS ✅";
-      setTimeout(()=> copyAllBtn.textContent = "COPY LOGS", 1800);
+      copyAllBtn.textContent = "ALL COPIED ✅";
+      setTimeout(() => copyAllBtn.textContent = "COPY ALL", 1800);
     });
-
-    window.__LIVE_LINKS = items;
-    window.__addLink = function(obj){ items.push(obj); render(items); };
 
     searchInput.focus();
   </script>

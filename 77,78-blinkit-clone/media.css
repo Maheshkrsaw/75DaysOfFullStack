@@ -1,0 +1,65 @@
+@media screen and (min-width: 201px) and (max-width: 575px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    gap: 10px;
+  }
+  .logo {
+    padding: 10px;
+  }
+
+  .headerleft {
+    justify-content: center;
+  }
+
+  .headeraddress {
+    padding: 10px;
+  }
+
+  .headeraddress h3 {
+    font-size: 18px;
+  }
+
+  .headeraddress p {
+    font-size: 13px;
+  }
+
+  .searchbox button {
+    padding: 10px;
+  }
+
+  .headerbtn {
+    position: fixed;
+    background-color: white;
+    bottom: 1px;
+    width: 100%;
+    margin-right: 0px;
+    justify-content: center;
+  }
+
+  .banner img {
+    display: none;
+  }
+
+  .orderBanner {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .categories {
+    flex-basis: 25%;
+  }
+
+  .productItems {
+    flex-basis: 49%;
+  }
+
+  .productRow {
+    padding: 0 10px;
+  }
+
+  .productSection {
+    padding: 0 15px;
+  }
+}

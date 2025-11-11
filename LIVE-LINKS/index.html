@@ -7,16 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Base: Deepest Charcoal/Black */
     body {
-      background-color: #0a0a0a; /* Slightly off-black for depth */
-      color: #f0f4f8; /* Light icy blue text */
+      background-color: #0a0a0a;
+      color: #f0f4f8;
       font-family: 'Poppins', sans-serif;
-      overflow: hidden;
       position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
     }
-    
-    /* 1. Aurora Background (NEW COLORS: Red/Gold) */
+
     body::before {
         content: '';
         position: fixed;
@@ -27,8 +26,8 @@
         pointer-events: none;
         background: radial-gradient(
             800px circle at var(--x) var(--y),
-            rgba(239, 68, 68, 0.2),  /* Vibrant Red glow */
-            rgba(245, 158, 11, 0.15), /* Warm Gold glow */
+            rgba(239, 68, 68, 0.2),
+            rgba(245, 158, 11, 0.15),
             transparent 70%
         );
         z-index: 0;
@@ -40,11 +39,10 @@
         z-index: 1;
     }
 
-    /* 2. 3D Tilt Card Style (NEW COLORS: Red/Gold) */
     .card-3d {
-      background: rgba(26, 26, 26, 0.7); /* Dark charcoal base */
+      background: rgba(26, 26, 26, 0.7);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(239, 68, 68, 0.2); /* Faint Red border */
+      border: 1px solid rgba(239, 68, 68, 0.2);
       border-radius: 16px;
       transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
       transform-style: preserve-3d;
@@ -53,11 +51,10 @@
     }
     
     .card-3d:hover {
-        border-color: rgba(239, 68, 68, 0.8); /* Strong Red border */
-        box-shadow: 0 20px 40px rgba(239, 68, 68, 0.4); /* Red shadow */
+        border-color: rgba(239, 68, 68, 0.8);
+        box-shadow: 0 20px 40px rgba(239, 68, 68, 0.4);
     }
 
-    /* 3. GIF/Video Preview Placeholder (NEW COLORS) */
     .preview-placeholder {
       width: 100%;
       height: 180px;
@@ -71,21 +68,9 @@
       position: relative;
       overflow: hidden;
     }
-    /* Animated scanline with Red tint */
-    .preview-placeholder::before {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(180deg, transparent, rgba(239, 68, 68, 0.3), transparent);
-        animation: scan 2.5s infinite linear;
-    }
 
-    /* Button Style: Gradient Blast (NEW COLORS: Red/Gold) */
     .cta-button {
-      background: linear-gradient(90deg, #ef4444, #f59e0b); /* Red to Gold */
+      background: linear-gradient(90deg, #ef4444, #f59e0b);
       color: #000000;
       font-weight: 700;
       border-radius: 8px;
@@ -96,8 +81,7 @@
       box-shadow: 0 0 20px rgba(239, 68, 68, 0.7);
       transform: scale(1.05);
     }
-    
-    /* Animation Keyframes */
+
     @keyframes scan {
         0% { top: -100%; }
         100% { top: 100%; }
@@ -134,8 +118,7 @@
       <button data-filter="tailwind" class="filter-btn px-4 py-2 rounded-md text-sm uppercase bg-black/30 text-slate-300 border border-red-500/50">TAILWIND</button>
     </nav>
 
-    <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      </section>
+    <section id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></section>
 
     <footer class="mt-24 text-slate-500 text-center text-sm pt-8 border-t border-red-500/30">
       <p class="mb-1">
@@ -148,7 +131,6 @@
   </main>
 
   <script>
-    // ======= Data: (No changes needed) =======
     const items = [
       {
         day: "MODULE: FINAL",
@@ -194,90 +176,91 @@
       }
     ];
 
-    // ======= Render logic - (Updated for new color classes) =======
     const grid = document.getElementById('grid');
     const searchInput = document.getElementById('search');
     const copyAllBtn = document.getElementById('copyAll');
 
     function render(list) {
+      // Random GIF list
+      const loadingImages = [
+        "https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif",
+        "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif",
+        "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+                "https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif"
+      ];
+
       grid.innerHTML = list.map(it => {
+        const randomImg = loadingImages[Math.floor(Math.random() * loadingImages.length)];
         const tagsHtml = it.tags.map(t => `<span class="inline-block text-xs uppercase px-2 py-0.5 rounded-full mr-1 bg-slate-700 text-red-300 border border-red-700">${t}</span>`).join(' ');
         
-        const previewPlaceholder = `
-            <div class="preview-placeholder">
-                <span>LOADING PREVIEW...</span>
-            </div>
-        `;
-
         return `
           <article class="card-3d" data-tilt>
-            ${previewPlaceholder}
+            <div class="preview-placeholder">
+              <img src="${randomImg}" alt="Loading preview" class="w-full h-full object-cover" />
+            </div>
             <div class="p-6 flex flex-col justify-between flex-grow">
               <div class="mb-4">
-                <div class="text-sm font-light text-slate-400 mb-1">${escapeHTML(it.day)}</div>
-                <h3 class="text-xl font-bold text-white mb-2">${escapeHTML(it.title)}</h3>
-                <p class="text-sm text-slate-300">${escapeHTML(it.desc)}</D>
+                <div class="text-sm font-light text-slate-400 mb-1">${it.day}</div>
+                <h3 class="text-xl font-bold text-white mb-2">${it.title}</h3>
+                <p class="text-sm text-slate-300">${it.desc}</p>
               </div>
               <div class="mt-auto">
-                  <div class="mb-4">${tagsHtml}</div>
-                  <div class="flex items-center justify-between pt-4 border-t border-red-500/30">
-                      <a href="${it.url}" target="_blank" rel="noopener" class="cta-button px-4 py-2 text-xs uppercase">LAUNCH MODULE</a>
-                      <button data-url="${it.url}" class="copy-btn px-4 py-2 text-xs uppercase rounded-md bg-slate-700 text-slate-200 hover:bg-slate-600 transition">COPY LINK</button>
-                  </div>
+                <div class="mb-4">${tagsHtml}</div>
+                <div class="flex items-center justify-between pt-4 border-t border-red-500/30">
+                  <a href="${it.url}" target="_blank" rel="noopener" class="cta-button px-4 py-2 text-xs uppercase">LAUNCH MODULE</a>
+                  <button data-url="${it.url}" class="copy-btn px-4 py-2 text-xs uppercase rounded-md bg-slate-700 text-slate-200 hover:bg-slate-600 transition">COPY LINK</button>
                 </div>
+              </div>
             </div>
           </article>
         `;
       }).join('');
-      
       attachCopyHandlers();
-      
-      // Attach 3D Tilt and Aurora listeners AFTER rendering
       attachAdvancedEffects();
     }
 
-    function escapeHTML(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
-
-    // ======= ADVANCED JAVASCRIPT EFFECTS (Same as before) =======
-    
     function attachAdvancedEffects() {
-        // 1. Aurora Background Effect
-        document.body.addEventListener('mousemove', (e) => {
-            document.body.style.setProperty('--x', e.clientX + 'px');
-            document.body.style.setProperty('--y', e.clientY + 'px');
+      document.body.addEventListener('mousemove', (e) => {
+          document.body.style.setProperty('--x', e.clientX + 'px');
+          document.body.style.setProperty('--y', e.clientY + 'px');
+      });
+
+      document.querySelectorAll('.card-3d').forEach(card => {
+        const tiltAmount = 15; 
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const { width, height } = rect;
+          const rotateX = (tiltAmount * (y - height / 2)) / (height / 2);
+          const rotateY = -(tiltAmount * (x - width / 2)) / (width / 2);
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
         });
-
-        // 2. 3D Tilt Card Effect
-        const cards = document.querySelectorAll('.card-3d');
-        cards.forEach(card => {
-            const tiltAmount = 15; 
-
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const { width, height } = rect;
-                const rotateX = (tiltAmount * (y - height / 2)) / (height / 2);
-                const rotateY = -(tiltAmount * (x - width / 2)) / (width / 2);
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
-            });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
         });
+      });
     }
 
-    // ======= Standard JS Functions (Search, Filter, Copy) (Same as before) =======
-    
-    render(items); // Initial render
+    function attachCopyHandlers() {
+      document.querySelectorAll('.copy-btn').forEach(b => {
+        b.onclick = async () => {
+          await navigator.clipboard.writeText(b.dataset.url);
+          b.textContent = "COPIED ✅";
+          setTimeout(() => b.textContent = "COPY LINK", 1500);
+        };
+      });
+    }
+
+    render(items);
 
     searchInput.addEventListener('input', (e) => {
       const q = e.target.value.trim().toLowerCase();
       const filtered = items.filter(it => 
-          it.title.toLowerCase().includes(q) || it.desc.toLowerCase().includes(q) ||
-          it.day.toLowerCase().includes(q) || it.tags.join(' ').toLowerCase().includes(q)
+        it.title.toLowerCase().includes(q) ||
+        it.desc.toLowerCase().includes(q) ||
+        it.day.toLowerCase().includes(q) ||
+        it.tags.join(' ').toLowerCase().includes(q)
       );
       render(filtered);
     });
@@ -285,21 +268,11 @@
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'bg-red-500', 'text-black'));
-        btn.classList.add('active', 'bg-red-500', 'text-black'); // Changed to red
+        btn.classList.add('active', 'bg-red-500', 'text-black');
         const f = btn.dataset.filter;
         render(f === 'all' ? items : items.filter(it => it.tags.includes(f)));
       });
     });
-
-    function attachCopyHandlers(){
-      document.querySelectorAll('.copy-btn').forEach(b => {
-        b.onclick = async (ev) => {
-          await navigator.clipboard.writeText(b.getAttribute('data-url'));
-          b.textContent = "COPIED ✅";
-          setTimeout(() => b.textContent = "COPY LINK", 1500);
-        };
-      });
-    }
 
     copyAllBtn.addEventListener('click', async () => {
       const all = items.map(i => `${i.day} — ${i.title} — ${i.url}`).join('\n');

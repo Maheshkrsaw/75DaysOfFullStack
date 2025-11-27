@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root{
+    --primary-color:#e2be0a;
+    --text-dark:#0f172a;
+    --white:#ffffff;
+    --max-width:1280px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    display: flex;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
+.container{
+    min-height: 100vh;
+  background-image: linear-gradient(rgba(9, 24, 29, 0.9), rgba(9, 24, 29, 0.9)),
+    url("assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav{
+    position: fixed;
+    isolation: isolate;
+    top: 0;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    z-index: 9;
+}
+
+.nav-bar{
+    padding: .75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--primary-color);
+}
+
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo img{
+    max-width: 75px;
+}
+
+.nav-logo span{
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--white);
+    display: none;
+}
+
+.nav-menu-btn{
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav-links{
+    list-style: none;
+    position: absolute;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: rgba(9, 24, 29, 0.9);
+    transform: translateY(-100%);
+    transition: .5s;
+    z-index: -1;
+}
+
+.nav-links.open {
+    transform: translateY(0);
+}
+
+.nav-links a{
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: var(--primary-color);
+}
+
+
+.container-grid{
+    position: relative;
+    isolation: isolate;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem 1rem;
+    padding-top: 8rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.bg-1,.bg-2,.bg-3{
+    max-width:150px ;
+    position: absolute;
+    z-index: 1;
+}
+
+.bg-1{
+    top: 0;
+    right: 0;
+}
+
+.bg-2{
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bg-3{
+    bottom: 0;
+    left: 25%;
+}
+
+.container-image>div{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    aspect-ratio: 1;
+    background-image:url(assests/header.jpg) ;
+    background-position: center;
+    background-size: cover;
+    -webkit-mask: url(assests/header-bg.png);
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center center;
+}
+
+.container-content{
+    text-align: center;
+}
+
+.container-content h1{
+    font-size: 4rem;
+    line-height: 5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.container-content h2{
+    margin-bottom: 1rem;
+    max-width: 450px;
+    font-size: 2.5rem;    
+    margin-inline: auto;
+    font-weight: 400;
+    line-height: 3rem;
+    color: var(--white);
+}
+
+.container-content p {
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  max-width: 400px;
+  color: var(--white);
+}
+
+.socials > div {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socials a {
+  padding: 2px 7px;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 100%;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+.socials span {
+  font-size: 1.1rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+
+  @media (width > 768px) {
+  nav {
+    padding: 2rem 1rem;
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-bar {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav-logo span {
+    display: flex;
+  }
+
+  .nav-menu-btn {
+    display: none;
+  }
+
+  .nav-links {
+    padding: 0;
+    width: unset;
+    position: static;
+    transform: none;
+    flex-direction: row;
+    background-color: transparent;
+  }
+
+  .container-grid {
+    padding-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .container-image {
+    grid-area: 1/2/2/3;
+  }
+
+  .container-content {
+    text-align: left;
+  }
+
+  .container-content :is(h2, p) {
+    margin-inline: unset;
+  }
+
+  .socials > div {
+    justify-content: flex-start;
+  }
+}

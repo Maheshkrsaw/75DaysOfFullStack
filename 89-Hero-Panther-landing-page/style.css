@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #ed1d24;
+  --primary-color-dark: #b80314;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main{
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    background-image: url(assets/header.png);
+    background-size: cover;   
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #060604;
+}
+
+.main::before{
+    position: absolute;
+    content: "";
+    inset: 0;
+    opacity: 1;
+    background-color: #060604;
+    z-index: 999;
+    animation: main-slider 2s ease-in-out forwards;
+}
+
+@keyframes main-slider {
+    90%{
+        opacity:0;
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+nav{
+    position: fixed;
+    isolation: isolate;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav_header{
+    padding: .75rem 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+
+.nav_logo a img{
+    max-width: 75px;
+}
+
+.nav_menu_btn{
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.nav_links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.nav_links.open{
+    transform: translateY(100%);
+}
+
+.nav_links a{
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.header_container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.header_container h1 {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0 1rem;
+  flex-wrap: wrap;
+  font-weight: 800;
+  color: var(--white);
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.header_container h1 span:nth-child(1) {
+  font-size: 6rem;
+  line-height: 6rem;
+}
+
+.header_container h1 span:nth-child(2) {
+  font-size: 2rem;
+}
+
+.header_container p {
+  margin-bottom: 5rem;
+  max-width: calc((var(--max-width)) / 2);
+  line-height: 1.75rem;
+  color: var(--white);
+}
+
+button {
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 0.25rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials a {
+  display: inline-flex;
+  padding: 9px 10px;
+  font-display: 1.2rem;
+  color: var(--white);
+  border: 1px solid var(--primary-color);
+  border-radius: 100%;
+}
+
+.socials a:hover {
+  color: var(--primary-color);
+  background-color: var(--white);
+  border-color: var(--white);
+}
+
+@media (width > 540px) {
+  .header__container h1 span:nth-child(1) {
+    font-size: 8rem;
+    line-height: 7.5rem;
+  }
+}
+
+
+
+
+@media (width > 768px) {
+  nav {
+    position: static;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .nav_header {
+    width: fit-content;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav_logo a img {
+    max-width: 120px;
+  }
+
+  .nav_menu_btn {
+    display: none;
+  }
+
+  .nav_links {
+    position: static;
+    width: fit-content;
+    padding: 0;
+    flex-direction: row;
+    gap: 3rem;
+    background-color: transparent;
+    transform: none !important;
+  }
+
+  .nav_links a:hover {
+    color: var(--primary-color);
+  }
+
+  .header_container h1 span:nth-child(1) {
+    font-size: 10rem;
+    line-height: 9rem;
+  }
+}

@@ -881,6 +881,108 @@ Sometimes, **maintenance and structure** are equally important as coding.
 
 ---
 
+# 🚀 Days 76–83 — Project Phase, UI Clones & GSAP Animations  
+A compiled log of my journey from starting the **Project Phase** (post #75DaysOfFullStack) to building multiple **frontend UI projects**, mastering **HTML, CSS, JS**, responsive layouts, and **GSAP animations**.
+
+---
+
+# 📅 Day 76 — Project Phase Begins 🎯  
+### 📍 Challenge: #DesignCraft75  
+
+## 🧠 Overview  
+The learning phase is complete — now begins the **real implementation**.  
+Focused on HTML, CSS, JS, and MERN mini-projects to sharpen design-to-code conversion.
+
+## 💻 Work Done  
+- Started the **Project Phase**  
+- Built a **Responsive Sidebar Menu**  
+- Added transitions, animations, and structured layout  
+
+🔗 **Live Project:**  
+https://maheshkrsaw.github.io/DesignCraft75/01-sidebar-menu/
+
+---
+
+# 🛒 Day 77–78 — Blinkit Clone (HTML + CSS)  
+A complete front-end clone of **Blinkit**, built using pure HTML and CSS.
+
+## 🌟 Highlights  
+- Pixel-perfect layout recreation  
+- Full responsive behavior  
+- Strong practice in Flexbox, Grid & positioning  
+- Improved UI/UX understanding  
+
+🔗 **Live Project:**  
+https://maheshkrsaw.github.io/DesignCraft75/02-blinkit-clone/
+
+📸 Preview:  
+![Blinkit Clone](https://github.com/Maheshkrsaw/DesignCraft75/blob/main/02-blinkit-clone/preview.png?raw=true)
+
+---
+
+# 🛍️ Day 79–81 — Complete E-Commerce Website (HTML + CSS + JS)
+
+## 🧩 Features  
+- Header + Navigation  
+- Hero & Features section  
+- Product card grid  
+- Promo banners  
+- 100% responsive design  
+
+## 💡 Learnings  
+- Strong understanding of **consistent spacing & layout hierarchy**  
+- Mastery over **Flexbox, Grid, rem units, vw/vh**  
+- Creating scalable mobile-first UI structures  
+
+🔗 **Live Demo:**  
+https://maheshkrsaw.github.io/DesignCraft75/03-Ecommerce/
+
+---
+
+# 🍨 Day 82–83 — Ice-Cream Website with GSAP Animations  
+
+## 🎨 What I Built  
+- Full ice-cream brand UI  
+- Hero animation  
+- Section-wise scroll animations  
+- GSAP timelines & trigger-based effects  
+
+## 🧠 Learnings  
+- GSAP scroll-trigger, sequencing & timelines  
+- Handling responsive animations  
+- Understanding GSAP `matchMedia()`  
+- Real motion-design experience  
+
+🔗 **Live Project:** *(Will be added soon)*  
+(Will be uploaded in the DesignCraft75 repo)
+
+📁 Repo:  
+https://github.com/Maheshkrsaw/DesignCraft75
+
+---
+
+# 🔥 Summary of Days 76–83  
+| Days | Project | Tech Stack | Live Link |
+|------|----------|-------------|-----------|
+| 76 | Sidebar Menu | HTML, CSS, JS | https://maheshkrsaw.github.io/DesignCraft75/01-sidebar-menu/ |
+| 77–78 | Blinkit Clone | HTML, CSS | https://maheshkrsaw.github.io/DesignCraft75/02-blinkit-clone/ |
+| 79–81 | E-Commerce Website | HTML, CSS, JS | https://maheshkrsaw.github.io/DesignCraft75/03-Ecommerce/ |
+| 82–83 | Ice-Cream GSAP Website | HTML, CSS, JS, GSAP | Coming Soon |
+
+---
+
+# 🌐 Connect With Me  
+🐦 X/Twitter: https://x.com/kumarMahesh9304  
+💻 GitHub: https://github.com/Maheshkrsaw  
+📘 75 Days DSA: https://github.com/Maheshkrsaw/75-Days-of-DSA-Grind  
+📂 75 Days Full Stack: https://github.com/Maheshkrsaw/75DaysOfFullStack  
+🎨 DesignCraft75: https://github.com/Maheshkrsaw/DesignCraft75  
+
+---
+
+🚀 **Consistency + Projects = Real Skill Growth**
+
+
 ## 📌 Hashtags  
 #75DaysFullStackAI #ReactJS #WebDevelopment #LearningInPublic #Consistency #Frontend #FullStack #Persistence
 

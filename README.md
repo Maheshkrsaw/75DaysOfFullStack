@@ -1076,14 +1076,6 @@ https://github.com/Maheshkrsaw/DesignCraft75
 
 ---
 
-# 🌐 Connect With Me  
-🐦 X/Twitter: https://x.com/kumarMahesh9304  
-💻 GitHub: https://github.com/Maheshkrsaw  
-📘 75 Days DSA: https://github.com/Maheshkrsaw/75-Days-of-DSA-Grind  
-📂 75 Days Full Stack: https://github.com/Maheshkrsaw/75DaysOfFullStack  
-🎨 DesignCraft75: https://github.com/Maheshkrsaw/DesignCraft75  
-
----
 
 🚀 **Consistency + Projects = Real Skill Growth**
 

@@ -971,6 +971,111 @@ https://github.com/Maheshkrsaw/DesignCraft75
 
 ---
 
+# 📚 Day 84–89 — Complete README (DesignCraft75 Series)
+
+This README covers **Day 84 to Day 89** of my **#75DaysDesignFlow** challenge.  
+Each day I built a fully responsive, theme-based landing page to sharpen my frontend fundamentals.
+
+---
+
+# ⭐ Day 84 — E-Learning Landing Page  
+📌 **Theme:** Study / Online Education  
+📌 **Focus:** Clean layout + mobile-first design  
+📌 **Tech:** HTML, CSS, Media Queries  
+🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/04-Landing-page/
+
+### ✅ Key Learning  
+- Building structured educational UIs  
+- Consistent spacing + typography  
+- Smooth responsive adjustments  
+
+---
+
+# ⭐ Day 85 — Nature Landing Page  
+📌 **Theme:** Nature / Eco UI  
+📌 **Focus:** Color harmony + minimal design  
+📌 **Tech:** HTML, CSS  
+🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/06-Nature-Landing-page/
+
+### ✅ Key Learning  
+- Creating natural soft color palettes  
+- Grid + flex combination for layout  
+- Improving mobile-first design strategy  
+
+---
+
+# ⭐ Day 86 — Porsche Watch Landing Page  
+📌 **Theme:** Luxury Watch (Porsche)  
+📌 **Focus:** ScrollReveal animations  
+📌 **Tech:** HTML, CSS, JS, ScrollReveal  
+🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/07-Porsche/
+
+### ✅ Key Learning  
+- Using ScrollReveal for smooth animations  
+- Timing, delay, easing, stagger effects  
+- Premium branding UI design principles  
+
+---
+
+# ⭐ Day 87 — Starbucks Landing Page  
+📌 **Theme:** Starbucks Product Showcase  
+📌 **Focus:** Hero mockups + product sections  
+📌 **Tech:** HTML, CSS  
+🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/08-Starbucks/
+
+### ✅ Key Learning  
+- Using brand colors effectively  
+- Clean product card layout  
+- High-contrast typography for branding  
+
+---
+
+# ⭐ Day 88 — PLAY Music Landing Page  
+📌 **Theme:** Music / Media Player  
+📌 **Focus:** Modern “music-app” UI sections  
+📌 **Tech:** HTML, CSS  
+🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/19-PLAY-landing-pages/
+
+### ✅ Key Learning  
+- Designing bold, high-energy landing pages  
+- Creating polished CTA sections  
+- Better hero composition and spacing  
+
+---
+
+# ⭐ Day 89 — Black Panther (Marvel) Landing Page  
+📌 **Theme:** Superhero / Marvel UI  
+📌 **Focus:** Cinematic layout + dark theme  
+📌 **Tech:** HTML, CSS  
+🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/20-Hero-Panther-landing-page/
+
+### ✅ Key Learning  
+- Building dark-theme cinematic layouts  
+- Typography for superhero vibes  
+- Hero-centered UI + dramatic spacing  
+
+---
+
+# 📁 Repository  
+🎨 **DesignCraft75:**  
+https://github.com/Maheshkrsaw/DesignCraft75
+
+---
+
+## 🔗 Connect With Me  
+🐦 Twitter/X: https://x.com/kumarMahesh9304  
+💻 GitHub: https://github.com/Maheshkrsaw  
+📘 75 Days of DSA: https://github.com/Maheshkrsaw/75-Days-of-DSA-Grind  
+📂 75 Days Full Stack: https://github.com/Maheshkrsaw/75DaysOfFullStack  
+🎨 75 Days Designs: https://github.com/Maheshkrsaw/DesignCraft75
+
+---
+
+## 🏷️ Tags  
+#75DaysDesignFlow #FrontendDevelopment #LandingPageDesign #HTML #CSS #ScrollReveal #WebDesign #UIUX #BuildInPublic
+
+---
+
 # 🌐 Connect With Me  
 🐦 X/Twitter: https://x.com/kumarMahesh9304  
 💻 GitHub: https://github.com/Maheshkrsaw  

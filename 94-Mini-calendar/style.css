@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1333, #0f0a28);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* The Main Card Container */
+.calendar-card {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    width: 300px;
+    height: 180px;
+    transition: transform 0.3s ease;
+}
+
+.calendar-card:hover {
+    transform: scale(1.02);
+}
+
+/* Left Side Styling */
+.date-side {
+    flex: 1; /* Takes 50% width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #111;
+    padding: 20px;
+}
+
+#date-num {
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+#day-name {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Right Side Styling */
+.month-side {
+    flex: 1; /* Takes 50% width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff4d15; /* The Orange Color */
+    color: white;
+    padding: 20px;
+}
+
+#month-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#year-num {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <!-- Google Fonts -->
+    <link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap)" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-card">
+        <div class="icon-circle">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+
+        <form id="contactForm" onsubmit="return validateForm()">
+            
+            <div class="form-group">
+                <label>Full Name</label>
+                <div class="input-container">
+                    <input type="text" id="fullname" placeholder="Enter your name" onkeyup="validateName()">
+                    <span class="error-msg" id="name-error">Name is required</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone No.</label>
+                <div class="input-container">
+                    <input type="tel" id="phone" placeholder="123 456 7890" onkeyup="validatePhone()">
+                    <span class="error-msg" id="phone-error">Invalid Phone No</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email Id</label>
+                <div class="input-container">
+                    <input type="email" id="email" placeholder="Enter Email" onkeyup="validateEmail()">
+                    <span class="error-msg" id="email-error">Invalid Email</span>
+                </div>
+            </div>
+
+            <div class="form-group textarea-group">
+                <label>Your Message</label>
+                <div class="input-container">
+                    <textarea id="message" rows="3" placeholder="Enter your message" onkeyup="validateMessage()"></textarea>
+                    <span class="error-msg" id="message-error">Message is required</span>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

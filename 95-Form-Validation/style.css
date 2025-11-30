@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-card {
+    background: white;
+    width: 550px;
+    padding: 60px 40px 40px 40px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.icon-circle {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.icon-circle i {
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #cbd5e1;
+    outline: none;
+    color: #334155;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus, textarea:focus {
+    border-bottom-color: #0f172a;
+}
+
+.error-msg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ef4444;
+    font-size: 0.8rem;
+    pointer-events: none;
+    display: none;
+}
+
+.textarea-group {
+    align-items: flex-start;
+}
+
+.textarea-group .error-msg {
+    top: 0;
+    transform: translateY(0);
+}
+
+/* Validation Classes */
+.input-container.error input,
+.input-container.error textarea {
+    border-bottom-color: #ef4444;
+}
+
+.input-container.error .error-msg {
+    display: block;
+}
+
+.input-container.success input,
+.input-container.success textarea {
+    border-bottom-color: #22c55e;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+button {
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    padding: 12px 50px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1e293b;
+}
+
+@media (max-width: 500px) {
+    .form-group {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    .error-msg {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        text-align: right;
+        margin-top: 5px;
+    }
+}

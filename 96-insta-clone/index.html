@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png" alt="Instagram">
+            </div>
+            <ul class="nav-links">
+                <li><a class="nav-link active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+                <li><a class="nav-link"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a></li>
+                <li><a class="nav-link"><i class="fa-regular fa-compass"></i> <span>Explore</span></a></li>
+                <li><a class="nav-link"><i class="fa-solid fa-clapperboard"></i> <span>Reels</span></a></li>
+                <li><a class="nav-link"><i class="fa-brands fa-facebook-messenger"></i> <span>Messages</span></a></li>
+                <li><a class="nav-link"><i class="fa-regular fa-heart"></i> <span>Notifications</span></a></li>
+                <li><a class="nav-link"><i class="fa-regular fa-square-plus"></i> <span>Create</span></a></li>
+                <li>
+                    <a class="nav-link">
+                        <div class="profile-thumb-nav">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fit=crop&w=100&q=80" alt="Me">
+                        </div>
+                        <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-link"><i class="fa-solid fa-bars"></i> <span>More</span></div>
+        </nav>
+
+        <!-- CONTENT -->
+        <main class="content-area">
+            <div class="feed-container">
+                
+                <!-- Stories (Added 8 items with data-story attribute for the modal) -->
+                <div class="stories-container">
+                    <div class="story" data-story="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">jessica_w</span>
+                    </div>
+                    <div class="story" data-story="https://images.unsplash.com/photo-1517849845537-4d257902454a?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">alex_dev</span>
+                    </div>
+                    <div class="story" data-story="https://images.unsplash.com/photo-1531297461136-82lw9z3?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">sarah.design</span>
+                    </div>
+                     <div class="story" data-story="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">travel_mike</span>
+                    </div>
+                     <div class="story" data-story="https://images.unsplash.com/photo-1483985988355-763728e1935b?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">fashion_l</span>
+                    </div>
+                     <div class="story" data-story="https://images.unsplash.com/photo-1513364776144-60967b0f800f?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">luna_art</span>
+                    </div>
+                    <div class="story" data-story="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">david_p</span>
+                    </div>
+                    <div class="story" data-story="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?fit=crop&w=600&q=80">
+                        <div class="story-ring"><div class="story-img"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=100&q=80"></div></div>
+                        <span class="story-name">emily_rose</span>
+                    </div>
+                </div>
+
+                <!-- POST 1 -->
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-user">
+                            <div class="post-user-thumb"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?fit=crop&w=100&q=80"></div>
+                            <span class="username">jessica_w</span>
+                        </div>
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <div class="post-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?fit=crop&w=800&q=80"></div>
+                    <div class="post-actions">
+                        <div class="actions-left">
+                            <button class="post-action-btn like-btn"><i class="fa-regular fa-heart"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-comment"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                        <button class="post-action-btn"><i class="fa-regular fa-bookmark"></i></button>
+                    </div>
+                    <div class="post-details">
+                        <span class="likes-count">1,204 likes</span>
+                        <div class="caption"><span class="username">jessica_w</span> Exploring the city! 🌆</div>
+                        <span class="timestamp">2 HOURS AGO</span>
+                    </div>
+                </article>
+
+                <!-- POST 2 -->
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-user">
+                            <div class="post-user-thumb"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?fit=crop&w=100&q=80"></div>
+                            <span class="username">alex_dev</span>
+                        </div>
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <div class="post-image"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?fit=crop&w=800&q=80"></div>
+                    <div class="post-actions">
+                        <div class="actions-left">
+                            <button class="post-action-btn like-btn"><i class="fa-regular fa-heart"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-comment"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                        <button class="post-action-btn"><i class="fa-regular fa-bookmark"></i></button>
+                    </div>
+                    <div class="post-details">
+                        <span class="likes-count">856 likes</span>
+                        <div class="caption"><span class="username">alex_dev</span> My new setup! 💻</div>
+                        <span class="timestamp">4 HOURS AGO</span>
+                    </div>
+                </article>
+
+                <!-- POST 3 -->
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-user">
+                            <div class="post-user-thumb"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=100&q=80"></div>
+                            <span class="username">travel_mike</span>
+                        </div>
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <div class="post-image"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fit=crop&w=800&q=80"></div>
+                    <div class="post-actions">
+                        <div class="actions-left">
+                            <button class="post-action-btn like-btn"><i class="fa-regular fa-heart"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-comment"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                        <button class="post-action-btn"><i class="fa-regular fa-bookmark"></i></button>
+                    </div>
+                    <div class="post-details">
+                        <span class="likes-count">3,402 likes</span>
+                        <div class="caption"><span class="username">travel_mike</span> Switzerland is breathtaking 🏔️</div>
+                        <span class="timestamp">6 HOURS AGO</span>
+                    </div>
+                </article>
+
+                <!-- POST 4 -->
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-user">
+                            <div class="post-user-thumb"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fit=crop&w=100&q=80"></div>
+                            <span class="username">sarah.design</span>
+                        </div>
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <div class="post-image"><img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?fit=crop&w=800&q=80"></div>
+                    <div class="post-actions">
+                        <div class="actions-left">
+                            <button class="post-action-btn like-btn"><i class="fa-regular fa-heart"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-comment"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                        <button class="post-action-btn"><i class="fa-regular fa-bookmark"></i></button>
+                    </div>
+                    <div class="post-details">
+                        <span class="likes-count">921 likes</span>
+                        <div class="caption"><span class="username">sarah.design</span> Minimalism 🎨</div>
+                        <span class="timestamp">8 HOURS AGO</span>
+                    </div>
+                </article>
+
+                <!-- POST 5 -->
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-user">
+                            <div class="post-user-thumb"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?fit=crop&w=100&q=80"></div>
+                            <span class="username">fashion_l</span>
+                        </div>
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <div class="post-image"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?fit=crop&w=800&q=80"></div>
+                    <div class="post-actions">
+                        <div class="actions-left">
+                            <button class="post-action-btn like-btn"><i class="fa-regular fa-heart"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-comment"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                        <button class="post-action-btn"><i class="fa-regular fa-bookmark"></i></button>
+                    </div>
+                    <div class="post-details">
+                        <span class="likes-count">2,100 likes</span>
+                        <div class="caption"><span class="username">fashion_l</span> Summer vibes ☀️</div>
+                        <span class="timestamp">10 HOURS AGO</span>
+                    </div>
+                </article>
+
+                <!-- POST 6 -->
+                <article class="post">
+                    <div class="post-header">
+                        <div class="post-user">
+                            <div class="post-user-thumb"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?fit=crop&w=100&q=80"></div>
+                            <span class="username">luna_art</span>
+                        </div>
+                        <button><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <div class="post-image"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?fit=crop&w=800&q=80"></div>
+                    <div class="post-actions">
+                        <div class="actions-left">
+                            <button class="post-action-btn like-btn"><i class="fa-regular fa-heart"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-comment"></i></button>
+                            <button class="post-action-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                        <button class="post-action-btn"><i class="fa-regular fa-bookmark"></i></button>
+                    </div>
+                    <div class="post-details">
+                        <span class="likes-count">560 likes</span>
+                        <div class="caption"><span class="username">luna_art</span> Late night sketch ✏️</div>
+                        <span class="timestamp">12 HOURS AGO</span>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+
+        <!-- RIGHT PANEL -->
+        <aside class="right-panel">
+            <div class="user-profile-section">
+                <div class="user-info">
+                    <div class="user-thumb-lg"><img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fit=crop&w=100&q=80"></div>
+                    <div class="user-text">
+                        <span class="username">john_doe_coder</span>
+                        <span class="fullname">John Doe</span>
+                    </div>
+                </div>
+                <a class="switch-link">Switch</a>
+            </div>
+            <div class="suggestions-header"><span>Suggested for you</span><a class="see-all">See All</a></div>
+            <!-- Suggestions List -->
+            <div class="suggestion-item">
+                <div class="user-info">
+                    <div class="user-thumb-sm"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?fit=crop&w=100&q=80"></div>
+                    <div class="user-text"><span class="username">design_daily</span><span class="relation">New to Instagram</span></div>
+                </div>
+                <a class="follow-link">Follow</a>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- STORY MODAL (Hidden by default) -->
+    <div class="story-modal" id="storyModal">
+        <button class="close-story">&times;</button>
+        <div class="story-content">
+            <img src="" alt="Story View" id="storyImage">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

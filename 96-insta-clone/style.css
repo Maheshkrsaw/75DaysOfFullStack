@@ -1,0 +1,101 @@
+:root {
+    --bg-color: #fafafa;
+    --white: #ffffff;
+    --border-color: #dbdbdb;
+    --text-primary: #262626;
+    --text-secondary: #8e8e8e;
+    --link-blue: #0095f6;
+    --sidebar-width: 245px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+body { background-color: var(--bg-color); color: var(--text-primary); }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+ul { list-style: none; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+button { background: none; border: none; cursor: pointer; }
+
+/* LAYOUT */
+.main-container { display: flex; min-height: 100vh; }
+
+/* SIDEBAR */
+.sidebar { width: var(--sidebar-width); height: 100vh; background: var(--white); border-right: 1px solid var(--border-color); position: fixed; top: 0; left: 0; padding: 30px 12px; display: flex; flex-direction: column; justify-content: space-between; z-index: 100; }
+.logo { padding: 0 12px; margin-bottom: 30px; }
+.logo img { width: 103px; }
+.nav-link { display: flex; align-items: center; padding: 12px; border-radius: 8px; transition: background 0.2s; color: var(--text-primary); margin-bottom: 4px; }
+.nav-link:hover { background-color: #f2f2f2; }
+.nav-link i { font-size: 24px; margin-right: 16px; width: 24px; }
+.nav-link span { font-size: 16px; }
+.nav-link.active span { font-weight: 700; }
+.profile-thumb-nav { width: 24px; height: 24px; border-radius: 50%; overflow: hidden; margin-right: 16px; }
+
+/* CONTENT */
+.content-area { margin-left: var(--sidebar-width); flex: 1; display: flex; justify-content: center; padding-top: 30px; }
+.feed-container { width: 100%; max-width: 630px; }
+
+/* STORIES */
+.stories-container { background: var(--white); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px 0; margin-bottom: 24px; display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; }
+.story { display: flex; flex-direction: column; align-items: center; min-width: 80px; cursor: pointer; }
+.story-ring { width: 66px; height: 66px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 2px; margin-bottom: 5px; }
+.story-img { width: 100%; height: 100%; border-radius: 50%; border: 2px solid var(--white); overflow: hidden; }
+.story-name { font-size: 12px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 70px; text-align: center; }
+
+/* POSTS */
+.post { background: var(--white); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 24px; }
+.post-header { display: flex; align-items: center; justify-content: space-between; padding: 14px; }
+.post-user { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
+.post-user-thumb { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; }
+.post-image { width: 100%; min-height: 400px; background: #eee; }
+.post-actions { padding: 12px 14px; display: flex; justify-content: space-between; }
+.actions-left { display: flex; gap: 16px; }
+.post-action-btn { font-size: 24px; transition: transform 0.1s; }
+.post-action-btn:active { transform: scale(0.85); }
+.like-btn.liked { color: #ed4956; }
+.post-details { padding: 0 14px 14px; font-size: 14px; }
+.likes-count { font-weight: 600; margin-bottom: 8px; display: block; }
+.caption { margin-bottom: 6px; }
+.timestamp { font-size: 10px; color: var(--text-secondary); text-transform: uppercase; }
+
+/* RIGHT PANEL */
+.right-panel { width: 320px; padding-top: 30px; margin-left: 30px; display: none; }
+@media (min-width: 1000px) { .right-panel { display: block; } }
+
+.user-profile-section { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.user-info { display: flex; align-items: center; gap: 12px; }
+.user-thumb-lg { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; }
+.user-text .username { font-weight: 600; font-size: 14px; display: block; }
+.user-text .fullname { color: var(--text-secondary); font-size: 14px; }
+.switch-link, .follow-link { color: var(--link-blue); font-size: 12px; font-weight: 600; cursor: pointer; }
+.suggestions-header { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 14px; }
+.suggestion-item { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.suggestion-item .user-thumb-sm { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; }
+.follow-link.following { color: var(--text-primary); }
+
+/* STORY MODAL OVERLAY */
+.story-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95); z-index: 2000;
+    display: none; justify-content: center; align-items: center;
+    flex-direction: column;
+}
+.story-modal.active { display: flex; }
+.story-content { width: auto; height: 85%; aspect-ratio: 9/16; position: relative; }
+.story-content img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+.close-story { position: absolute; top: 20px; right: 20px; color: white; font-size: 40px; cursor: pointer; z-index: 2001; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .sidebar { width: 72px; padding: 12px; }
+    .nav-link span, .logo { display: none; }
+    .nav-link i { margin-right: 0; }
+    .content-area { margin-left: 72px; }
+}
+@media (max-width: 480px) {
+    .sidebar { top: auto; bottom: 0; width: 100%; height: 50px; border-right: none; border-top: 1px solid var(--border-color); flex-direction: row; padding: 0; }
+    .nav-links { display: flex; width: 100%; justify-content: space-around; }
+    .nav-links li:nth-child(n+6) { display: none; }
+    .content-area { margin-left: 0; padding-top: 0; padding-bottom: 60px; }
+    .post, .stories-container { border-radius: 0; border: none; border-bottom: 1px solid var(--border-color); }
+    .story-content { width: 100%; height: 100%; border-radius: 0; }
+    .story-content img { border-radius: 0; }
+}

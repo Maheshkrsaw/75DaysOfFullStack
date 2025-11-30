@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age-calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <h1>
+          Javascript <br />
+          <span>Age calculator</span>
+        </h1>
+        <div class="input-box">
+          <input type="date" id="date" />
+          <button onclick="calculateAge()">Calculate</button>
+        </div>
+        <p id="result"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    function calculateAge() {
+      const inputDate = document.getElementById("date").value;
+      if (!inputDate) {
+        document.getElementById("result").innerText = "Please select a date.";
+        return;
+      }
+
+      const birthDate = new Date(inputDate);
+      const today = new Date();
+
+      let years = today.getFullYear() - birthDate.getFullYear();
+      let months = today.getMonth() - birthDate.getMonth();
+      let days = today.getDate() - birthDate.getDate();
+
+      // Adjusting months & days
+      if (days < 0) {
+        months--;
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      document.getElementById(
+        "result"
+      ).innerHTML = `You are <span>${years}</span> years, <span>${months}</span> months, and <span>${days}</span> days old.`;
+    }
+  </script>
+</html>

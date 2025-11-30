@@ -1,0 +1,146 @@
+/* Basic CSS Boilerplate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #4203a9, #90bafc);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+}
+
+.calculator h1 {
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.calculator h1 span {
+  color: #ffff76;
+}
+
+/* Input Box */
+.input-box {
+  margin: 30px 0;
+  padding: 25px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.input-box button {
+  background-color: #ffff76;
+  border: 0;
+  outline: 0;
+  padding: 13px 25px;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Date picker fix */
+.input-box input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* Result */
+#result {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+#result span {
+  color: #ffff76;
+}
+
+/* -------------------- */
+/* Responsive Styling   */
+/* -------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .calculator h1 {
+    font-size: 40px;
+  }
+
+  .input-box {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .input-box button {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .input-box input {
+    width: 100%;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .calculator h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .input-box {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .input-box input {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .input-box button {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  #result {
+    font-size: 18px;
+    text-align: center;
+  }
+}

@@ -1062,6 +1062,157 @@ https://github.com/Maheshkrsaw/DesignCraft75
 
 ---
 
+# 📘 Day 90–98 — JavaScript Mini Projects & Interactive UI Experiments
+
+From Day 90 to Day 98, I worked on multiple **small but impactful JavaScript projects** and UI experiments.  
+These projects focused on building **interactive, responsive, and user-friendly interfaces** while strengthening my JS logic, DOM manipulation, and design sense.
+
+---
+
+## 🌟 Projects Overview
+
+### **Day 90**
+1. **Age Calculator**  
+   - Input date of birth, calculate age in years, months, days, hours  
+   - Fully responsive UI  
+   - Live Link: *Coming Soon*
+
+2. **Modern Calculator**  
+   - All standard calculator functions  
+   - Clean, modern UI  
+   - Responsive design  
+   - Live Link: https://maheshkrsaw.github.io/DesignCraft75/22-Calculator/
+
+---
+
+### **Day 91**
+1. **Notes App**  
+   - Keep notes like Android/iPhone apps  
+   - Stores data in **localStorage**  
+   - Fully responsive  
+   - Live Link: https://maheshkrsaw.github.io/DesignCraft75/23-Notes/
+
+2. **Stopwatch**  
+   - Fully functional stopwatch with start, stop, reset  
+   - Responsive design  
+   - Live Link: https://maheshkrsaw.github.io/DesignCraft75/24-stopwatch/
+
+---
+
+### **Day 92**
+- **Digital Clock**  
+  - Shows real-time clock  
+  - Engaging UI with responsive layout  
+  - Live Link: https://maheshkrsaw.github.io/DesignCraft75/25-Digital-Clock/
+
+---
+
+### **Day 93**
+- **Image Crousers (Infinite Scroll Gallery)**  
+  - Scroll triggers color change  
+  - Infinite scroll effect with interactive visuals  
+  - Live Link: https://maheshkrsaw.github.io/DesignCraft75/26-image-crousers/
+
+---
+
+### **Day 94**
+- **Mini Calendar**  
+  - Shows current date  
+  - Small project to improve motivation  
+  - Live Link: https://maheshkrsaw.github.io/DesignCraft75/27-Mini-calendar/
+
+---
+
+### **Day 95**
+- **Form Validation**  
+  - Prevent form submission until all required fields are filled  
+  - Fully responsive  
+  - Live Link: https://maheshkrsaw.github.io/DesignCraft75/28-Form-Validation/
+
+---
+
+### **Day 96**
+- **Instagram Clone**  
+  - Includes stories section (5–6 posts)  
+  - Responsive layout and realistic UI  
+  - Live Link: https://maheshkrsaw.github.io/DesignCraft75/29-insta-clone/
+
+---
+
+### **Day 97**
+- **Job Dashboard**  
+  - Card-based UI with job details for big MNCs  
+  - Responsive grid layout  
+  - Live Link: https://maheshkrsaw.github.io/DesignCraft75/31-job%20dashboard/
+
+---
+
+### **Day 98**
+- **Glitch Effect Website**  
+  - Experimental glitch hover effects on text and images  
+  - Partial e-commerce style layout  
+  - Fully responsive  
+  - Live Link: https://maheshkrsaw.github.io/DesignCraft75/30-Glitch-effect/
+
+---
+
+## 🧩 Tech Stack Used
+- **HTML5** → Structure  
+- **CSS3** → Styling & effects  
+- **JavaScript** → Logic & interactivity  
+- **LocalStorage** → Notes app  
+- **Media Queries / Flexbox / Grid** → Responsive design
+
+---
+
+## 🧠 Key Learnings
+- Building multiple small projects strengthens **JS fundamentals**  
+- Handling **DOM manipulation** and **user inputs**  
+- Practicing **responsive layouts** and **UI consistency**  
+- Understanding interactive effects like **glitch, scroll-trigger, infinite scroll**  
+- Time management for multiple small projects in sequence
+
+---
+
+## 🌐 Live Projects Links
+- Age Calculator: https://maheshkrsaw.github.io/DesignCraft75/21-Age-calculator/
+- Modern Calculator: https://maheshkrsaw.github.io/DesignCraft75/22-Calculator/  
+- Notes App: https://maheshkrsaw.github.io/DesignCraft75/23-Notes/  
+- Stopwatch: https://maheshkrsaw.github.io/DesignCraft75/24-stopwatch/  
+- Digital Clock: https://maheshkrsaw.github.io/DesignCraft75/25-Digital-Clock/  
+- Image Crousers: https://maheshkrsaw.github.io/DesignCraft75/26-image-crousers/  
+- Mini Calendar: https://maheshkrsaw.github.io/DesignCraft75/27-Mini-calendar/  
+- Form Validation: https://maheshkrsaw.github.io/DesignCraft75/28-Form-Validation/  
+- Instagram Clone: https://maheshkrsaw.github.io/DesignCraft75/29-insta-clone/  
+- Glitch Effect: https://maheshkrsaw.github.io/DesignCraft75/30-Glitch-effect/  
+- Job Dashboard: https://maheshkrsaw.github.io/DesignCraft75/31-job%20dashboard/
+
+---
+
+## 📁 Repository  
+🎨 DesignCraft75 Repo:  
+https://github.com/Maheshkrsaw/DesignCraft75
+
+---
+
+## 🔗 Connect With Me  
+🐦 Twitter/X: https://x.com/kumarMahesh9304  
+💻 GitHub Profile: https://github.com/Maheshkrsaw  
+📘 75 Days of DSA: https://github.com/Maheshkrsaw/75-Days-of-DSA-Grind  
+📂 75 Days Full Stack: https://github.com/Maheshkrsaw/75DaysOfFullStack  
+🎨 75 Days Designs: https://github.com/Maheshkrsaw/DesignCraft75
+
+---
+
+## 🏷️ Tags  
+#75DaysDesignFlow #FrontendDevelopment #WebDesign #JavaScriptProjects #ResponsiveUI #BuildInPublic #DOMManipulation #MiniProjects
+
+
+
+
+
+
+
 ## 🔗 Connect With Me  
 🐦 Twitter/X: https://x.com/kumarMahesh9304  
 💻 GitHub: https://github.com/Maheshkrsaw  
@@ -1083,10 +1234,3 @@ https://github.com/Maheshkrsaw/DesignCraft75
 ## 📌 Hashtags  
 #75DaysFullStackAI #ReactJS #WebDevelopment #LearningInPublic #Consistency #Frontend #FullStack #Persistence
 
-
----
-
-## 🔗 Connect with Me
-🌐 GitHub: [Maheshkrsaw](https://github.com/Maheshkrsaw)  
-💼 LinkedIn: [maheshmahi07](https://www.linkedin.com/in/maheshmahi07)  
-🐦 Twitter (X): [@kumarMahesh9304](https://x.com/kumarMahesh9304)  

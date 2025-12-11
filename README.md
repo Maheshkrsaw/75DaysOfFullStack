@@ -1196,185 +1196,199 @@ https://github.com/Maheshkrsaw/DesignCraft75
 
 ---
 
-# 🚀 DesignCraft75 — Final Phase (Day 99 to Day 117)
-### **High-End UI/UX • JavaScript Logic • Real-World Web Apps**
+# 🚀 DesignCraft75 — Final README (Day 99 to Day 117)
 
-This section covers all projects from **Day 99 to Day 117**, focusing on advanced UI systems, animations, dashboards, CRUD logic, API clones, marketplace designs, and streaming platforms.
-
----
-
-# ✅ **Day 99 — CryptoVault (Wallet UI)**
-- Crypto Dashboard with balance, coins, and charts  
-- Transaction history with filters  
-- Animated progress rings  
-- Responsive modern glassmorphism design  
-🔗 **Live:** (Not Provided)
+Comprehensive and accurate summary of projects built from **Day 99 to Day 117** under the **DesignCraft75** challenge.
 
 ---
 
-# ✅ **Day 100 — FoodHub (Restaurant Ordering UI)**
-- Menu filtering  
-- Cart logic with add/remove items  
-- Price calculations  
-- Responsive layout  
-🔗 **Live:** (Not Provided)
+# 📅 Days 99–117 — Project Summary (accurate links)
+
+## **Day 99 — Vita (Health & Beauty)**
+
+* HTML, CSS, small JS for responsive mobile menu
+* Mobile-first responsive layout
+* Color-themed UI for health & beauty
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/32-Health-care/](https://maheshkrsaw.github.io/DesignCraft75/32-Health-care/)
 
 ---
 
-# ✅ **Day 101 — InstaPost (Social Media Post Designer)**
-- Upload & preview image  
-- Caption editor  
-- Filters applied using CSS effects  
-- Export final post  
-🔗 **Live:** (Not Provided)
+## **Day 100 — Insta Reel Clone**
+
+* Instagram Reels style UI (frontend only)
+* Responsive layout, swipe/scroll interactions
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/33-insta-reel-clone/](https://maheshkrsaw.github.io/DesignCraft75/33-insta-reel-clone/)
 
 ---
 
-# ✅ **Day 102 — ShopEase (E-commerce Minimal Store)**
-- Category filtering  
-- Product cards with animations  
-- Wishlist logic  
-- Responsive grid  
-🔗 **Live:** (Not Provided)
+## **Day 101 — CineScope (Movie Discovery App)**
+
+* TVMaze API integration (async/await)
+* Dynamic search & responsive grid
+* Favorites saved in LocalStorage
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/34-CineScope-Movie/](https://maheshkrsaw.github.io/DesignCraft75/34-CineScope-Movie/)
 
 ---
 
-# ✅ **Day 103 — DocuFlow (Docs + Cloud UI)**
-- File cards  
-- Fake upload simulation  
-- Sidebar with sections  
-- Clean minimal UI  
-🔗 **Live:** (Not Provided)
+## **Day 102 — CashFlow (Expense Tracker)**
+
+* Chart.js visualisations (donut charts)
+* Transaction history with add/delete
+* Persistent data via LocalStorage
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/35-CashFlow-expense-Tracker/](https://maheshkrsaw.github.io/DesignCraft75/35-CashFlow-expense-Tracker/)
 
 ---
 
-# ✅ **Day 104 — TravelGo (Flight & Hotel Platform)**
-- Responsive forms (horizontal → vertical)  
-- Tab switching: Flights / Hotels  
-- Glassmorphism UI  
-- Date pickers & guest counters  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/37-TravelPlan
+## **Day 103 — TaskMaster (Trello Clone)**
+
+* Native Drag & Drop (HTML5 API)
+* Kanban columns: To Do / In Progress / Done
+* Editable tasks and modal details
+* State saved and persisted
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/36-TaskMaker-project/](https://maheshkrsaw.github.io/DesignCraft75/36-TaskMaker-project/)
 
 ---
 
-# ✅ **Day 105 — API Master (Postman Clone)**
-- Send GET/POST/PUT/DELETE  
-- Syntax-highlighted JSON pretty print  
-- Status color badges  
-- Response time calculator  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/38-Postman
+## **Day 104 — TravelGo (Booking Platform)**
+
+* Responsive search bar & tab switching (Flights / Hotels)
+* Glassmorphism UI and dynamic inputs
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/37-TravelPlan](https://maheshkrsaw.github.io/DesignCraft75/37-TravelPlan)
 
 ---
 
-# ✅ **Day 107 — TypeBlitz (Typing Speed Test)**
-- Calculates WPM & Accuracy  
-- Per-keystroke validation  
-- Countdown timer with results modal  
-- Auto-focus logic for smooth UX  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/40-Typing-Master
+## **Day 105 — API Master (Postman Clone)**
+
+* HTTP requests via fetch (GET/POST/PUT/DELETE)
+* Pretty-print JSON & response-time tracking
+* Status badges and response formatting
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/38-Postman](https://maheshkrsaw.github.io/DesignCraft75/38-Postman)
 
 ---
 
-# ✅ **Day 108 — JobFinder (Job Portal)**
-- CRUD simulation for posting jobs  
-- “Apply Now” saves to user dashboard  
-- Job detail page via URL ID  
-- Real-time search filter  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/41-Job-Finder
+## **Day 106 — CodeCraft (Live Preview / CodePen Clone)**
+
+* Real-time HTML/CSS/JS preview in iframe
+* Download/export as .html
+* Auto-save to LocalStorage
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/39-Website-Live-Preview](https://maheshkrsaw.github.io/DesignCraft75/39-Website-Live-Preview)
 
 ---
 
-# ✅ **Day 109 — DreamHome (Real Estate UI)**
-- Scroll reveal animations  
-- Parallax hero banner  
-- Wishlist system  
-- Hover zoom image grids  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/42-Property-Dealer
+## **Day 107 — TypeBlitz (Typing Test)**
+
+* WPM & accuracy calculation
+* Real-time keystroke validation and timer
+* Results modal and focus management
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/40-Typing-Master](https://maheshkrsaw.github.io/DesignCraft75/40-Typing-Master)
 
 ---
 
-# ✅ **Day 110 — SkillSpire (E-Learning LMS)**
-- Tabs for Course/Overview/Curriculum  
-- Custom video player + playlist  
-- Progress bars for learning status  
-- Enrollment validation (no duplicates)  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/43-Course-Selling
+## **Day 108 — JobFinder (Job Portal)**
+
+* CRUD simulation for job posts
+* Apply Now → saves to user dashboard
+* Dynamic routing via URL ID and search filter
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/41-Job-Finder](https://maheshkrsaw.github.io/DesignCraft75/41-Job-Finder)
 
 ---
 
-# ✅ **Day 111 — DriveX (Car Rental Platform)**
-- Date difference price calculator  
-- Neon dark-mode UI  
-- Garage (wishlist) feature  
-- Validation for return-date input  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/44-Car-Rental-Drivex
+## **Day 109 — DreamHome (Real Estate)**
+
+* Scroll reveal (Intersection Observer)
+* Parallax hero, wishlist system, image hover zoom
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/42-Property-Dealer](https://maheshkrsaw.github.io/DesignCraft75/42-Property-Dealer)
 
 ---
 
-# ✅ **Day 112 — NeonArt (NFT Marketplace)**
-- Mobile slide-out sidebar  
-- Glassmorphism cards  
-- File upload preview via FileReader  
-- Wallet login simulation  
-🔗 **Live:** https://maheshkrsaw.github.io/DesignCraft75/45-Neon-Selling-Website
+## **Day 110 — SkillSpire (LMS / E-Learning)**
+
+* Switchable tabs, video player UI, progress tracking
+* Enrollment logic & course dashboard
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/43-Course-Selling](https://maheshkrsaw.github.io/DesignCraft75/43-Course-Selling)
 
 ---
 
-# ✅ **Day 113 — LensLoop (Photography Social UI)**
-- Masonry grid layout (Pinterest)  
-- Follow + Like micro-interactions  
-- Fake loading for downloads  
-- Hover overlays with actions  
-🔗 **Live:**  
-https://maheshkrsaw.github.io/DesignCraft75/46-Lensloop-(unplash-clone)
+## **Day 111 — DriveX (Car Rental)**
+
+* Date calculator for pricing, dark mode UI, garage (wishlist)
+* Validation to prevent invalid return dates
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/44-Car-Rental-Drivex](https://maheshkrsaw.github.io/DesignCraft75/44-Car-Rental-Drivex)
 
 ---
 
-# ✅ **Day 114 — CoinDash (Crypto Exchange Dashboard)**
-- Chart.js live price charts  
-- Dynamic gain/loss table  
-- Trade calculator  
-- Collapsible responsive sidebar  
-🔗 **Live:**  
-https://maheshkrsaw.github.io/DesignCraft75/47-CoinDash-(Binance)
+## **Day 112 — NeonArt (NFT Marketplace)**
+
+* Mobile-first slide-out menu, glassmorphism cards
+* File upload preview (FileReader) and wallet simulation
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/45-Neon-Selling-Website](https://maheshkrsaw.github.io/DesignCraft75/45-Neon-Selling-Website)
 
 ---
 
-# ✅ **Day 115 — BrainWave (AI Chat UI)**
-- Typewriter effect  
-- Chat bubbles + auto-scroll  
-- Mock keyword-based AI replies  
-- SaaS pricing page with toggles  
-🔗 **Live:**  
-https://maheshkrsaw.github.io/DesignCraft75/48-BrainWave-(GptClone)
+## **Day 113 — LensLoop (Social Photography)**
+
+* Masonry grid, follow/like micro-interactions
+* Fake download loader and overlay reveals
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/46-Lensloop-(unplash-clone)](https://maheshkrsaw.github.io/DesignCraft75/46-Lensloop-%28unplash-clone%29)
 
 ---
 
-# ✅ **Day 116 — GameZone (Esports Platform)**
-- Cyberpunk UI  
-- Live/pulse badges  
-- Tournament cards  
-- Game filtering by genre  
-🔗 **Live:**  
-https://maheshkrsaw.github.io/DesignCraft75/49-Gamezone
+## **Day 114 — CoinDash (Crypto Dashboard)**
+
+* Chart.js integration, real-time data table, trade logic
+* Collapsible responsive sidebar
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/47-CoinDash-(Binance)](https://maheshkrsaw.github.io/DesignCraft75/47-CoinDash-%28Binance%29)
 
 ---
 
-# ✅ **Day 117 — StreamX (Netflix Clone)**
-- Hover video overlay UI  
-- Dynamic movie titles via URL ID  
-- Autoplay handling  
-- Netflix-style horizontal sliders  
-🔗 **Live:**  
-https://maheshkrsaw.github.io/DesignCraft75/50-StreamX-(netflix)
+## **Day 115 — BrainWave (GPT Clone + SaaS UI)**
+
+* Typewriter effect, chat UI, mock AI responses
+* SaaS pricing UI with toggles
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/48-BrainWave-(GptClone)](https://maheshkrsaw.github.io/DesignCraft75/48-BrainWave-%28GptClone%29)
 
 ---
 
-# 🎉 End of Days 99–117  
-You completed 19 high-level UI/JS projects in this phase.  
-Each project strengthens your frontend engineering and visual design skills.
+## **Day 116 — GameZone (Esports Platform)**
+
+* Cyberpunk theme, live badges, tournament cards, filtering
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/49-Gamezone](https://maheshkrsaw.github.io/DesignCraft75/49-Gamezone)
 
 ---
+
+## **Day 117 — StreamX (Video Streaming / Netflix Clone)**
+
+* Hover overlay, dynamic title from URL, autoplay handling
+* Netflix-style horizontal sliders
+* **Live:** [https://maheshkrsaw.github.io/DesignCraft75/50-StreamX-(netflix)](https://maheshkrsaw.github.io/DesignCraft75/50-StreamX-%28netflix%29)
+
+---
+
+# 📚 Tech Stack Used
+
+* **HTML5**
+* **CSS3 / SCSS**
+* **JavaScript (ES6+)**
+* **LocalStorage / Client-side Routing**
+* **Chart.js**
+* **Responsive Design (Flexbox / Grid / Media Queries)**
+
+---
+
+# 🌐 Connect With Me
+
+* **GitHub:** [https://github.com/Maheshkrsaw](https://github.com/Maheshkrsaw)
+* **Twitter/X:** [https://x.com/kumarMahesh9304](https://x.com/kumarMahesh9304)
+* **DesignCraft75 Repo:** [https://github.com/Maheshkrsaw/DesignCraft75](https://github.com/Maheshkrsaw/DesignCraft75)
+
+---
+
+# 🏁 Completed: Day 99 — Day 117
+
+Proudly building consistency, design skills, and front-end mastery.
+
+Let's continue the grind 💪⚡
+
 
 
 

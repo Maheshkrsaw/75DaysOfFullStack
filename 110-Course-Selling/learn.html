@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Room</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav style="padding:10px 5%;">
+        <div class="logo">Skill<span>Spire</span></div>
+        <a href="dashboard.html" style="color:var(--dark);"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </nav>
+
+    <div style="display:grid; grid-template-columns: 2.5fr 1fr; gap:0; height:calc(100vh - 70px);">
+        <div style="background:#111; display:flex; align-items:center; justify-content:center;">
+            <div style="text-align:center; color:white;">
+                <i class="fas fa-play-circle" style="font-size:60px; margin-bottom:20px; cursor:pointer;"></i>
+                <h2>Click to Play Lesson</h2>
+            </div>
+        </div>
+
+        <div style="background:white; border-left:1px solid #ddd; overflow-y:auto;">
+            <div style="padding:20px; border-bottom:1px solid #eee;">
+                <h3>Course Content</h3>
+            </div>
+            <div class="lesson-item active">
+                <i class="far fa-check-circle" style="color:green;"></i>
+                <div>
+                    <h4>1. Introduction</h4>
+                    <span style="font-size:12px; color:#777;">5 mins</span>
+                </div>
+            </div>
+            <div class="lesson-item">
+                <i class="far fa-circle"></i>
+                <div>
+                    <h4>2. Getting Started</h4>
+                    <span style="font-size:12px; color:#777;">12 mins</span>
+                </div>
+            </div>
+            <div class="lesson-item">
+                <i class="far fa-circle"></i>
+                <div>
+                    <h4>3. Advanced Topics</h4>
+                    <span style="font-size:12px; color:#777;">20 mins</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

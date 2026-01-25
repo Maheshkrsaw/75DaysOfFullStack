@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Courses | SkillSpire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Local styles for Filter Buttons */
+        .filter-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--dark);
+            transition: 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Skill<span>Spire</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html" class="active">Courses</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+        <a href="dashboard.html" class="btn">My Learning</a>
+    </nav>
+
+    <div style="background:var(--dark); color:white; padding:60px 5%; text-align:center;">
+        <h1 style="font-size:40px;">Explore Our Library</h1>
+        <p style="margin-top:10px; color:#ccc;">Find the right course for you.</p>
+    </div>
+
+    <section class="container">
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterCourses('all', this)">All</button>
+            <button class="filter-btn" onclick="filterCourses('coding', this)">Coding</button>
+            <button class="filter-btn" onclick="filterCourses('design', this)">Design</button>
+            <button class="filter-btn" onclick="filterCourses('marketing', this)">Marketing</button>
+            <button class="filter-btn" onclick="filterCourses('data', this)">Data Science</button>
+        </div>
+
+        <div id="courses-grid" class="grid-4"></div>
+
+    </section>
+
+    <footer style="background:white; padding:30px; text-align:center; border-top:1px solid #eee; margin-top:50px;">
+        <p style="color:#777;">&copy; 2025 SkillSpire. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // --- Page Specific Logic ---
+        
+        // Initial Load
+        renderGrid(courses);
+
+        // Filter Logic
+        function filterCourses(category, btn) {
+            // 1. Update Buttons Visual
+            let buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 2. Filter Data
+            if(category === 'all') {
+                renderGrid(courses);
+            } else {
+                let filtered = courses.filter(course => course.category === category);
+                renderGrid(filtered);
+            }
+        }
+
+        // Custom Render Function for this page (Reuses cards style)
+        function renderGrid(data) {
+            const container = document.getElementById('courses-grid');
+            
+            // Get Wishlist for Heart Logic
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            if(data.length === 0) {
+                container.innerHTML = '<p style="grid-column: 1/-1; text-align:center;">No courses found in this category.</p>';
+                return;
+            }
+
+            container.innerHTML = data.map(course => {
+                let isSaved = wishlist.includes(course.id);
+                let heartColor = isSaved ? 'color: red;' : 'color: #ccc;';
+                let heartClass = isSaved ? 'fas fa-heart' : 'far fa-heart';
+
+                return `
+                <div class="course-card">
+                    <span class="badge">${course.category}</span>
+                    <img src="${course.img}" class="thumb">
+                    <div class="course-info">
+                        <div class="meta">
+                            <span><i class="fas fa-user"></i> ${course.students}</span>
+                            <span><i class="fas fa-star" style="color:orange;"></i> ${course.rating}</span>
+                        </div>
+                        <h3>${course.title}</h3>
+                        <p style="font-size:14px; color:#777; margin:5px 0;">by ${course.instructor}</p>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span class="price">${course.price}</span>
+                            <button onclick="handleWishlistClick(${course.id})" style="background:none; border:none; font-size:20px; cursor:pointer;">
+                                <i class="${heartClass}" style="${heartColor}" id="heart-${course.id}"></i>
+                            </button>
+                        </div>
+                        <a href="course-detail.html?id=${course.id}" class="btn" style="display:block; text-align:center; margin-top:15px;">View Course</a>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // Wrapper for toggleWishlist to redraw if needed (or just toggle icon)
+        function handleWishlistClick(id) {
+            toggleWishlist(id);
+            // Optional: If you want to re-render to update state perfectly, uncomment below
+            // But toggleWishlist in script.js updates the icon ID directly, so it's fine.
+        }
+    </script>
+</body>
+</html>

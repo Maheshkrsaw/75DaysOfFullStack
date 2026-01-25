@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Master | REST Client</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fas fa-satellite-dish"></i> API Master</div>
+        <div class="user-menu">
+            <span>Mahesh</span>
+            <div class="avatar">M</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="request-section">
+            <div class="url-group">
+                <select id="method">
+                    <option value="GET" class="get">GET</option>
+                    <option value="POST" class="post">POST</option>
+                    <option value="PUT" class="put">PUT</option>
+                    <option value="DELETE" class="delete">DELETE</option>
+                </select>
+                <input type="text" id="url" placeholder="Enter Request URL (e.g., https://jsonplaceholder.typicode.com/posts/1)">
+                <button id="send-btn" onclick="sendRequest()">Send <i class="fas fa-paper-plane"></i></button>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('json')">JSON Body</button>
+                <button class="tab-btn" onclick="switchTab('headers')">Headers</button>
+            </div>
+
+            <div class="editor-container">
+                <textarea id="json-input" placeholder='{
+  "title": "foo",
+  "body": "bar",
+  "userId": 1
+}'></textarea>
+                
+                <textarea id="headers-input" class="hidden" placeholder='Content-Type: application/json
+Authorization: Bearer token123'></textarea>
+            </div>
+        </section>
+
+        <section class="response-section">
+            <div class="response-header">
+                <h3>Response</h3>
+                <div class="meta-data">
+                    <span id="status-badge" class="badge hidden">Status: <span id="status-code"></span></span>
+                    <span id="time-badge" class="badge hidden">Time: <span id="time-ms"></span>ms</span>
+                </div>
+            </div>
+            
+            <div class="response-body-container">
+                <pre id="response-output">Ready to send request...</pre>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- https://jsonplaceholder.typicode.com/posts/1 -->

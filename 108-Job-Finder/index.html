@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JobFinder | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">JobFinder.</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="jobs.html">Find Jobs</a>
+            <a href="post-job.html">Post Job</a>
+            <a href="saved.html">Dashboard</a>
+        </div>
+        <a href="jobs.html" class="btn-nav">Browse All</a>
+    </nav>
+
+    <div class="container header-center">
+        <h1>Find Your Dream Job Today</h1>
+        <p>Thousands of jobs available in engineering, design, and more.</p>
+        <br>
+        <div style="max-width:500px; margin:auto; display:flex; gap:10px;">
+            <input type="text" id="search-input" placeholder="Search job title..." style="flex:1; padding:10px; border-radius:5px; border:1px solid #ccc;">
+            <button onclick="window.location.href='jobs.html'" class="btn-nav">Search</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Featured Jobs</h2>
+        <br>
+        <div id="home-jobs" class="job-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>loadJobs('home-jobs', 3);</script> </body>
+</html>

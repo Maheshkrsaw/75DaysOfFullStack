@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watching StreamX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Local Styles for Player Page */
+        body { margin: 0; overflow: hidden; background: black; }
+        
+        .player-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Custom Back Button overlay */
+        .back-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+            z-index: 100;
+            opacity: 0;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Show overlay when hovering over the player area */
+        .player-wrapper:hover .back-container {
+            opacity: 1;
+        }
+
+        .back-btn {
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .back-btn:hover { transform: scale(1.1); }
+
+        .playing-title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures video isn't cropped */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-wrapper">
+        <div class="back-container">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            <span id="movie-title" class="playing-title">Loading...</span>
+        </div>
+        
+        <video id="video-player" controls autoplay>
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <script>
+        // 1. Get Movie ID from URL (e.g., play.html?id=1)
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        // 2. Mock Data (Ideally this comes from script.js, but defining here for standalone safety)
+        const moviesData = [
+            { id: 1, title: "Stranger Things" },
+            { id: 2, title: "The Witcher" },
+            { id: 3, title: "Avengers: Endgame" },
+            { id: 4, title: "Inception" },
+            { id: 5, title: "Dark" },
+            { id: 6, title: "Interstellar" },
+            { id: 7, title: "John Wick" },
+            { id: 8, title: "Friends" },
+            { id: 9, title: "Breaking Bad" },
+            { id: 10, title: "Spider-Man" }
+        ];
+
+        // 3. Find Movie Name
+        const movie = moviesData.find(m => m.id == id);
+        const titleElement = document.getElementById('movie-title');
+
+        if (movie) {
+            titleElement.innerText = "Now Watching: " + movie.title;
+        } else {
+            titleElement.innerText = "Now Watching: Sample Video";
+        }
+
+        // 4. Autoplay logic helper (Browsers sometimes block autoplay)
+        const video = document.getElementById('video-player');
+        video.volume = 0.5; // Set volume to 50%
+        
+        // Try to play immediately
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Autoplay started
+            }).catch(error => {
+                // Autoplay was prevented (User interaction needed usually)
+                console.log("Autoplay blocked by browser policy");
+                video.muted = true; // Muting often allows autoplay
+                video.play();
+            });
+        }
+    </script>
+</body>
+</html>

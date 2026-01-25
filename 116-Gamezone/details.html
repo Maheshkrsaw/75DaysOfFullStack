@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Game<span>Zone</span></div>
+        <ul class="nav-links">
+            <a href="shop.html">Back to Shop</a>
+        </ul>
+    </nav>
+
+    <div class="container" style="display:flex; gap:50px; flex-wrap:wrap;">
+        <img id="g-img" src="" style="width:100%; max-width:500px; border-radius:10px; box-shadow:0 0 30px rgba(233, 69, 96, 0.3);">
+        
+        <div style="flex:1;">
+            <span id="g-cat" style="color:var(--secondary); font-family:'Orbitron';">CATEGORY</span>
+            <h1 id="g-title" style="font-family:'Orbitron'; font-size:50px; margin:10px 0;">Title</h1>
+            <p style="color:var(--text-dim); line-height:1.6; margin-bottom:30px;">
+                Experience the ultimate thrill in this open-world adventure. 
+                Stunning graphics, immersive gameplay, and endless possibilities await.
+            </p>
+            
+            <h2 id="g-price" style="color:var(--primary); font-size:40px; margin-bottom:20px;">$0.00</h2>
+            
+            <button class="btn" onclick="buyNow(this)" style="padding:15px 40px; font-size:18px;">Add to Library</button>
+            
+            <div style="margin-top:40px; border-top:1px solid #333; padding-top:20px;">
+                <h3 style="margin-bottom:10px;">System Requirements</h3>
+                <ul style="color:var(--text-dim); font-size:14px;">
+                    <li>• OS: Windows 10/11</li>
+                    <li>• Processor: Intel Core i7</li>
+                    <li>• Memory: 16 GB RAM</li>
+                    <li>• Graphics: NVIDIA RTX 3060</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>loadDetails();</script>
+</body>
+</html>

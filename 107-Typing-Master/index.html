@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeBlitz | Master Your Speed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo"><i class="fas fa-keyboard"></i> TypeBlitz</div>
+            <div class="mode-selector">
+                <span class="mode active">30s</span>
+                <span class="mode">60s</span>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <p>Time</p>
+                <span id="time">30</span>
+            </div>
+            <div class="stat">
+                <p>WPM</p>
+                <span id="wpm">0</span>
+            </div>
+            <div class="stat">
+                <p>Accuracy</p>
+                <span id="accuracy">100%</span>
+            </div>
+        </div>
+
+        <div class="typing-box-wrapper">
+            <input type="text" class="input-field" id="input-field">
+            <div class="typing-text" id="typing-text">
+                </div>
+            <div class="overlay-msg">Click here to start typing...</div>
+        </div>
+
+        <button class="restart-btn" onclick="loadParagraph()">
+            <i class="fas fa-redo"></i> Restart Test
+        </button>
+
+        <div class="footer-tip">
+            <i class="fas fa-info-circle"></i> Tip: Don't look at your keyboard!
+        </div>
+
+    </div>
+
+    <div class="modal-overlay" id="result-modal">
+        <div class="modal-content">
+            <h2>Test Complete! 🚀</h2>
+            <div class="final-score">
+                <div class="score-item">
+                    <span>WPM</span>
+                    <h3 id="final-wpm">0</h3>
+                </div>
+                <div class="score-item">
+                    <span>Accuracy</span>
+                    <h3 id="final-acc">0%</h3>
+                </div>
+                <div class="score-item">
+                    <span>Errors</span>
+                    <h3 id="final-errors">0</h3>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="loadParagraph()">Try Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

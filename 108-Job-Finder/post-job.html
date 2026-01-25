@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">JobFinder.</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="jobs.html">Find Jobs</a>
+            <a href="post-job.html" class="active">Post Job</a>
+            <a href="saved.html">Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-box">
+            <h2 style="text-align:center; margin-bottom:20px;">Post a New Job</h2>
+            <form onsubmit="handlePostJob(event)">
+                <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" id="company" required>
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label>Job Type</label>
+                    <select id="type">
+                        <option>Full Time</option>
+                        <option>Part Time</option>
+                        <option>Contract</option>
+                        <option>Freelance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Salary Range</label>
+                    <input type="text" id="salary" placeholder="e.g. ₹5L - ₹8L">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="desc" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Post Job</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

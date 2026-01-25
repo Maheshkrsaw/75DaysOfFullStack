@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonArt | NFT Market</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Neon<span>Art</span>.</div>
+        <ul class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="creators.html">Creators</a>
+            <a href="create.html">Create</a>
+            <a href="wallet.html" class="btn wallet-trigger">Connect Wallet</a>
+        </ul>
+        <i class="fas fa-bars menu-btn"></i>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Discover, Collect & Sell <br> <span style="color:var(--primary);">Extraordinary</span> NFTs</h1>
+            <p>The world's first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs).</p>
+            <br>
+            <a href="explore.html" class="btn">Explore Now</a>
+            <a href="create.html" class="btn" style="background:transparent; border:1px solid white; margin-left:10px;">Create</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="section-title">Trending <span>Auctions</span></div>
+        <div id="trending-grid" class="grid"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>loadNFTs('trending-grid', 3);</script>
+</body>
+</html>

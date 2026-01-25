@@ -1,0 +1,239 @@
+:root {
+    --bg: #323437;
+    --text-main: #d1d0c5;
+    --text-dim: #646669;
+    --primary: #e2b714; /* Yellow accent */
+    --correct: #d1d0c5;
+    --incorrect: #ca4754;
+    --bg-modal: #2c2e31;
+    --font: 'Roboto Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 900px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dim);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i { color: var(--primary); }
+
+.mode-selector {
+    background: #2c2e31;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.mode {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+    color: var(--text-dim);
+}
+
+.mode.active {
+    background: var(--primary);
+    color: #111;
+    font-weight: 700;
+}
+
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    gap: 50px;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.stat p {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 5px;
+}
+
+/* Typing Area */
+.typing-box-wrapper {
+    position: relative;
+    background: transparent;
+    min-height: 150px;
+    cursor: text;
+}
+
+.input-field {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.typing-text {
+    font-size: 24px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    user-select: none;
+    text-align: left;
+}
+
+/* Character States */
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span.correct {
+    color: var(--correct);
+}
+
+.typing-text span.incorrect {
+    color: var(--incorrect);
+    background: rgba(202, 71, 84, 0.2);
+    border-radius: 3px;
+}
+
+/* Blinking Cursor logic */
+.typing-text span.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--primary);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Overlay Message (Click to focus) */
+.overlay-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-dim);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.typing-box-wrapper:not(:focus-within) .typing-text {
+    filter: blur(4px);
+    opacity: 0.5;
+}
+
+.typing-box-wrapper:not(:focus-within) .overlay-msg {
+    opacity: 1;
+}
+
+/* Restart Button */
+.restart-btn {
+    align-self: center;
+    background: #2c2e31;
+    color: var(--text-dim);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.restart-btn:hover {
+    background: var(--text-main);
+    color: var(--bg);
+}
+
+.footer-tip {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modal-overlay.show { opacity: 1; pointer-events: auto; }
+
+.modal-content {
+    background: var(--bg-modal);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-content h2 { margin-bottom: 20px; color: var(--text-main); }
+
+.final-score {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.score-item span { display: block; color: var(--text-dim); font-size: 12px; }
+.score-item h3 { font-size: 32px; color: var(--primary); margin-top: 5px; }
+
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #111;
+}
+
+/* Responsive */
+@media(max-width: 700px) {
+    .container { width: 100%; padding: 15px; }
+    .typing-text { font-size: 18px; }
+    .stats-bar { gap: 20px; }
+}

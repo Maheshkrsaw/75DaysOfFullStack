@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap");
+
+:root {
+  --primary: #6c5ce7; /* Purple */
+  --secondary: #fdcb6e; /* Gold */
+  --dark: #2d3436;
+  --light: #f9f9f9;
+  --gray: #636e72;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* --- Navbar --- */
+nav {
+  background: white;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+}
+.logo span {
+  color: var(--secondary);
+}
+.nav-links a {
+  margin-left: 30px;
+  color: var(--dark);
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+.btn {
+  padding: 10px 25px;
+  background: var(--primary);
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #5649c0;
+  transform: translateY(-3px);
+}
+
+/* --- Hero --- */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: linear-gradient(135deg, #fff 50%, #f0edff 50%);
+}
+.hero-text h1 {
+  font-size: 50px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.hero-text span {
+  color: var(--primary);
+}
+.hero-img img {
+  width: 500px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* --- Course Cards --- */
+.container {
+  padding: 80px 5%;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  position: relative;
+}
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+.thumb {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--secondary);
+  color: var(--dark);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.course-info {
+  padding: 20px;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+  margin-top: 10px;
+}
+
+/* --- Tabs System (Course Detail) --- */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 20px;
+}
+.tab-btn {
+  padding: 15px 30px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--gray);
+  position: relative;
+}
+.tab-btn.active {
+  color: var(--primary);
+}
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+}
+.tab-content {
+  display: none;
+  padding: 20px 0;
+  animation: fadeIn 0.5s;
+}
+.tab-content.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Accordion (Syllabus) --- */
+.accordion-item {
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.accordion-header {
+  background: #f8f8f8;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.accordion-body {
+  padding: 15px;
+  display: none;
+  background: white;
+  border-top: 1px solid #eee;
+}
+.accordion-item.open .accordion-body {
+  display: block;
+}
+
+/* --- Progress Bar (Dashboard) --- */
+.progress-bg {
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--secondary);
+  width: 0%;
+  transition: width 1s ease;
+}
+
+/* --- Video Player Page --- */
+.video-wrapper {
+  width: 100%;
+  height: 500px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 10px;
+}
+.playlist {
+  height: 500px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+.lesson-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  transition: 0.2s;
+}
+.lesson-item:hover,
+.lesson-item.active {
+  background: #f0edff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    height: auto;
+    padding: 50px 5%;
+  }
+  .hero-img img {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  .video-wrapper {
+    height: 300px;
+  }
+  .playlist {
+    height: auto;
+    max-height: 300px;
+    margin-top: 20px;
+  }
+}

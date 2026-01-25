@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DriveX | Premium Rentals</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Drive<span>X</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="fleet.html">Fleet</a>
+            <a href="garage.html">Garage</a>
+            <a href="my-rentals.html">My Rentals</a>
+        </div>
+        <a href="fleet.html" class="btn">Book Now</a>
+    </nav>
+
+    <header class="hero">
+        <h1 class="reveal">Feel The <span style="color:var(--primary);">Adrenaline</span></h1>
+        <p class="reveal">Experience the world's most exclusive cars. Rent for a day, remember for a lifetime.</p>
+        <br>
+        <div class="reveal">
+            <a href="fleet.html" class="btn">View Fleet</a>
+            <a href="#featured" class="btn" style="background:transparent; color:white; border-color:white; margin-left:10px;">Learn More</a>
+        </div>
+    </header>
+
+    <section id="featured" class="container">
+        <h2 class="section-title reveal">Featured Machines</h2>
+        <div id="home-fleet" class="grid-3"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        loadFleet('home-fleet', 3);
+        setTimeout(() => document.querySelectorAll('.reveal').forEach(e => e.classList.add('active')), 500);
+    </script>
+</body>
+</html>

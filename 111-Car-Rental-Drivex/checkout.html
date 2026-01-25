@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav><div class="logo">Drive<span>X</span></div></nav>
+
+    <div class="container" style="max-width:600px;">
+        <div class="price-box">
+            <h2 style="text-align:center; margin-bottom:30px; font-family:'Orbitron';">Secure Checkout</h2>
+            
+            <form onsubmit="confirmBooking(event)">
+                <input type="text" id="name" placeholder="Full Name" class="date-input" required>
+                <input type="email" id="email" placeholder="Email Address" class="date-input" required>
+                <input type="text" id="phone" placeholder="Phone Number" class="date-input" required>
+                
+                <div style="background:#222; padding:15px; border-radius:5px; margin:20px 0;">
+                    <p style="display:flex; justify-content:space-between;">
+                        <span>Amount to Pay:</span>
+                        <span style="color:var(--primary); font-weight:bold;">$<span id="pay-amt">0</span></span>
+                    </p>
+                </div>
+
+                <button class="btn" style="width:100%;">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Get Total from URL
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('pay-amt').innerText = params.get('total');
+
+        function confirmBooking(e) {
+            e.preventDefault();
+            // Save to LocalStorage
+            let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            let booking = {
+                id: Date.now(),
+                carId: params.get('id'),
+                total: params.get('total'),
+                date: new Date().toLocaleDateString(),
+                status: 'Confirmed'
+            };
+            bookings.push(booking);
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+            
+            alert("Booking Confirmed! Your super car awaits.");
+            window.location.href = "my-rentals.html";
+        }
+    </script>
+</body>
+</html>

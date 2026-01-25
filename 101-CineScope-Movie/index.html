@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineScope | Discover Shows</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="logo">Cine<span class="highlight">Scope</span></div>
+        <ul class="nav-links">
+            <li onclick="showPage('home')" class="active-nav"><i class="fas fa-home"></i> Home</li>
+            <li onclick="showPage('search')"><i class="fas fa-search"></i> Search</li>
+            <li onclick="showPage('favorites')"><i class="fas fa-heart"></i> Favorites</li>
+        </ul>
+        <div class="footer-note">Made by Mahesh</div>
+    </nav>
+
+    <main>
+        
+        <section id="home-page" class="view active">
+            <header class="hero">
+                <div class="hero-content">
+                    <h1>Unlimited Entertainment.</h1>
+                    <p>Discover the highest-rated TV shows and movies updated in real-time via API.</p>
+                    <button class="btn-primary" onclick="showPage('search')">Start Exploring</button>
+                </div>
+            </header>
+            
+            <h2>Trending Now</h2>
+            <div id="trending-grid" class="grid-container">
+                <div class="loader"></div>
+            </div>
+        </section>
+
+        <section id="search-page" class="view">
+            <div class="search-bar-container">
+                <input type="text" id="search-input" placeholder="Type a show name (e.g. Breaking Bad)...">
+                <button onclick="searchShows()"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" class="grid-container">
+                <p class="placeholder-text">Search for a show to see results here...</p>
+            </div>
+        </section>
+
+        <section id="details-page" class="view">
+            <button class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Back</button>
+            <div id="details-content">
+                </div>
+        </section>
+
+        <section id="favorites-page" class="view">
+            <h2>Your Watchlist</h2>
+            <div id="favorites-grid" class="grid-container">
+                <p class="placeholder-text">No favorites added yet.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

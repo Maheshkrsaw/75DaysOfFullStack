@@ -1,0 +1,229 @@
+:root {
+    --bg-dark: #1e1e2e; /* VS Code dark */
+    --bg-panel: #252536;
+    --border: #353545;
+    --primary: #7d5fff;
+    --text-white: #e1e1e6;
+    --text-gray: #a1a1aa;
+    --green: #2ecc71;
+    --blue: #3498db;
+    --yellow: #f1c40f;
+    --red: #e74c3c;
+    --font-ui: 'Inter', sans-serif;
+    --font-code: 'Fira Code', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-ui);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navbar --- */
+nav {
+    height: 60px;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* --- Main Layout --- */
+.container {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Request Section */
+.request-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+/* URL Bar */
+.url-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+select {
+    background: var(--bg-panel);
+    color: var(--text-white);
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input#url {
+    flex: 1;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    color: var(--text-white);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: var(--font-code);
+}
+
+button#send-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button#send-btn:hover { background: #6c5ce7; }
+
+/* Tabs */
+.tabs {
+    margin-bottom: 10px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    padding: 8px 15px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--text-white);
+    border-bottom-color: var(--primary);
+}
+
+/* Editors */
+.editor-container {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+    background: #15151e;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: #a6accd;
+    padding: 15px;
+    resize: none;
+    font-family: var(--font-code);
+    font-size: 14px;
+    outline: none;
+    line-height: 1.5;
+}
+
+.hidden { display: none; }
+
+/* Response Section */
+.response-section {
+    flex: 1;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 300px;
+}
+
+.response-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meta-data {
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.badge.success { background: rgba(46, 204, 113, 0.2); color: var(--green); }
+.badge.error { background: rgba(231, 76, 60, 0.2); color: var(--red); }
+
+.response-body-container {
+    flex: 1;
+    overflow: auto;
+    padding: 15px;
+    position: relative;
+}
+
+pre {
+    font-family: var(--font-code);
+    font-size: 13px;
+    color: #cecfd5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Syntax Highlighting Colors */
+.key { color: #f1fa8c; }
+.string { color: #8be9fd; }
+.number { color: #bd93f9; }
+.boolean { color: #ff79c6; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .container { flex-direction: column; overflow-y: auto;}
+    .request-section, .response-section { min-height: 400px; }
+}

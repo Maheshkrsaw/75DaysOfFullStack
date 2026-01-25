@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Skill<span>Spire</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+    </nav>
+
+    <section class="container" style="padding-top:40px;">
+        <div style="display:grid; grid-template-columns: 2fr 1fr; gap:40px;">
+            <div>
+                <img id="course-img" src="" style="width:100%; border-radius:10px; margin-bottom:20px;">
+                
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'Overview')">Overview</button>
+                    <button class="tab-btn" onclick="openTab(event, 'Curriculum')">Curriculum</button>
+                    <button class="tab-btn" onclick="openTab(event, 'Instructor')">Instructor</button>
+                </div>
+
+                <div id="Overview" class="tab-content active">
+                    <h2 id="course-title"></h2>
+                    <p id="course-desc" style="margin-top:10px; line-height:1.6; color:#555;"></p>
+                </div>
+
+                <div id="Curriculum" class="tab-content">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                            Section 1: Introduction <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-body">
+                            <p><i class="fas fa-play-circle"></i> 1.1 Welcome to the course</p>
+                            <p><i class="fas fa-play-circle"></i> 1.2 Tools Setup</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                            Section 2: Fundamentals <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-body">
+                            <p><i class="fas fa-play-circle"></i> 2.1 Basic Concepts</p>
+                            <p><i class="fas fa-file-alt"></i> 2.2 Quiz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Instructor" class="tab-content">
+                    <h3>About the Instructor</h3>
+                    <p>Highly experienced industry professional with 10+ years of teaching experience.</p>
+                </div>
+            </div>
+
+            <div>
+                <div style="background:white; padding:30px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.05); position:sticky; top:100px;">
+                    <h2 id="course-price" style="font-size:32px; color:var(--primary);"></h2>
+                    <p style="text-decoration:line-through; color:#999;">$99.99</p>
+                    <br>
+                    <ul style="margin-bottom:20px;">
+                        <li><i class="fas fa-check" style="color:green; margin-right:10px;"></i> Full Lifetime Access</li>
+                        <li><i class="fas fa-check" style="color:green; margin-right:10px;"></i> Certificate of Completion</li>
+                        <li><i class="fas fa-check" style="color:green; margin-right:10px;"></i> 24/7 Support</li>
+                    </ul>
+                    <button id="enroll-btn" class="btn" style="width:100%;">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>loadDetails();</script>
+</body>
+</html>

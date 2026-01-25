@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkillSpire | Learn Anything</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Skill<span>Spire</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+        <a href="courses.html" class="btn">Get Started</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Unlock Your <br> <span>Creative Potential</span></h1>
+            <p style="margin:20px 0; color:#666; font-size:18px;">Master new skills with our top-rated courses. Learn anytime, anywhere.</p>
+            <a href="courses.html" class="btn">Browse Courses</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://plus.unsplash.com/premium_photo-1706545209925-ae9b9de6cb8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bW9kZXJuJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D" alt="Learning">
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="section-header">
+            <h2>Popular Courses</h2>
+            <p>Explore our best-selling courses</p>
+        </div>
+        <div id="home-courses" class="grid-4"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>loadCourses('home-courses', 4);</script>
+</body>
+</html>

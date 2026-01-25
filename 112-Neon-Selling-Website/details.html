@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Neon<span>Art</span>.</div>
+        <ul class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="wallet.html" class="btn wallet-trigger">Connect Wallet</a>
+        </ul>
+        <i class="fas fa-bars menu-btn"></i>
+    </nav>
+
+    <div class="container details-container">
+        <img id="nft-img" src="" class="details-img">
+        
+        <div class="details-info">
+            <h1 id="nft-title" style="font-size:40px; margin-bottom:10px;"></h1>
+            <p style="color:var(--text-gray); font-size:18px;">Created by <span id="nft-creator" style="color:var(--primary);"></span></p>
+            
+            <div style="background:var(--bg-card); padding:20px; border-radius:15px; margin:30px 0; border:1px solid var(--border);">
+                <p style="font-size:14px; color:var(--text-gray);">Current Price</p>
+                <h2 id="nft-price" style="font-size:36px; margin:5px 0;"></h2>
+                <p style="font-size:14px; color:var(--text-gray);">$3,450.23</p>
+            </div>
+
+            <button class="btn" style="width:100%; padding:15px; font-size:18px;">Place Bid</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>loadDetails();</script>
+</body>
+</html>

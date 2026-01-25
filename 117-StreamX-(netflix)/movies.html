@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All Movies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="black">
+        <div style="display:flex; align-items:center; gap:40px;">
+            <div class="logo">StreamX</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html" class="active">Movies</a>
+                <a href="watchlist.html">My List</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="search.html" style="color:white;"><i class="fas fa-search"></i></a>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" class="profile-icon">
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <h1 style="margin-bottom:20px;">All Movies & TV Shows</h1>
+        <div id="all-movies" class="grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>renderGrid('all-movies');</script>
+</body>
+</html>

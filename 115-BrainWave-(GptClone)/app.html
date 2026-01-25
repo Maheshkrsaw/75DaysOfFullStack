@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat | BrainWave</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <aside class="sidebar">
+            <button class="new-chat-btn" onclick="window.location.reload()">
+                <i class="fas fa-plus"></i> New chat
+            </button>
+
+            <div class="history-list">
+                <div style="padding:10px; font-size:12px; font-weight:600; color:#666;">Today</div>
+                <div class="history-item"><i class="far fa-comment-alt"></i> Python script help</div>
+                <div class="history-item"><i class="far fa-comment-alt"></i> Marketing strategy</div>
+                <div class="history-item"><i class="far fa-comment-alt"></i> React components</div>
+                
+                <div style="padding:10px; font-size:12px; font-weight:600; color:#666; margin-top:20px;">Yesterday</div>
+                <div class="history-item"><i class="far fa-comment-alt"></i> Email draft</div>
+            </div>
+
+            <div class="user-menu">
+                <a href="settings.html" class="history-item"><i class="fas fa-cog"></i> Settings</a>
+                <a href="index.html" class="history-item"><i class="fas fa-sign-out-alt"></i> Log out</a>
+            </div>
+        </aside>
+
+        <main class="main-chat">
+            <div style="padding:10px; border-bottom:1px solid #444; display:none;" class="mobile-nav">
+                <i class="fas fa-bars" onclick="toggleSidebar()" style="cursor:pointer;"></i>
+            </div>
+
+            <div class="chat-window" id="chat-window">
+                <div class="message-row ai">
+                    <div class="avatar ai"><i class="fas fa-brain"></i></div>
+                    <div class="message-content">Hello! I am BrainWave. How can I assist you today?</div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-box">
+                    <textarea id="user-input" placeholder="Send a message..."></textarea>
+                    <button id="send-btn" class="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div style="position:absolute; bottom:5px; font-size:12px; color:#666;">BrainWave may produce inaccurate information about people or facts.</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        /* Mobile specific inline for brevity */
+        @media(max-width: 768px) { .mobile-nav { display: block; } }
+    </style>
+</body>
+</html>

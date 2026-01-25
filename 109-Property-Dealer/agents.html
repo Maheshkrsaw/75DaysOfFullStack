@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Agents</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Dream<span>Home</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html">Properties</a>
+            <a href="agents.html" class="active">Agents</a>
+            <a href="saved.html">Saved</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero" style="height:40vh; background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+        <h1>Meet Our Team</h1>
+    </div>
+
+    <section class="container">
+        <div class="grid-3">
+            <div class="agent-card reveal">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="agent-img">
+                <h3>John Doe</h3>
+                <p>Senior Broker</p>
+                <div style="margin-top:10px; color:var(--primary);">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="agent-card reveal">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="agent-img">
+                <h3>Sarah Smith</h3>
+                <p>Luxury Specialist</p>
+                <div style="margin-top:10px; color:var(--primary);">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="agent-card reveal">
+                <img src="https://randomuser.me/api/portraits/men/85.jpg" class="agent-img">
+                <h3>Mike Ross</h3>
+                <p>Sales Executive</p>
+                <div style="margin-top:10px; color:var(--primary);">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <script>reveal();</script>
+</body>
+</html>

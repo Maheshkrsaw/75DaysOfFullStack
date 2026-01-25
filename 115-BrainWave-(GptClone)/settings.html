@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | BrainWave</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Local specific styles for Settings */
+        .settings-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .settings-section {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .settings-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .settings-label h3 { font-size: 16px; margin-bottom: 5px; color: var(--text); }
+        .settings-label p { font-size: 14px; color: var(--text-dim); }
+
+        /* Custom Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #555;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px; width: 18px;
+            left: 3px; bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--primary); }
+        input:checked + .slider:before { transform: translateX(26px); }
+
+        .select-box {
+            background: #202123;
+            color: white;
+            border: 1px solid var(--border);
+            padding: 8px 15px;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background: var(--bg-body); overflow-y: auto;">
+
+    <nav class="navbar" style="position: sticky;">
+        <div class="logo"><i class="fas fa-brain"></i> BrainWave</div>
+        <a href="app.html" class="btn btn-outline">Back to Chat</a>
+    </nav>
+
+    <div class="settings-container">
+        <h1 style="margin-bottom: 40px; font-size: 32px;">Settings</h1>
+
+        <div class="settings-section">
+            <h2 style="margin-bottom: 20px; font-size: 20px; color: var(--text-dim);">General</h2>
+            
+            <div class="settings-row">
+                <div class="settings-label">
+                    <h3>Theme</h3>
+                    <p>Customize the look of the interface.</p>
+                </div>
+                <select class="select-box">
+                    <option>System</option>
+                    <option selected>Dark</option>
+                    <option>Light</option>
+                </select>
+            </div>
+
+            <div class="settings-row">
+                <div class="settings-label">
+                    <h3>Language</h3>
+                    <p>Select the AI's primary language.</p>
+                </div>
+                <select class="select-box">
+                    <option selected>English (US)</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                    <option>Hindi</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h2 style="margin-bottom: 20px; font-size: 20px; color: var(--text-dim);">Data Controls</h2>
+            
+            <div class="settings-row">
+                <div class="settings-label">
+                    <h3>Chat History & Training</h3>
+                    <p>Save new chats to your history and allow them to be used to improve our models.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="settings-row">
+                <div class="settings-label">
+                    <h3>Clear all chats</h3>
+                    <p>Delete all your conversation history permanently.</p>
+                </div>
+                <button class="btn" style="background: #ef4444; color: white; padding: 8px 15px; font-size: 14px;" onclick="clearChats(this)">Clear All</button>
+            </div>
+        </div>
+
+        <div class="settings-section" style="border-bottom: none;">
+            <h2 style="margin-bottom: 20px; font-size: 20px; color: var(--text-dim);">Subscription</h2>
+            
+            <div class="settings-row" style="background: rgba(16, 163, 127, 0.1); padding: 20px; border-radius: 10px; border: 1px solid var(--primary);">
+                <div class="settings-label">
+                    <h3 style="color: var(--primary);">Free Plan</h3>
+                    <p>You are currently on the free plan.</p>
+                </div>
+                <a href="pricing.html" class="btn btn-primary">Upgrade to Plus</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Simple Interaction for "Clear All"
+        function clearChats(btn) {
+            if(confirm("Are you sure? This cannot be undone.")) {
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Clearing...';
+                setTimeout(() => {
+                    btn.innerHTML = 'Cleared';
+                    btn.style.background = '#333';
+                    btn.disabled = true;
+                    // Optional: Add logic to clear localStorage here if you implemented it
+                    alert("Chat history cleared.");
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><i class="fas fa-camera-retro"></i> LensLoop</a>
+        <div class="nav-actions">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="profile.html" class="nav-link active">Profile</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" class="profile-img">
+            <h1>Jessica Doe</h1>
+            <p style="color:var(--gray); margin:5px 0;">@jess_photography • Los Angeles</p>
+            <p style="max-width:500px; margin:10px auto; font-size:14px;">Travel photographer capturing the world one lens at a time. Available for hire.</p>
+            
+            <div class="stats">
+                <div><span>1.2k</span> Posts</div>
+                <div><span>54.5k</span> Followers</div>
+                <div><span>200</span> Following</div>
+            </div>
+
+            <div style="margin-top:20px; display:flex; gap:10px; justify-content:center;">
+                <button class="btn btn-outline">Message</button>
+                <button class="btn-follow" onclick="toggleFollow(this)">Follow</button>
+            </div>
+        </div>
+
+        <hr style="border:0; border-top:1px solid #eee; margin-bottom:30px;">
+        
+        <h3 style="margin-bottom:20px;">Recent Uploads</h3>
+        <div id="profile-grid" class="masonry-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>renderGrid('profile-grid', 5);</script>
+</body>
+</html>

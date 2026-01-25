@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone | Esports Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Game<span>Zone</span></div>
+        <ul class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="streamers.html">Streams</a>
+        </ul>
+        <a href="login.html" class="btn">Join Now</a>
+        <i class="fas fa-bars menu-btn"></i>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 style="animation: slideIn 1s ease;">Next Gen <br> <span>Gaming</span></h1>
+            <p>Join the ultimate esports community. Compete, Watch, and Win.</p>
+            <a href="shop.html" class="btn" style="background:transparent; border:2px solid var(--primary);">Explore Games</a>
+            <a href="tournaments.html" class="btn" style="margin-left:15px;">Compete</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">Trending <span>Games</span></h2>
+        <div id="home-grid" class="grid"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>renderGames('home-grid', 3);</script>
+</body>
+</html>

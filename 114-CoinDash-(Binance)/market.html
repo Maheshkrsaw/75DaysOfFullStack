@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Markets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dash-container">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom:40px; padding:0 15px;"><i class="fab fa-bitcoin"></i> CoinDash</div>
+            <a href="dashboard.html" class="sidebar-link"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="market.html" class="sidebar-link active"><i class="fas fa-chart-line"></i> Markets</a>
+            <a href="trade.html" class="sidebar-link"><i class="fas fa-exchange-alt"></i> Trade</a>
+            <a href="wallet.html" class="sidebar-link"><i class="fas fa-wallet"></i> Wallet</a>
+        </aside>
+
+        <main class="main-content">
+            <div style="display:flex; align-items:center; margin-bottom:30px;">
+                <i class="fas fa-bars menu-toggle" onclick="toggleSidebar()"></i>
+                <h2>Market Overview</h2>
+            </div>
+            
+            <div class="card">
+                <table class="crypto-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>24h Change</th>
+                            <th>Market Cap</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="market-table">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>renderMarketTable('market-table');</script>
+</body>
+</html>

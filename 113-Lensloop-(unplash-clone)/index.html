@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LensLoop | Explore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo"><i class="fas fa-camera-retro"></i> LensLoop</a>
+        
+        <div class="search-bar">
+            <i class="fas fa-search" style="color:#999;"></i>
+            <input type="text" placeholder="Search for photos, nature, people...">
+        </div>
+
+        <div class="nav-actions">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="explore.html" class="nav-link">Explore</a>
+            <a href="upload.html" class="nav-link">Create</a>
+            <a href="profile.html"><img src="https://randomuser.me/api/portraits/men/1.jpg" style="width:40px; height:40px; border-radius:50%; object-fit:cover;"></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="home-grid" class="masonry-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>renderGrid('home-grid');</script>
+</body>
+</html>

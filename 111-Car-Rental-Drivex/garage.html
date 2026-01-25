@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Garage | DriveX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Drive<span>X</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="fleet.html">Fleet</a>
+            <a href="garage.html" class="active">Garage</a>
+            <a href="my-rentals.html">My Rentals</a>
+        </div>
+        <a href="fleet.html" class="btn">Book Now</a>
+    </nav>
+
+    <div style="padding: 80px 5% 20px; text-align:center;">
+        <h1 class="section-title">My Dream Garage</h1>
+        <p style="color:var(--gray);">Your curated collection of machines.</p>
+    </div>
+
+    <section class="container">
+        <div id="garage-container" class="grid-3"></div>
+    </section>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // --- Page Specific Logic: Load Garage ---
+        const container = document.getElementById('garage-container');
+        
+        // 1. Get Saved IDs from LocalStorage
+        let garageIds = JSON.parse(localStorage.getItem('garage')) || [];
+
+        // 2. Filter the global 'cars' array (from script.js)
+        let savedCars = cars.filter(car => garageIds.includes(car.id));
+
+        // 3. Render logic
+        if(savedCars.length === 0) {
+            container.innerHTML = `
+                <div style="grid-column: 1/-1; text-align:center; padding:50px; border:1px dashed #333; border-radius:10px;">
+                    <i class="far fa-folder-open" style="font-size:50px; color:#333; margin-bottom:20px;"></i>
+                    <h3 style="color:var(--gray);">Your garage is empty.</h3>
+                    <br>
+                    <a href="fleet.html" class="btn">Explore Fleet</a>
+                </div>
+            `;
+        } else {
+            container.innerHTML = savedCars.map(car => `
+                <div class="car-card reveal active">
+                    <span class="badge">${car.category}</span>
+                    <img src="${car.img}" class="car-img">
+                    <div class="car-info">
+                        <h3 class="car-title">${car.name}</h3>
+                        <span class="car-price">$${car.price} / day</span>
+                        <div class="specs">
+                            <span><i class="fas fa-tachometer-alt"></i> ${car.speed}</span>
+                            <span><i class="fas fa-bolt"></i> ${car.topSpeed}</span>
+                            <span><i class="fas fa-chair"></i> ${car.seats}</span>
+                        </div>
+                        <div style="display:flex; gap:10px;">
+                            <a href="details.html?id=${car.id}" class="btn" style="flex:1; text-align:center;">Rent Now</a>
+                            
+                            <button onclick="removeFromGarage(${car.id})" style="background:var(--primary); border:none; color:white; width:50px; cursor:pointer;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Helper function to remove and refresh immediately
+        function removeFromGarage(id) {
+            toggleGarage(id); // call function from script.js
+            location.reload(); // refresh page to update list
+        }
+    </script>
+</body>
+</html>

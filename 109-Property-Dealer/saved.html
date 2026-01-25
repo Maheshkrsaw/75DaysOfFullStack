@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Properties</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Dream<span>Home</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html">Properties</a>
+            <a href="agents.html">Agents</a>
+            <a href="saved.html" class="active">Saved</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="container" style="margin-top:50px;">
+        <h2 style="margin-bottom:30px;">My Wishlist</h2>
+        <div id="saved-container" class="grid-3"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        loadSaved();
+        reveal();
+    </script>
+</body>
+</html>

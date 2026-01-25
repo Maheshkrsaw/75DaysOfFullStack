@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashFlow | Finance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-wallet"></i> CashFlow
+            </div>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a>
+                <a href="#"><i class="fas fa-exchange-alt"></i> Transactions</a>
+                <a href="#"><i class="fas fa-bullseye"></i> Goals</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar"><i class="fas fa-user"></i></div>
+                <div class="user-info">
+                    <h4>Mahesh</h4>
+                    <p>Pro Member</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Overview</h1>
+                <button class="btn-clear" onclick="clearData()">Reset Data</button>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card balance">
+                    <h3>Total Balance</h3>
+                    <h2 id="balance">$0.00</h2>
+                    <i class="fas fa-wallet icon-bg"></i>
+                </div>
+                <div class="stat-card income">
+                    <h3>Income</h3>
+                    <h2 id="money-plus">+$0.00</h2>
+                    <i class="fas fa-arrow-up icon-bg"></i>
+                </div>
+                <div class="stat-card expense">
+                    <h3>Expense</h3>
+                    <h2 id="money-minus">-$0.00</h2>
+                    <i class="fas fa-arrow-down icon-bg"></i>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                
+                <div class="chart-section">
+                    <div class="card-header">
+                        <h3>Analytics</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="expenseChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="transaction-section">
+                    <h3>Add Transaction</h3>
+                    <form id="form">
+                        <div class="form-control">
+                            <label>Text</label>
+                            <input type="text" id="text" placeholder="e.g. Salary, Rent..." required>
+                        </div>
+                        <div class="form-control">
+                            <label>Amount</label>
+                            <p class="hint">(Negative - expense, Positive + income)</p>
+                            <input type="number" id="amount" placeholder="e.g. -500 or 2000" required>
+                        </div>
+                        <button class="btn">Add Transaction</button>
+                    </form>
+
+                    <div class="recent-history">
+                        <h3>History</h3>
+                        <ul id="list" class="list">
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

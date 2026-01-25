@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign In - StreamX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo" style="position:absolute; top:20px; left:40px;">StreamX</div>
+    
+    <div class="login-body">
+        <div class="login-box">
+            <h1 style="margin-bottom:30px;">Sign In</h1>
+            <form onsubmit="event.preventDefault(); window.location.href='index.html'">
+                <input type="email" placeholder="Email or phone number" class="login-input" required>
+                <input type="password" placeholder="Password" class="login-input" required>
+                <button class="login-btn">Sign In</button>
+                
+                <div style="display:flex; justify-content:space-between; color:#b3b3b3; font-size:13px; margin-top:10px;">
+                    <div><input type="checkbox"> Remember me</div>
+                    <a href="#" style="color:#b3b3b3;">Need help?</a>
+                </div>
+
+                <div style="margin-top:50px; color:#737373;">
+                    New to StreamX? <a href="#" style="color:white;">Sign up now.</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

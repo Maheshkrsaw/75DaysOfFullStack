@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft | Online Compiler</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fas fa-code"></i> CodeCraft</div>
+        <div class="actions">
+            <button class="btn-dark" onclick="saveCode()"><i class="fas fa-save"></i> Save</button>
+            <button class="btn-primary" onclick="downloadCode()"><i class="fas fa-download"></i> Export .html</button>
+            <div class="avatar">M</div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        
+        <div class="editors-pane">
+            
+            <div class="editor-group">
+                <div class="editor-header html-header">
+                    <span><i class="fab fa-html5"></i> HTML</span>
+                    <i class="fas fa-compress-alt"></i>
+                </div>
+                <textarea id="html-code" spellcheck="false" placeholder="<h1>Hello World</h1>"></textarea>
+            </div>
+
+            <div class="editor-group">
+                <div class="editor-header css-header">
+                    <span><i class="fab fa-css3-alt"></i> CSS</span>
+                    <i class="fas fa-compress-alt"></i>
+                </div>
+                <textarea id="css-code" spellcheck="false" placeholder="body { background: #f0f0f0; }"></textarea>
+            </div>
+
+            <div class="editor-group">
+                <div class="editor-header js-header">
+                    <span><i class="fab fa-js"></i> JS</span>
+                    <i class="fas fa-compress-alt"></i>
+                </div>
+                <textarea id="js-code" spellcheck="false" placeholder="console.log('CodeCraft Ready');"></textarea>
+            </div>
+
+        </div>
+
+        <div class="preview-pane">
+            <div class="preview-header">
+                <span><i class="fas fa-eye"></i> Live Preview</span>
+                <span id="size-badge">1920px</span>
+            </div>
+            <iframe id="output" frameborder="0"></iframe>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

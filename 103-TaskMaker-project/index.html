@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster | Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><i class="fas fa-tasks"></i> TaskMaster</div>
+        <div class="user-actions">
+            <button class="btn-clear" onclick="clearBoard()">Clear Board</button>
+            <img src="https://i.pravatar.cc/100?img=12" alt="User" class="avatar">
+        </div>
+    </header>
+
+    <div class="board">
+        <div class="column" id="todo">
+            <div class="column-header">
+                <span class="dot todo-dot"></span>
+                <h2>To Do</h2>
+                <span class="count" id="count-todo">0</span>
+            </div>
+            <div class="task-list" id="list-todo">
+                </div>
+            <button class="add-task-btn" onclick="openModal('todo')">+ Add Task</button>
+        </div>
+
+        <div class="column" id="progress">
+            <div class="column-header">
+                <span class="dot progress-dot"></span>
+                <h2>In Progress</h2>
+                <span class="count" id="count-progress">0</span>
+            </div>
+            <div class="task-list" id="list-progress">
+                </div>
+            <button class="add-task-btn" onclick="openModal('progress')">+ Add Task</button>
+        </div>
+
+        <div class="column" id="done">
+            <div class="column-header">
+                <span class="dot done-dot"></span>
+                <h2>Done</h2>
+                <span class="count" id="count-done">0</span>
+            </div>
+            <div class="task-list" id="list-done">
+                </div>
+            <button class="add-task-btn" onclick="openModal('done')">+ Add Task</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <h3>New Task</h3>
+            <input type="text" id="task-title" placeholder="What needs to be done?">
+            <div class="priority-select">
+                <label>Priority:</label>
+                <select id="task-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-save" onclick="saveTask()">Add Card</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+:root {
+    --bg-dark: #0f0f14;
+    --bg-card: #1c1c24;
+    --primary: #e50914; /* Netflix Red */
+    --text-white: #ffffff;
+    --text-gray: #a1a1a6;
+    --font: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background: var(--bg-card);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.highlight { color: var(--primary); }
+
+.nav-links li {
+    list-style: none;
+    padding: 15px 0;
+    color: var(--text-gray);
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links li:hover, .nav-links li.active-nav {
+    color: var(--text-white);
+    border-right: 3px solid var(--primary);
+}
+
+.footer-note {
+    margin-top: auto;
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+/* Main Area */
+main {
+    margin-left: 250px; /* Offset for sidebar */
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* View Management (Tabs) */
+.view { display: none; animation: fadeIn 0.5s; }
+.view.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1469&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.hero h1 { font-size: 48px; margin-bottom: 10px; }
+.hero p { color: var(--text-gray); max-width: 500px; margin-bottom: 20px; }
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Show Cards */
+.card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover { transform: translateY(-10px); z-index: 2; }
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-info { padding: 15px; }
+.card-info h3 { font-size: 16px; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-info span { font-size: 12px; color: var(--primary); font-weight: bold; }
+
+/* Search Bar */
+.search-bar-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: var(--bg-card);
+    color: white;
+    font-size: 16px;
+}
+
+/* Details Page */
+.details-layout { display: flex; gap: 40px; }
+.details-img { width: 300px; border-radius: 15px; }
+.details-info h1 { font-size: 42px; margin-bottom: 15px; }
+.details-meta { display: flex; gap: 20px; color: var(--text-gray); margin-bottom: 20px; }
+.genres span { background: #333; padding: 5px 10px; border-radius: 5px; font-size: 12px; margin-right: 5px;}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar { width: 100%; height: auto; position: fixed; bottom: 0; z-index: 100; flex-direction: row; padding: 10px; justify-content: space-around; top: auto; }
+    .logo, .footer-note { display: none; }
+    main { margin-left: 0; margin-bottom: 60px; padding: 20px; }
+    .hero h1 { font-size: 32px; }
+    .details-layout { flex-direction: column; }
+    .details-img { width: 100%; }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Properties</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Dream<span>Home</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html" class="active">Properties</a>
+            <a href="agents.html">Agents</a>
+            <a href="saved.html">Saved</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero" style="height:40vh; background-image:url('https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+        <h1>All Listings</h1>
+    </div>
+
+    <section class="container">
+        <div id="all-props-container" class="grid-3"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        loadProperties('all-props-container');
+        reveal();
+    </script>
+</body>
+</html>

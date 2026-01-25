@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CoinDash</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dash-container">
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom:40px; padding:0 15px;"><i class="fab fa-bitcoin"></i> CoinDash</div>
+            <a href="dashboard.html" class="sidebar-link active"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="market.html" class="sidebar-link"><i class="fas fa-chart-line"></i> Markets</a>
+            <a href="trade.html" class="sidebar-link"><i class="fas fa-exchange-alt"></i> Trade</a>
+            <a href="wallet.html" class="sidebar-link"><i class="fas fa-wallet"></i> Wallet</a>
+            <a href="settings.html" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+            
+            <a href="index.html" class="sidebar-link" style="margin-top:auto;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+                <i class="fas fa-bars menu-toggle" onclick="toggleSidebar()"></i>
+                <h2>Dashboard</h2>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="color:var(--text-dim);">Hi, User</span>
+                    <div style="width:35px; height:35px; background:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; color:black; font-weight:bold;">U</div>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <span style="color:var(--text-dim);">Estimated Balance</span>
+                    <div class="balance">$12,450.00</div>
+                    <span class="trend up">+2.4% today</span>
+                </div>
+                <div class="card">
+                    <span style="color:var(--text-dim);">Bitcoin Holdings</span>
+                    <div class="balance">0.24 BTC</div>
+                    <span style="color:var(--text-dim); font-size:14px;">≈ $10,200</span>
+                </div>
+                <div class="card">
+                    <span style="color:var(--text-dim);">USDT Available</span>
+                    <div class="balance">2,250 USDT</div>
+                    <div style="margin-top:10px;">
+                        <a href="wallet.html" class="btn" style="padding:5px 15px; font-size:12px;">Deposit</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Portfolio Performance</h3>
+                        <select style="background:var(--bg-dark); color:white; border:none; padding:5px;">
+                            <option>24H</option>
+                            <option>1W</option>
+                            <option>1M</option>
+                        </select>
+                    </div>
+                    <canvas id="priceChart"></canvas>
+                </div>
+
+                <div class="card">
+                    <h3>Recent Trades</h3>
+                    <br>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid var(--border);">
+                        <div>
+                            <div style="font-weight:bold; color:var(--green);">Bought BTC</div>
+                            <span style="font-size:12px; color:var(--text-dim);">Today, 10:23 AM</span>
+                        </div>
+                        <div style="text-align:right;">
+                            <div>+0.05 BTC</div>
+                            <span style="font-size:12px; color:var(--text-dim);">$2,100</span>
+                        </div>
+                    </div>
+                    
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
+                        <div>
+                            <div style="font-weight:bold; color:var(--red);">Sold ETH</div>
+                            <span style="font-size:12px; color:var(--text-dim);">Yesterday</span>
+                        </div>
+                        <div style="text-align:right;">
+                            <div>-1.2 ETH</div>
+                            <span style="font-size:12px; color:var(--text-dim);">$2,800</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>renderMainChart();</script>
+</body>
+</html>

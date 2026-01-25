@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamX | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div style="display:flex; align-items:center; gap:40px;">
+            <div class="logo">StreamX</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="watchlist.html">My List</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="search.html" style="color:white;"><i class="fas fa-search"></i></a>
+            <i class="fas fa-bell"></i>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" class="profile-icon">
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-title">STRANGER <br> THINGS</div>
+            <div class="hero-desc">
+                When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.
+            </div>
+            <div style="display:flex;">
+                <button class="btn btn-play" onclick="playMovie(1)"><i class="fas fa-play"></i> Play</button>
+                <button class="btn btn-more"><i class="fas fa-info-circle"></i> More Info</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="slider-container" style="margin-top: -100px; position: relative; z-index: 10;"></div>
+
+    <script src="script.js"></script>
+    <script>renderSliders();</script>
+</body>
+</html>

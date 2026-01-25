@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet | NeonArt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Local style for multiple wallet options grid */
+        .wallet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .wallet-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wallet-card:hover {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 0; right: 0;
+            background: var(--primary);
+            color: black;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-bottom-left-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Neon<span>Art</span>.</div>
+        <ul class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="creators.html">Creators</a>
+            <a href="create.html">Create</a>
+        </ul>
+        <i class="fas fa-bars menu-btn"></i>
+    </nav>
+
+    <div class="container">
+        <div style="text-align:center; max-width:600px; margin:0 auto;">
+            <h1 class="section-title">Connect your <span>Wallet</span></h1>
+            <p style="color:var(--text-gray); font-size:18px;">
+                Connect with one of our available wallet providers to create, collect, and sell NFTs.
+            </p>
+        </div>
+
+        <div class="wallet-grid">
+            
+            <div class="wallet-card" onclick="connectWallet(this)">
+                <div class="popular-badge">POPULAR</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" style="width:60px; margin-bottom:20px;">
+                <h3>MetaMask</h3>
+                <p style="color:var(--text-gray); font-size:14px; margin-top:10px;">
+                    One of the most secure wallets with great flexibility.
+                </p>
+            </div>
+
+            <div class="wallet-card" onclick="connectWallet(this)">
+                <img src="https://avatars.githubusercontent.com/u/18060234?s=280&v=4" style="width:60px; margin-bottom:20px; border-radius:50%;">
+                <h3>Coinbase Wallet</h3>
+                <p style="color:var(--text-gray); font-size:14px; margin-top:10px;">
+                    The easiest way to manage your crypto assets.
+                </p>
+            </div>
+
+            <div class="wallet-card" onclick="connectWallet(this)">
+                <img src="https://avatars.githubusercontent.com/u/37784886?s=280&v=4" style="width:60px; margin-bottom:20px;">
+                <h3>WalletConnect</h3>
+                <p style="color:var(--text-gray); font-size:14px; margin-top:10px;">
+                    Connect with Rainbow, Trust, Argent and more.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Override the connect function specifically for this page for better UI feedback
+        function connectWallet(card) {
+            // Reset others
+            document.querySelectorAll('.wallet-card').forEach(c => c.style.borderColor = 'var(--border)');
+            
+            // Highlight clicked
+            card.style.borderColor = 'var(--secondary)';
+            
+            // Show loading
+            const originalText = card.querySelector('h3').innerText;
+            card.querySelector('h3').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
+
+            setTimeout(() => {
+                alert('Wallet Connected Successfully!');
+                localStorage.setItem('walletConnected', 'true');
+                card.querySelector('h3').innerText = originalText; // Reset text
+                window.location.href = "explore.html"; // Redirect to explore page
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>

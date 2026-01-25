@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DreamHome | Luxury Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Dream<span>Home</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="properties.html">Properties</a>
+            <a href="agents.html">Agents</a>
+            <a href="saved.html">Saved</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="reveal">Find Your Dream Sanctuary</h1>
+        <p class="reveal">Exclusive properties for the modern lifestyle.</p>
+        <a href="properties.html" class="btn reveal">Browse Properties</a>
+    </header>
+
+    <section class="container">
+        <div class="section-title reveal">
+            <h2>Featured Properties</h2>
+            <p>Handpicked selection of luxury homes.</p>
+        </div>
+        <div id="featured-container" class="grid-3">
+            </div>
+        <div style="text-align:center; margin-top:50px;">
+            <a href="properties.html" class="btn reveal">View All Listings</a>
+        </div>
+    </section>
+
+    <section class="container" style="background:white;">
+        <div class="grid-3" style="align-items:center; grid-template-columns: 1fr 1fr;">
+            <div class="reveal">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:10px;">
+            </div>
+            <div class="reveal">
+                <h2>Why Choose DreamHome?</h2>
+                <br>
+                <p style="line-height:1.8; color:#666;">We provide a complete service for the sale, purchase, or rental of real estate. We have been operating for more than 10 years. We are searching for new solutions and our clients are very satisfied with our service.</p>
+                <br>
+                <a href="agents.html" class="btn">Meet Our Agents</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        loadProperties('featured-container', 3); // Load only 3
+        reveal(); // Trigger animation on load
+    </script>
+</body>
+</html>

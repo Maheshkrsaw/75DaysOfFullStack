@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="black">
+        <div style="display:flex; align-items:center; gap:40px;">
+            <div class="logo">StreamX</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="watchlist.html" class="active">My List</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" class="profile-icon">
+        </div>
+    </nav>
+
+    <div class="grid-container">
+        <h1 style="margin-bottom:20px;">My List</h1>
+        <div id="watchlist-grid" class="grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>loadWatchlist();</script>
+</body>
+</html>

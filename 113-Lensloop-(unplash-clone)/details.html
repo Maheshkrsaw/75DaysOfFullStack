@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><i class="fas fa-camera-retro"></i> LensLoop</a>
+        <div class="nav-actions">
+            <a href="index.html" class="nav-link">Back</a>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width:1000px;">
+        <div class="detail-layout">
+            <img id="det-img" src="" class="detail-img">
+            
+            <div class="detail-info">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <img id="det-avatar" src="" style="width:50px; height:50px; border-radius:50%;">
+                        <div>
+                            <h3 id="det-user">User Name</h3>
+                            <p style="font-size:12px; color:gray;">2.3k Followers</p>
+                        </div>
+                    </div>
+                    <button class="btn-follow" onclick="toggleFollow(this)">Follow</button>
+                </div>
+
+                <p style="line-height:1.6; color:#555; margin-bottom:20px;">
+                    This allows you to download free high-resolution photos. 
+                    Captured using Sony A7III with 35mm lens.
+                </p>
+
+                <div style="display:flex; gap:15px; margin-bottom:30px;">
+                    <button class="btn btn-outline" onclick="toggleLike(this)" style="display:flex; align-items:center; gap:8px;">
+                        <i class="fa-regular fa-heart"></i> <span>452</span>
+                    </button>
+                    
+                    <button class="btn btn-outline" style="display:flex; align-items:center; gap:8px;">
+                        <i class="fa-solid fa-share"></i> Share
+                    </button>
+                </div>
+
+                <button class="btn btn-primary" style="width:100%; padding:15px; display:flex; justify-content:center; align-items:center; gap:10px;" onclick="downloadImage(this)">
+                    Download Free <i class="fas fa-download"></i>
+                </button>
+            </div>
+        </div>
+
+        <h3 style="margin:40px 0 20px;">More like this</h3>
+        <div id="related-grid" class="masonry-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        loadDetails();
+        renderGrid('related-grid', 4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+:root {
+    --bg-dark: #1e1e1e; /* VS Code Background */
+    --bg-panel: #252526;
+    --border: #333;
+    --accent: #007acc; /* VS Code Blue */
+    --text: #cccccc;
+    --html-color: #e34c26;
+    --css-color: #2965f1;
+    --js-color: #f0db4f;
+    --font-ui: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-ui);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Navbar --- */
+nav {
+    height: 50px;
+    background: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #111;
+}
+
+.logo {
+    font-weight: 700;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    padding: 6px 15px;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.2s;
+}
+
+.btn-dark {
+    background: #444;
+    color: white;
+}
+.btn-dark:hover { background: #555; }
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+.btn-primary:hover { background: #0098ff; }
+
+.avatar {
+    width: 25px;
+    height: 25px;
+    background: purple;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    margin-left: 10px;
+}
+
+/* --- Main Layout --- */
+.main-container {
+    flex: 1;
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+/* Left Pane: Editors */
+.editors-pane {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+    background: var(--bg-dark);
+}
+
+.editor-group {
+    flex: 1; /* Divide space equally */
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--border);
+}
+
+.editor-header {
+    background: var(--bg-panel);
+    padding: 8px 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #999;
+}
+
+.html-header i { color: var(--html-color); }
+.css-header i { color: var(--css-color); }
+.js-header i { color: var(--js-color); }
+
+textarea {
+    flex: 1;
+    background: var(--bg-dark);
+    color: #d4d4d4;
+    border: none;
+    padding: 15px;
+    resize: none;
+    outline: none;
+    font-family: var(--font-code);
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre; /* Keep code formatting */
+}
+
+/* Scrollbars */
+textarea::-webkit-scrollbar { width: 10px; }
+textarea::-webkit-scrollbar-track { background: var(--bg-dark); }
+textarea::-webkit-scrollbar-thumb { background: #444; }
+
+/* Right Pane: Preview */
+.preview-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white; /* Preview is usually white */
+}
+
+.preview-header {
+    background: #f3f3f3;
+    color: #333;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .editors-pane { width: 100%; height: 50%; }
+    .preview-pane { width: 100%; height: 50%; }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Skill<span>Spire</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+        </div>
+    </nav>
+
+    <section class="container">
+        <h1>My Learning</h1>
+        <p style="margin-bottom:30px;">Track your progress</p>
+        <div id="my-courses-container" class="grid-4"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>loadDashboard();</script>
+</body>
+</html>

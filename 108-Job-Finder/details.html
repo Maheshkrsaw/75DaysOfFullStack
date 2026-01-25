@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">JobFinder.</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="jobs.html" class="active">Find Jobs</a>
+            <a href="post-job.html">Post Job</a>
+            <a href="saved.html">Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="jobs.html" style="color:#666;">&larr; Back to Jobs</a>
+        <br><br>
+        <div class="details-box">
+            <h1 id="job-title">Job Title</h1>
+            <p id="job-company" style="font-size:18px; margin-top:5px; color:#2563eb;">Company Name</p>
+            
+            <div class="meta-row" id="job-meta">
+                </div>
+            
+            <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
+            
+            <h3>Job Description</h3>
+            <p id="job-desc" style="line-height:1.6; color:#444; margin-top:10px;">
+                </p>
+            <br><br>
+            <button id="apply-btn" class="btn-submit" style="width:200px;">Apply Now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>loadDetails();</script>
+</body>
+</html>

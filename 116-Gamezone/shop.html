@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Game<span>Zone</span></div>
+        <ul class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="streamers.html">Streams</a>
+        </ul>
+        <i class="fas fa-bars menu-btn"></i>
+    </nav>
+
+    <div class="container">
+        <h1 class="section-title">All <span>Games</span></h1>
+        
+        <div style="text-align:center; margin-bottom:40px;">
+            <button class="btn" style="margin:5px;">All</button>
+            <button class="btn" style="background:transparent; border:1px solid #333; margin:5px;">RPG</button>
+            <button class="btn" style="background:transparent; border:1px solid #333; margin:5px;">Action</button>
+            <button class="btn" style="background:transparent; border:1px solid #333; margin:5px;">Shooter</button>
+        </div>
+
+        <div id="shop-grid" class="grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>renderGames('shop-grid');</script>
+</body>
+</html>

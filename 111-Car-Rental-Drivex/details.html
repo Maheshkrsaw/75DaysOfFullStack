@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Drive<span>X</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="fleet.html" class="active">Fleet</a>
+            <a href="garage.html">Garage</a>
+        </div>
+    </nav>
+
+    <section class="container detail-layout" style="margin-top:20px;">
+        <div>
+            <img id="car-img" src="" style="width:100%; border-radius:10px; border:1px solid #333;">
+            <h1 id="car-name" style="font-family:'Orbitron'; font-size:40px; margin-top:20px;"></h1>
+            <p id="car-desc" style="color:gray; margin-top:10px; line-height:1.6;"></p>
+        </div>
+
+        <div class="price-box">
+            <h3 style="margin-bottom:20px;">Booking Details</h3>
+            
+            <label style="color:gray; font-size:12px;">PICK-UP DATE</label>
+            <input type="date" id="start-date" class="date-input" onchange="calculateTotal()">
+            
+            <label style="color:gray; font-size:12px;">RETURN DATE</label>
+            <input type="date" id="end-date" class="date-input" onchange="calculateTotal()">
+            
+            <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
+            
+            <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                <span>Daily Rate</span>
+                <span>$<span id="base-price">0</span></span>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                <span>Duration</span>
+                <span><span id="total-days">0</span> Days</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:24px; font-weight:bold; color:var(--primary); margin-top:10px;">
+                <span>TOTAL</span>
+                <span>$<span id="total-price">0</span></span>
+            </div>
+            
+            <br>
+            <button id="book-btn" class="btn" style="width:100%; opacity:0.5;" disabled>Proceed to Checkout</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>loadDetails();</script>
+</body>
+</html>

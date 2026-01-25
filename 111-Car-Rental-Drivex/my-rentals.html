@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Rentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Drive<span>X</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="fleet.html">Fleet</a>
+            <a href="my-rentals.html" class="active">My Rentals</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="section-title">Booking History</h1>
+        <div id="booking-list" style="display:grid; gap:20px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+        const container = document.getElementById('booking-list');
+        
+        if(bookings.length === 0) {
+            container.innerHTML = "<p style='text-align:center; color:gray;'>No active rentals.</p>";
+        } else {
+            container.innerHTML = bookings.map(b => `
+                <div style="background:#161616; padding:20px; border-radius:10px; border-left:5px solid var(--primary); display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <h3 style="margin-bottom:5px;">Booking #${b.id}</h3>
+                        <p style="color:gray; font-size:14px;">Booked on: ${b.date}</p>
+                    </div>
+                    <div style="text-align:right;">
+                        <h2 style="color:var(--primary);">$${b.total}</h2>
+                        <span style="background:green; color:white; padding:2px 8px; font-size:12px; border-radius:3px;">${b.status}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

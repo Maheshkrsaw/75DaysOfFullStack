@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGo | Book Your Dream</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fas fa-plane-departure"></i> TravelGo</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Explore the World <br> with <span class="highlight">Confidence</span>.</h1>
+            <p>Find the best deals on flights, hotels, and holiday packages.</p>
+        </div>
+
+        <div class="booking-container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('flights')"><i class="fas fa-plane"></i> Flights</button>
+                <button class="tab-btn" onclick="openTab('hotels')"><i class="fas fa-hotel"></i> Hotels</button>
+            </div>
+
+            <div class="form-wrapper">
+                <form id="flights" class="booking-form active-form">
+                    <div class="input-group">
+                        <label>From</label>
+                        <input type="text" placeholder="New York, USA">
+                        <i class="fas fa-map-marker-alt icon"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>To</label>
+                        <input type="text" placeholder="London, UK">
+                        <i class="fas fa-map-marker-alt icon"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Departure</label>
+                        <input type="date">
+                    </div>
+                    <div class="input-group">
+                        <label>Passengers</label>
+                        <select>
+                            <option>1 Adult</option>
+                            <option>2 Adults</option>
+                            <option>Family</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-search">Search Flights</button>
+                </form>
+
+                <form id="hotels" class="booking-form">
+                    <div class="input-group">
+                        <label>Location</label>
+                        <input type="text" placeholder="Where are you going?">
+                        <i class="fas fa-search icon"></i>
+                    </div>
+                    <div class="input-group">
+                        <label>Check-in</label>
+                        <input type="date">
+                    </div>
+                    <div class="input-group">
+                        <label>Check-out</label>
+                        <input type="date">
+                    </div>
+                    <div class="input-group">
+                        <label>Guests</label>
+                        <select>
+                            <option>1 Room, 2 Guests</option>
+                            <option>2 Rooms, 4 Guests</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-search">Search Hotels</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section class="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="grid" id="destination-grid">
+            </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+:root {
+    --bg-body: #0079bf; /* Trello Blue-ish style or change to #f4f5f7 */
+    --bg-column: #ebecf0;
+    --card-bg: #ffffff;
+    --text-dark: #172b4d;
+    --text-gray: #5e6c84;
+    --high: #eb5a46;
+    --medium: #f2d600;
+    --low: #61bd4f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0079bf, #5067c5);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    background: rgba(0,0,0,0.15);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.btn-clear {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* --- Board Layout --- */
+.board {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    overflow-x: auto;
+    height: 100%;
+    align-items: flex-start;
+}
+
+.column {
+    background: var(--bg-column);
+    min-width: 300px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.column-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+.column-header h2 {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px; }
+.todo-dot { background: var(--high); }
+.progress-dot { background: var(--medium); }
+.done-dot { background: var(--low); }
+
+.count {
+    background: #ddd;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+/* --- Task Lists & Cards --- */
+.task-list {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 100px; /* Important for dropping into empty columns */
+}
+
+.task-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    cursor: grab;
+    position: relative;
+    transition: 0.2s;
+}
+
+.task-card:hover { background: #f8f9fa; }
+
+/* The visual style when dragging */
+.task-card.dragging {
+    opacity: 0.5;
+    transform: rotate(3deg);
+    border: 2px dashed #0079bf;
+}
+
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.tag-high { background: var(--high); }
+.tag-medium { background: var(--medium); }
+.tag-low { background: var(--low); }
+
+.task-card p {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.delete-task {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.task-card:hover .delete-task { opacity: 1; }
+.delete-task:hover { color: var(--high); }
+
+.add-task-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+    transition: 0.2s;
+}
+
+.add-task-btn:hover { background: rgba(0,0,0,0.05); color: var(--text-dark); }
+
+/* --- Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.btn-save { background: #0079bf; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+.btn-cancel { background: transparent; border: none; color: var(--text-gray); cursor: pointer; }

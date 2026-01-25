@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Photo | LensLoop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific Styles for Upload Page */
+        .upload-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        .drop-zone {
+            width: 100%;
+            height: 300px;
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            background: #fafafa;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .drop-zone:hover {
+            background: #f0f0f0;
+            border-color: var(--primary);
+        }
+
+        .drop-zone i {
+            font-size: 50px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .drop-zone p {
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Image Preview Style */
+        #preview-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 0; left: 0;
+            background: white;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .form-input:focus { border-color: var(--primary); }
+
+        .tag-badge {
+            display: inline-block;
+            background: var(--light-gray);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo"><i class="fas fa-camera-retro"></i> LensLoop</a>
+        <div class="nav-actions">
+            <a href="index.html" class="nav-link">Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="upload-container">
+            <h1 style="text-align:center; margin-bottom:30px;">Create a new post</h1>
+
+            <div class="form-group">
+                <div class="drop-zone" onclick="document.getElementById('fileInput').click()">
+                    <div id="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop or click to upload</p>
+                        <p style="font-size:12px; color:#999; margin-top:5px;">Recommendation: High quality .jpg files less than 20MB</p>
+                    </div>
+                    <img id="preview-img" src="">
+                </div>
+                <input type="file" id="fileInput" hidden onchange="showPreview(this)">
+            </div>
+
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-input" placeholder="Add a title">
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-input" rows="4" placeholder="Tell everyone what your photo is about"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Tags</label>
+                <input type="text" class="form-input" placeholder="Add tags (e.g., nature, portrait)">
+                <div id="tags-container">
+                    <span class="tag-badge">#nature</span>
+                    <span class="tag-badge">#travel</span>
+                    <span class="tag-badge">#minimal</span>
+                </div>
+            </div>
+
+            <hr style="border:0; border-top:1px solid #eee; margin:30px 0;">
+
+            <div style="display:flex; justify-content:flex-end; gap:15px;">
+                <button class="btn btn-outline" onclick="window.location.href='index.html'">Cancel</button>
+                <button class="btn btn-primary" onclick="publishPost(this)" style="padding:12px 30px;">Publish</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // --- 1. PREVIEW IMAGE LOGIC ---
+        function showPreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Hide upload text
+                    document.getElementById('upload-content').style.display = 'none';
+                    // Show Image
+                    const img = document.getElementById('preview-img');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // --- 2. PUBLISH BUTTON MICRO-INTERACTION ---
+        function publishPost(btn) {
+            // Prevent double clicking
+            if(btn.disabled) return;
+
+            // 1. Loading State
+            const originalText = btn.innerText;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Publishing...';
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+
+            // 2. Success State (Simulated after 2 seconds)
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Published!';
+                btn.style.background = "#2ecc71"; // Green color for success
+                btn.style.border = "none";
+                btn.style.opacity = "1";
+
+                // 3. Redirect (Simulated after 1 more second)
+                setTimeout(() => {
+                    alert("Photo uploaded successfully!");
+                    window.location.href = "profile.html"; // Go to profile to see new post
+                }, 1000);
+
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Dream<span>Home</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="properties.html" class="active">Properties</a>
+            <a href="agents.html">Agents</a>
+            <a href="saved.html">Saved</a>
+        </div>
+    </nav>
+
+    <div class="details-header">
+        <img id="detail-img" src="" alt="House">
+    </div>
+
+    <div class="details-content reveal">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h1 id="detail-title">Title</h1>
+            <h2 id="detail-price" style="color:var(--primary);">Price</h2>
+        </div>
+        <p id="detail-loc" style="color:#777; margin:10px 0 20px;"><i class="fas fa-map-marker-alt"></i> Location</p>
+        
+        <div class="features" style="font-size:18px; padding:20px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;">
+            <span id="feat-beds"><i class="fas fa-bed"></i></span>
+            <span id="feat-baths"><i class="fas fa-bath"></i></span>
+            <span id="feat-sqft"><i class="fas fa-ruler"></i></span>
+        </div>
+
+        <br>
+        <h3>Description</h3>
+        <p id="detail-desc" style="line-height:1.8; color:#555; margin-top:10px;"></p>
+
+        <br><br>
+        <a href="contact.html" class="btn" style="width:100%; display:block; text-align:center;">Contact Agent Now</a>
+    </div>
+
+    <div style="height:100px;"></div>
+
+    <script src="script.js"></script>
+    <script>
+        loadDetails();
+        setTimeout(reveal, 500); // Small delay for effect
+    </script>
+</body>
+</html>

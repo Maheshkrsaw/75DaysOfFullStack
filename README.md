@@ -1074,8 +1074,7 @@ These projects focused on building **interactive, responsive, and user-friendly 
 ### **Day 90**
 1. **Age Calculator**  
    - Input date of birth, calculate age in years, months, days, hours  
-   - Fully responsive UI  
-   - Live Link: *Coming Soon*
+   - Fully responsive UI  - Live Link: *Coming Soon*
 
 2. **Modern Calculator**  
    - All standard calculator functions  
@@ -1388,6 +1387,193 @@ Comprehensive and accurate summary of projects built from **Day 99 to Day 117** 
 Proudly building consistency, design skills, and front-end mastery.
 
 Let's continue the grind 💪⚡
+
+
+---
+
+# 🎨 DesignCraft75 — Days 118 to 136
+
+A curated collection of my **Front-End, Full-Stack & UI/UX Projects**, built over Days 118–136 as part of my **75 Days Full Stack + AI Journey**. Each project focuses on **interactive UI, logic-driven features, and responsive design**.
+
+---
+
+## **Day 118 — CineVerse (Movie Discovery App)**
+
+* Netflix-style movie discovery, search functionality, personalized watchlist  
+* Dark theme UI for premium OTT feel  
+* **Live Demo:** [CineVerse](https://51-cineverse.netlify.app/)
+
+---
+
+## **Day 119 — FinSmart (Personal Finance Manager)**
+
+* Track daily expenses & income with real-time analytics  
+* Budget management with visual feedback  
+* **Live Demo:** [FinSmart](https://52-finsmart.netlify.app/)
+
+---
+
+## **Day 120 — Focus – Todo (Productivity Dashboard)**
+
+* Organize tasks, team collaboration, real-time counts for total/pending/completed  
+* Priority management with color-coded logic and SPA navigation  
+* **Live Demo:** [Focus – Todo](https://53-focus-to-do.netlify.app/)
+
+---
+
+## **Day 121 — Nexus Agency (Corporate Portfolio)**
+
+* Showcase services & portfolio with filtering  
+* Testimonial slider, contact form validation, responsive navigation  
+* **Live Demo:** [Nexus Agency](https://54-nexus-agency.netlify.app/)
+
+---
+
+## **Day 122 — ShopZone (Shopping Cart Application)**
+
+* Smart add-to-cart, live total calculation, quantity controls  
+* Empty cart handling with custom messages  
+* **Live Demo:** [ShopZone](https://55-shopzone.netlify.app/)
+
+---
+
+## **Day 123 — TechPulse (Dynamic Blogging Platform)**
+
+* Dynamic category filtering, auto-generated categories  
+* Active state styling and reading time indicators  
+* **Live Demo:** [TechPulse](https://56-techpulse.netlify.app/)
+
+---
+
+## **Day 124 — TaskMaster (Project Management Tool)**
+
+* Analytics dashboard, priority tagging (High/Medium/Critical)  
+* SPA sidebar navigation & team status visual indicators  
+* **Live Demo:** [TaskMaster](https://57-taskmaster.netlify.app/)
+
+---
+
+## **Day 125 — Foodie Express (Hyperlocal Food Delivery App)**
+
+* Dynamic menu per restaurant, add-to-cart logic  
+* Sticky cart summary, order success animations  
+* **Live Demo:** [Foodie Express](https://58-foodie-express.netlify.app/)
+
+---
+
+## **Day 126 — DreamNest (Property Rental Platform)**
+
+* Responsive grid layout, wishlist toggle  
+* Sticky booking card & reusable components  
+* **Live Demo:** [DreamNest](https://59-dreamnest.netlify.app/)
+
+---
+
+## **Day 127 — VibeSnap (Photo Sharing Platform)**
+
+* Auth simulation, like/unlike toggle, stories bar  
+* Responsive feed & interactive UI  
+* **Live Demo:** [VibeSnap](https://60-vibesnap.netlify.app/)
+
+---
+
+## **Day 128 — FairShare (Expense Splitter)**
+
+* Add friends dynamically, log expenses  
+* Auto-split calculations & net balance display  
+* **Live Demo:** [FairShare](https://61-fairshare.netlify.app/)
+
+---
+
+## **Day 129 — QuizMan (Interactive Quiz App)**
+
+* KBC-style 15-second timer, instant feedback  
+* Score tracking, confetti celebration for high scores  
+* **Live Demo:** [QuizMan](https://62-quizmaster.netlify.app/)
+
+---
+
+## **Day 130 — MediCare (Digital Health Platform)**
+
+* Find doctors by specialty, multi-step booking  
+* Slot selection & dynamic digital ticket generation  
+* **Live Demo:** [MediCare](https://63-medicare.netlify.app/)
+
+---
+
+## **Day 131 — CareerCraft (Interactive Resume Generator)**
+
+* Multi-step wizard for personal info, education, experience  
+* Live preview & print-to-PDF functionality  
+* **Live Demo:** [CareerCraft](https://64-careercraft.netlify.app/)
+
+---
+
+## **Day 132 — FitTrack (Personal Trainer App)**
+
+* Step-by-step workout sessions, auto rest timer  
+* Interactive BMI calculator, activity history tracking  
+* **Live Demo:** [FitTrack](https://66-fittrack.netlify.app/)
+
+---
+
+## **Day 133 — JobHunt (Comprehensive Job Portal)**
+
+* Advanced filtering (location, type, salary)  
+* Application tracking dashboard & conditional apply buttons  
+* **Live Demo:** [JobHunt](https://67-jobhunt.netlify.app/)
+
+---
+
+## **Day 134 — MelodyStream (Music Player)**
+
+* Persistent music player, smart queue logic  
+* Play/pause toggle & interactive UI  
+* **Live Demo:** [MelodyStream](https://68-melodystream.netlify.app/)
+
+---
+
+## **Day 135 — EduMaster (Learning Management System)**
+
+* Smart video player, locked content logic  
+* Progress tracking & dynamic certificate generation  
+* **Live Demo:** [EduMaster](https://69-edumaster.netlify.app/)
+
+---
+
+## **Day 136 — WanderLust (Travel Companion App)**
+
+* Day-wise itinerary, visual budget tracker, interactive packing list  
+* Dynamic routing for destinations  
+* **Live Demo:** [WanderLust](https://70-wanderlust.netlify.app/)
+
+---
+
+## 📌 Project List & Live Links (Days 118–136)
+
+| Day  | Project Name      | Live Link |
+|------|-----------------|-----------|
+| 118  | CineVerse        | [Live](https://51-cineverse.netlify.app/) |
+| 119  | FinSmart         | [Live](https://52-finsmart.netlify.app/) |
+| 120  | Focus – Todo     | [Live](https://53-focus-to-do.netlify.app/) |
+| 121  | Nexus Agency     | [Live](https://54-nexus-agency.netlify.app/) |
+| 122  | ShopZone         | [Live](https://55-shopzone.netlify.app/) |
+| 123  | TechPulse        | [Live](https://56-techpulse.netlify.app/) |
+| 124  | TaskMaster       | [Live](https://57-taskmaster.netlify.app/) |
+| 125  | Foodie Express   | [Live](https://58-foodie-express.netlify.app/) |
+| 126  | DreamNest        | [Live](https://59-dreamnest.netlify.app/) |
+| 127  | VibeSnap         | [Live](https://60-vibesnap.netlify.app/) |
+| 128  | FairShare        | [Live](https://61-fairshare.netlify.app/) |
+| 129  | QuizMan          | [Live](https://62-quizmaster.netlify.app/) |
+| 130  | MediCare         | [Live](https://63-medicare.netlify.app/) |
+| 131  | CareerCraft      | [Live](https://64-careercraft.netlify.app/) |
+| 132  | FitTrack         | [Live](https://66-fittrack.netlify.app/) |
+| 133  | JobHunt          | [Live](https://67-jobhunt.netlify.app/) |
+| 134  | MelodyStream     | [Live](https://68-melodystream.netlify.app/) |
+| 135  | EduMaster        | [Live](https://69-edumaster.netlify.app/) |
+| 136  | WanderLust       | [Live](https://70-wanderlust.netlify.app/) |
+
+---
 
 
 
